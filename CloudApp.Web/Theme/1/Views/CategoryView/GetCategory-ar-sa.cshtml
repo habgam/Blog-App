@@ -1,0 +1,52 @@
+﻿@model CloudApp.Data.Model.CCategory
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    CloudApp.Web.Controllers.TextViewController tx = new CloudApp.Web.Controllers.TextViewController();
+    Layout = "~/blog/Theme/1/Views/Shared/_Layout-ar-sa.cshtml";
+}
+
+
+
+@*<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h1>@Model.Name</h1>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <ul class="breadcrumb pull-right">
+                        @foreach (var k in tx.GetCategoryNavigation(Model, Request).OrderBy(s => s.Level))
+                        {
+                        <li>
+                            <a href="/@k.Url">@k.Name</a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>*@
+
+@if (Model.SubCategory != null && Model.SubCategory.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active).Count() != 0)
+{
+
+    Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/Category" + Model.ItemTheme.ThemePath, Model.SubCategory.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active).ToList());
+
+
+}
+else
+{
+
+    Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/Item" + Model.ItemTheme.ThemePath, Model.Texts.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active).ToList());
+
+}
+
+
+
+@section scripts
+{
+  
+  
+}

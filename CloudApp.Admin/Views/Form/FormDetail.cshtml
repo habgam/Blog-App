@@ -1,0 +1,65 @@
+﻿@model CloudApp.Data.ViewModel.FormViewListModel
+@{
+
+}
+
+
+<div class="rightpanel">
+
+    @*<ul class="breadcrumbs">
+            <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li>Kategori Ekle</li>
+
+        </ul>*@
+
+
+    <div class="pageheader">
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5></h5>
+            <h1>@ViewBag.FormName</h1>
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+
+            <div class="widget">
+                <h4 class="widgettitle"></h4>
+                <div class="widgetcontent">
+
+                    @foreach (var item in Model.Parameters)
+                    {
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">@item.Key</label>
+                            <div class="col-md-10">
+                               @item.Value
+                            </div>
+                        </div>
+                    }
+
+
+
+
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+@section scripts{
+
+
+}
+

@@ -1,0 +1,200 @@
+/************************************************
+Yev Tasarım Dijital Medya Ajansı - http://yevtasarim.com/ 
+Yunus Emre Vergül
+18 09 2015
+ie6, ff, opera. chrome, safari
+************************************************/
+@import url('normalize.css');
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,600,700,100);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext);
+
+body,td,th {font-family: 'Roboto', sans-serif; font-weight:300; color:#404040;  outline:0; font-size:15px; margin:0; padding:0; text-decoration:none; padding:0; margin:0; background: url(../img/esuvari_bg.jpg) repeat; }
+input {-webkit-appearance: none; -webkit-border-radius:0; border-radius:0; outline:0}
+textarea {-webkit-appearance: none; -webkit-border-radius:0; border-radius:0; outline:0}
+h1{font-family: 'Oswald', sans-serif; font-weight:500; margin:0; }
+h2{font-family: 'Oswald', sans-serif; font-weight:300;}
+h3{font-family: 'Oswald', sans-serif; margin:0;}  
+h4{color:#ffb400; font-size:25px; font-family: 'Oswald', sans-serif; font-weight:400; } 
+p{padding:0;}
+a{text-decoration: none; transition: 0.4s all ease; outline: 0;}
+.clear {clear:both;}
+.active {background:#f5f5f5; color:#ff0002;}
+.link {color:#999;}
+.link:hover {color:red;}
+/*Header Stiller*/
+
+header {height:auto; width:100%;  background: #303030; position: absolute; top: 0; left: 0; opacity: 0.8; z-index: 20;}
+.container {max-width: 1024px; height: auto; margin: 0 auto;}
+.logo {width: 280px; height:123px; float: left; display: block; background: url(../img/Esuvari_Logo.png) no-repeat center center;}
+.topRight {width: 72.5%; float: right; height: 93px; margin-top: 0;}
+.topPhone {width: auto; padding: 10px 20px 10px 45px; margin: 0 0 0 5px; color:#222; float: right; background: url(../img/phone.png) no-repeat 10px center #fff12b;} 
+.topMail {width: auto; padding: 10px 20px 10px 45px; color:#222; float: right; margin: 0 0 0 5px;background: url(../img/mail.png) no-repeat 10px center #fff12b;}
+
+.facebook {width: 24px; height: 24px; background: #999 url(../img/facebook.png) no-repeat center center; float: right; margin-right: 5px;}
+.twitter {width: 24px; height: 24px; background: #999 url(../img/twitter.png) no-repeat center center; float: right; margin-right: 5px;}
+.instagram {width: 24px; height: 24px; background: #999 url(../img/instagram.png) no-repeat center center; float: right; margin-right: 5px;}
+.pad {padding: 15px 0 15px 15px}
+.menuAc { display:none; width:92%; overflow:hidden; border:1px solid #ccc; background:#eee; font-weight:bold; padding:5%; text-align:center; font-size:15px; cursor:pointer;}
+nav {width: auto; float: right; height: 53px;}
+nav ul  {margin: 0; padding: 0;}
+nav ul li {float: left; list-style-type: none;}
+nav ul li a {display: block; height: 53px; font-size: 16px; line-height: 53px; padding:15px 20px; color:#aaa;}
+nav ul li a:hover {color:#fff12b;}
+
+
+/*İç Sayfa Stiller*/
+.page_head {height: 30px; padding: 10px 0; background:#eee; margin-top: 120px; width: 100%;}
+.pmenu {width: auto; height: 30px;}
+.pmenu ul {margin:0; padding: 0;}
+.pmenu ul li {float: left; list-style-type: none;}
+.pmenu ul li a{display: block; margin-right: 10px; font-weight: 500; color:#999; font-size: 13px; height: 30px; line-height: 30px;}
+.pmenu ul li a:hover {color:#666;}
+.line {background: url(../img/line.jpg) repeat-x left bottom; display: block; height: 75px;}
+.shadow {width: 96%; padding: 2%; margin:2% 0; background: #fff; }
+.left {width:25%; float: left;}
+.right {width: 75%; float: right;}
+.side {width: 94.5%; padding:5% 0 5% 5%; background:#fff; margin-top: 90px; border-left: 2px solid #ccc; border-bottom: 2px solid #ccc;}
+.side ul {margin: 0; padding: 0;}
+.side ul li {float: none; list-style-type: none; border-bottom: 1px solid #eee;}
+.side ul li a {display: block; padding: 10px 1%; color:#777; height: auto;}
+.side ul li a:hover {background:#fff12b; color:#505050; }
+.side > h2 {background: #fff12b; padding: 5%; margin: 0 0 15px 0;}
+.p_text {float: left; width: 44%; height: auto;}
+.p_img {float: right; width: 50%; border:1px solid #ddd; padding:1%;}
+
+.i_form {width:49%; float:left;}
+.map {float:right; width:49%;}
+
+
+
+/*Content Stiller*/
+.boxWrap {max-width: 1124px; margin: 2% auto; padding-left: 100px;}
+.box {width: 22%; max-height: 210px; margin: 0 1% 1% 0; float: left; border-radius: 2px;}
+.box .blue {background: blue;}
+.box .orange {background: orange;}
+.box .green {background: green;}
+.box .purple {background: purple;}
+.box .gold {background: gold;}
+.box .red {background: red;}
+.box .gray {background: gray;}
+.box .brown {background: brown;}
+.box .turquoise  {background: turquoise;}
+.name {position: absolute; z-index: 3; left: 0; bottom: 30px; color: #fff; text-shadow:2px 2px #000; font-size: 1.5em; display: block; width:100%; text-align: center; font-weight:500; }
+.opacity {opacity: 0.4; position: absolute; width: 100%; height: 100%; z-index: 2; top: 0; left: 0;}
+.box > a {overflow: hidden; display: block; position: relative;}
+.box > a > img {/*webkit-transition: -webkit-transform 0.15s ease 0s;
+              -moz-transition: -moz-transform 0.15s ease 0s;
+              -o-transition: -o-transform 0.15s ease 0s;
+              transition: transform 0.15s ease 0s;
+              -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);*/
+              width: 100%; height: 100%;
+              margin-bottom: 2%;
+}
+.boxs {width: 16.84%; background: #fff; padding:2.5% 2.5% 5% 2.5%; border: 1px solid #e1e1e1; margin: 0 1% 1% 0; float: left; border-radius: 2px;}
+.boxs > a {overflow: hidden; display: block; margin-bottom: 2%;  }
+.boxs > a > img {/*webkit-transition: -webkit-transform 0.15s ease 0s;
+              -moz-transition: -moz-transform 0.15s ease 0s;
+              -o-transition: -o-transform 0.15s ease 0s;
+              transition: transform 0.15s ease 0s;
+              -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);*/
+              width: 100%; height: 240px;
+              margin-bottom: 5%;
+}
+.bwidth {padding:2.5% 2% 10% 2%!important; width: 28%; margin:1% 0.5%!important; height: auto!important; }
+.pname {color:#404040; font-size: 1.2em; display: block; width:100%; text-align: center; font-weight:300; margin-top:5%; }
+
+/*Footer Stiller*/
+
+footer{width: 100%; left: 0; bottom: 0; position: relative; background: #fff; height:auto; margin: 2% 0 0 0;}
+footer .wrap {width: 100%; height: auto; background: #eee; padding: 2% 0;}
+.fmenu {float: left; width: 23%;margin-right: 2%;}
+.fmenu > img {width: 100%;}
+.fmenu ul {margin: 0; padding: 0;}
+.fmenu ul li {width: auto; float: none; list-style-type: none;}
+.fmenu ul li a {display: block; padding:5px 0; color:#999; font-size: 15px; font-weight: 500;}
+.fmenu ul li a:hover {color:#aaa;}
+.copy {display: block; font-size: 13px; text-align: right; width: 100%; padding: 15px 0;}
+.yevtasarim {width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 1% 0;
+    display: block;
+    background: url(../img/yevtasarim.png) no-repeat center center; }
+
+/*Form Stiller*/
+.txt {float:left; height:40px; width:47%; padding:0 1%; margin:1%; background:#eee; border:#ddd; color:#999; }
+.txtmulti {float:none; height:80px; width:97%; padding:1%; margin:1%; background:#eee; border:#ddd; color:#999; }
+.btn {background:#fff12b; border:none; padding:1% 2%; margin:1%; color:#222; text-align:center; cursor:pointer;}
+.btn:hover {background:#aaa;}
+/* TABLET EKRANLAR */
+@media (min-width:500px) and (max-width:799px) {
+    .menuAc {display:none;}
+    .logo {margin:0 auto; float:none!important;}
+    .topRight {width: 100%; float: none!important; height: auto; margin-top: 0;}
+    .topPhone {width: 40%; padding: 10px 2.5% 10px 45px; margin: 0 0 0 5px; color:#222; float: left; background: url(../img/phone.png) no-repeat 10px center #fff12b;} 
+    .topMail {width: 40%; padding: 10px 2.5% 10px 45px; color:#222; float: left; margin: 0 0 0 5px;background: url(../img/mail.png) no-repeat 10px center #fff12b;}
+
+    nav {width: 100%; float: none; height: 53px;}
+    nav ul  {margin: 0; padding: 0;}
+    nav ul li {float: left; list-style-type: none;}
+    nav ul li a {display: block; height: 53px; font-size: 16px; line-height: 53px; padding:15px 10px; color:#aaa;}
+    nav ul li a:hover {color:#fff12b;}
+    .container {margin:0 3%;}
+    .boxWrap {max-width: 1124px; margin: 2% 3%; padding-left: 0;}
+    .box {width: 48%; margin: 0 2% 3% 0; float: left; border-radius: 2px;}
+    .boxs {width: 42.5%; background: #fff; padding:2.5% 2.5% 10% 2.5%; border: 1px solid #e1e1e1; margin: 0 2% 3% 0; float: left; border-radius: 2px;}
+    .fmenu {float: left; width: 45%;margin-right: 2%;}
+    .box > a {overflow:hidden; display: block; position: relative;}
+    .box > a > img {
+              width: 100%; height: 100%;
+              margin-bottom: 5%;
+}
+    .boxs > a > img {
+              width: 100%; height: 240px;
+              margin-bottom: 5%;
+}
+    .page_head {margin-top:240px;}
+    footer .wrap {width: 100%; height: auto; background: #eee; padding: 3% 0;}
+}
+
+
+/* MOBİLE EKRANLAR */
+@media (min-width:100px) and (max-width:499px) {
+    .menuAc {display:block; width:90%; height:auto; margin:5%; padding:5%; background:#eee; color:#666; text-align:center;}
+    nav {width: auto; float: none; height: 53px; margin:0 auto;}
+    nav ul  {margin: 0 auto; padding: 0; display:none; position:absolute; top:50px;}
+    nav ul li {float: none; list-style-type: none;}
+    nav ul li a {display: block; height: 53px; font-size: 16px; line-height: 53px; padding:15px 10px; color:#aaa; text-align:center;}
+    nav ul li a:hover {color:#fff12b;}
+    header {position:relative;}
+    .logo {width: 182px; height:80px; float: none; margin:0 auto; display: block; background: url(../img/Esuvari__Mobile_Logo.png) no-repeat center center;}
+    .topRight {width: auto; float: right; height: 80px; margin-top: 0;}
+    .topPhone {display:none;} 
+    .topMail {display:none;}
+
+    .container {margin:0 5%;}
+    .boxWrap {max-width: 1124px; margin: 2% 5%; padding-left: 0;}
+    .box {width: 100%; margin:0 0 5% 0; float: none; border-radius: 2px;}
+    .boxs {width: 90%; background: #fff; padding:5% 5% 10% 5%; border: 1px solid #e1e1e1; margin: 0 0% 5% 0; float: none; border-radius: 2px;}
+    .fmenu {float: none!important; width:100%!important; margin-bottom:5%;text-align:center; }
+    .box > a > img {
+              width: 100%; height: 100%;
+              margin-bottom: 2%;
+}
+    footer .wrap {width: 100%; height: auto; background: #eee; padding: 5% 0;}
+
+    .i_form {width:100%; float:none; margin-bottom:5%;}
+.map {float:none; width:100%; margin-bottom:5%;}
+.p_text {float: none; width: 100%; height: auto;}
+.p_img {float: none; width: 90%; border:1px solid #ddd; padding:5%;}
+ .page_head {margin-top:0px;}
+.left {display:none;}
+.right {width: 100%; float: left!important; margin-bottom:5%;}
+
+/*Form Stiller*/
+.txt {float:none; width:90%; padding:0 5%; margin:2% 0; background:#eee; border:#ddd; color:#999; }
+.txtmulti {float:none; width:90%; padding:0 5%; margin:2% 0; background:#eee; border:#ddd; color:#999; }
+
+}

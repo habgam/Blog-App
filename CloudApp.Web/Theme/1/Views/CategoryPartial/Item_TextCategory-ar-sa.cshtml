@@ -1,0 +1,28 @@
+﻿@model List<CloudApp.Data.Model.CText>
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    var header = Model.FirstOrDefault();
+    string PageHeader = "";
+    if (header != null)
+    {
+        PageHeader = header.Category.Name;
+    }
+}
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-6 col-xs-12 project">
+
+                <a href="/@seo.GetUrlString(item.Id, CloudApp.Data.Enum.EMenuType.Text, item.OrganizationId.Value)">
+                    <img src="blog/admin/Image/Orji/3/@item.ImageUrl" alt="@item.Name" />
+                    <span class="proname">@item.Name</span>
+                </a>
+
+            </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,104 @@
+﻿@model List<CloudApp.Data.Model.CImage>
+@{
+
+}
+
+
+<div class="rightpanel">
+
+    @*@Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)*@
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            @if (Request.QueryString["type"] == "1")
+            {
+                <h5>Yazı Resimleri</h5>
+                <h1>@ViewBag.TextName</h1>
+            }
+            else if (Request.QueryString["type"] == "2")
+            {
+                <h5>Slider</h5>
+                <h1>Resim Görüntüle</h1>
+            }
+
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+            <div class="mediamgr">
+                <div class="mediamgr_left">
+                    <div class="mediamgr_head">
+                        <ul class="mediamgr_menu medialist">
+
+                            <li class="right newfilebtn"><a style="color:white;" href="/blog/Admin/Images/GetImage/?type=@Request.QueryString["type"]&Id=@Request.QueryString["Id"]&ImageId=@Request.QueryString["ImageId"]" class="btn btn-primary">Upload New File</a></li>
+                        </ul>
+                        <span class="clearall"></span>
+                    </div><!--mediamgr_head-->
+                    <h4 class="widgettitle">Liste</h4>
+
+                    <div class="mediamgr_content" style="margin-right:0;">
+                        <ul id="medialist" class="listfile medialist">
+                            @foreach (var item in Model)
+                            {
+                                <li class="image">
+                                    <a href="/blog/Admin/Images/GetImage/?type=@Request.QueryString["type"]&Id=@Request.QueryString["Id"]&pictureId=@item.Id"><img width="100px" src="~/Image/300X150/@item.OrganizationId.Value/@item.ImageUrl" alt="" /></a>
+                                    <span class="filename">@item.Name (@item.Language)  </span>
+                                </li>
+                            }
+                          
+                         
+                        </ul>
+
+                        <br class="clearall" />
+
+                    </div>
+
+                    @Html.Partial("../Shared/_Footer")
+                    <!--footer-->
+                </div>
+            </div>
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+        //Replaces data-rel attribute to rel.
+        //We use data-rel because of w3c validation issue
+        jQuery('a[data-rel]').each(function () {
+            jQuery(this).attr('rel', jQuery(this).data('rel'));
+        });
+
+        jQuery(".medialist a").colorbox();
+
+    });
+    jQuery(window).load(function () {
+        jQuery('.medialist').isotope({
+            itemSelector: 'li',
+            layoutMode: 'fitRows'
+        });
+
+        // Media Filter
+        jQuery('#mediafilter a').click(function () {
+
+            var filter = (jQuery(this).attr('href') != 'all') ? '.' + jQuery(this).attr('href') : '*';
+            jQuery('.medialist').isotope({ filter: filter });
+
+            jQuery('#mediafilter li').removeClass('current');
+            jQuery(this).parent().addClass('current');
+
+            return false;
+        });
+    });
+</script>
+
+@section scripts{
+
+
+}
+

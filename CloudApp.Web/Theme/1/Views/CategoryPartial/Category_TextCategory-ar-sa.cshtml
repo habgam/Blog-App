@@ -1,0 +1,40 @@
+﻿@model List<CloudApp.Data.Model.CCategory>
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    var header = Model.FirstOrDefault();
+    string PageHeader = "";
+    if (header != null)
+    {
+        PageHeader = header.TopCategory.Name;
+    }
+}
+
+
+
+
+
+
+<div class="page-header">
+    <div class="container">
+        <div class="banner page-back relative">
+            <h1>GALERİ</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <a class="brand" href="GaleriDetay.aspx">
+                <img src="img/galeri.jpg" alt="Marka Adı" />
+                <span>Albüm Adı</span>
+            </a>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+

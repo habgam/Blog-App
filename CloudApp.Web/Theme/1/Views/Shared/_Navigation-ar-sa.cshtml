@@ -1,0 +1,36 @@
+﻿@model CloudApp.Data.Model.CText
+           @{
+               CloudApp.Web.Controllers.TextViewController tc = new CloudApp.Web.Controllers.TextViewController();
+               List<CloudApp.Web.Models.ViewNavigation> nvg = tc.GetTextNavigation(Model,Request);
+           }
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <ul>
+                    @foreach (var item in nvg.OrderBy(item => item.Level))
+                    {
+                        if (item.Level != 999 && item.Level!=-1)
+                        {
+                            <li class="home"><a href="/@item.Url"><i class="category-1"></i> @item.Name</a></li>
+                            <li><span>//</span></li>
+                        }
+                        if (item.Level == -1)
+                        {
+                            <li class="home"><a href="#"><i class="fa fa-home"></i> @item.Name</a></li>
+                            <li><span>//</span></li>
+                        }
+                        if (item.Level == 999)
+                        {
+                            <li class="category-2"><a href="#">@item.Name</a></li>
+                        }
+
+
+                    }
+                   
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

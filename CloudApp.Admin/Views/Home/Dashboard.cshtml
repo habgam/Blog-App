@@ -1,0 +1,252 @@
+﻿@{
+
+
+}
+
+<div class="rightpanel">
+
+    <ul class="breadcrumbs">
+        <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+        <li>Anasayfa</li>
+
+    </ul>
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Anasayfa</h5>
+            <h1>Anasayfa</h1>
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+
+
+
+        <div class="maincontentinner">
+            <div class="dvGoogleAnalytics">
+                @*<div>
+                    <div style="float:left; width:33%;">
+                        <h4 class="widgettitle">Giriş Yöntemlerine Göre Oturumlar</h4>
+                        <div class="widgetcontent">
+                            <div id="bargraph" style="height:200px;"></div>
+                        </div>
+                    </div>
+                    <div style="float:left; width:33%; margin-left:2%;">
+                        <h4 class="widgettitle">Giriş Yöntemlerine Göre Kullanıcılar</h4>
+                        <div class="widgetcontent">
+                            <div id="bargraphSS" style="height:200px;"></div>
+                        </div>
+                    </div>
+                    <div style="float:left; width:30%;  margin-left:2%;">
+                        <h4 class="widgettitle">Şu Andaki Ziyaretçiler</h4>
+                        <div class="widgetcontent">
+                            <div style=" width:100%;">
+                                <div style=" width:100%; text-align:center; margin-top:30px;">
+                                    <span style="font-size:8vw;" id="spnRealtime"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="clear:both;"></div>
+                <h4 class="widgettitle">Son Bir Aydaki Ziyaretçi Sayısı</h4>
+                <div class="widgetcontent">
+                    <div id="chartplace" style="height:300px;"></div>
+                </div>*@<!--widgetcontent-->
+            </div>
+
+
+
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+@section scripts{
+    @*<script>
+        function setRealTime() {
+            $.ajax({
+                url: '/blog/Admin/Home/GetAnayticsRealTimeS',
+                type: 'GET',
+                success: function (data) {
+
+                    $("#spnRealtime").text(data);
+
+                },
+                err: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+
+
+
+
+
+
+            $.ajax({
+                url: '/blog/Admin/Home/GetAnayticsMonthVSU',
+                type: 'GET',
+                success: function (data) {
+
+                    var maxCount = 0;
+
+                    var session = [];
+                    var users = [];
+                    var pageview = [];
+                    $.each(data, function (i, item) {
+                        session.push([(new Date(data[i].Time)).getTime(), data[i].Session]);
+                        users.push([(new Date(data[i].Time)).getTime(), data[i].Users]);
+                        pageview.push([(new Date(data[i].Time)).getTime(), data[i].PageViews]);
+                        if (data[i].Session > maxCount) {
+                            maxCount = parseInt(data[i].Session)
+                        }
+                    })
+                    function showTooltip(x, y, contents) {
+                        jQuery('<div id="tooltip" class="tooltipflot">' + contents + '</div>').css({
+                            position: 'absolute',
+                            display: 'none',
+                            top: y + 5,
+                            left: x + 5
+                        }).appendTo("body").fadeIn(200);
+                    }
+                    var plot = jQuery.plot(jQuery("#chartplace"),
+                           [{ data: session, label: "Oturum", color: "#0866c6" }],
+                          {
+                              series: {
+                                  lines: { show: true, fill: true, fillColor: { colors: [{ opacity: 0.05 }, { opacity: 0.15 }] } },
+                                  points: { show: true }
+                              },
+                              legend: { position: 'nw' },
+                              grid: { hoverable: true, clickable: true, borderColor: '#666', borderWidth: 2, labelMargin: 10 },
+                              yaxis: { min: 0, max: maxCount + 4 },
+                              xaxis: {
+                                  mode: "time", timeformat: "%d/%m/%y",
+                                  min: (new Date(data[0].Time)).getTime(),
+                                  max: (new Date(data[data.length - 1].Time)).getTime()
+                              },
+                          });
+
+                    var previousPoint = null;
+                    jQuery("#chartplace").bind("plothover", function (event, pos, item) {
+                        jQuery("#x").text(pos.x.toFixed(2));
+                        jQuery("#y").text(pos.y.toFixed(2));
+
+                        if (item) {
+                            if (previousPoint != item.dataIndex) {
+                                previousPoint = item.dataIndex;
+
+                                jQuery("#tooltip").remove();
+                                var x = new Date(item.datapoint[0]).getDate() + "/" + (parseInt(new Date(item.datapoint[0]).getMonth()) + 1) + "/" + new Date(item.datapoint[0]).getFullYear();
+                                y = item.datapoint[1];
+
+                                showTooltip(item.pageX, item.pageY,
+                                                item.series.label + " </br> Tarih : " + "  " + x + " </br> Ziyaretçi : " + y);
+                            }
+
+                        } else {
+                            jQuery("#tooltip").remove();
+                            previousPoint = null;
+                        }
+
+                    });
+
+                    jQuery("#chartplace").bind("plotclick", function (event, pos, item) {
+                        if (item) {
+                            jQuery("#clickdata").text("You clicked point " + item.dataIndex + " in " + item.series.label + ".");
+                            plot.highlight(item.series, item.datapoint);
+                        }
+                    });
+
+                },
+                err: function (err) {
+                    console.log(err);
+                }
+            });
+
+
+            setRealTime();
+            setInterval(setRealTime, 10000);
+
+
+            $.ajax({
+                url: '/blog/Admin/Home/GetAnayticsSourceVSU',
+                type: 'GET',
+                success: function (data) {
+                    var dataArray = [];
+                    var labelText = [];
+                    var dataArrayS = [];
+                    var maxCount = 0;
+                    var maxCountS = 0;
+                    $.each(data, function (i, item) {
+                        if (data[i].Refferal == '(none)')
+                            labelText.push([i, 'Direk']);
+                        else if (data[i].Refferal == 'referral')
+                            labelText.push([i, 'Referans']);
+                        else
+                            labelText.push([i, data[i].Refferal]);
+                        dataArray.push([i, data[i].SessionCount]);
+                        dataArrayS.push([i, data[i].Users]);
+                        if (parseInt(data[i].SessionCount) > maxCount)
+                            maxCount = parseInt(data[i].SessionCount);
+                        if (parseInt(data[i].Users) > maxCountS)
+                            maxCountS = parseInt(data[i].Users);
+                        
+                    });
+                    var stack = 0, bars = true, lines = false, steps = false;
+                    jQuery.plot(jQuery("#bargraph"), [dataArray], {
+                        series: {
+                            stack: stack,
+                            lines: { show: lines, fill: true, steps: steps },
+                            bars: { show: bars, barWidth: 0.6 }
+                        },
+                        grid: { hoverable: true, clickable: true, borderColor: '#666', borderWidth: 2, labelMargin: 10 },
+                        colors: ["#666"]
+                        ,
+                        xaxis: {
+                            ticks: labelText
+                        },
+                        yaxis: {
+                            min: 0,
+                            max: maxCount + 10
+                        }
+                    });
+
+                    jQuery.plot(jQuery("#bargraphSS"), [dataArrayS], {
+                        series: {
+                            stack: stack,
+                            lines: { show: lines, fill: true, steps: steps },
+                            bars: { show: bars, barWidth: 0.6 }
+                        },
+                        grid: { hoverable: true, clickable: true, borderColor: '#666', borderWidth: 2, labelMargin: 10 },
+                        colors: ["#666"]
+                        ,
+                        xaxis: {
+                            ticks: labelText
+                        },
+                        yaxis: {
+                            min: 0,
+                            max: maxCountS + 10
+                        }
+                    });
+
+                },
+                err: function (err) {
+                    console.log(err);
+                }
+            });
+
+            //setRealTime();
+
+
+
+        });
+
+    </script>*@
+}

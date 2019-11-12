@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Alaylı Mağazaları</title>
+    <meta name="description" content="Sadecebutik.com Esra Kekülloğlu'nun tesettür giyim markasıdır." />
+    <meta name="keywords" content="sadecebutik, esra keküllüoğlu, tesettür, tesettür giyim, bayan giyim, özel tasarım ürünler, giyim, tesettür abiye, tesettür butik, sadecebutik, esra keküküllüoğlu, giyim, moda, özel dikim giyim, tesettür" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/autocomplete.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+     <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+     
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  
+    <form id="form1" runat="server">
+   <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 relative">
+                <a class="logo" href="#"></a>
+                
+                  <nav class="menu">
+                <ul>
+                    <li><a href="Default.aspx">ANASAYFA</a></li>
+                    <li><a href="Kurumsal.aspx">KURUMSAL</a></li>
+                    <li><a href="Urunler.aspx">ÜRÜNLER</a></li>
+                    <li><a href="Galeri.aspx">GALERİ</a></li>
+                    <li><a href="Iletisim.aspx">İLETİŞİM</a></li>
+                    
+                 <div class="social hidden-lg hidden-md hidden-sm">
+                <a class="facebook" href="https://www.facebook.com/AlayliArcelik/" target="_blank" title="Alaylı Facebook Hesabı"></a>
+                <a class="instagram" href="https://www.instagram.com/alayliarcelik/" target="_blank" title="Alaylı Instagram Hesabı"></a>
+                <a class="twitter" href="https://twitter.com/alayliarcelik" target="_blank" title="Alaylı Twitter Hesabı"></a>
+              </div>
+                </ul>
+                </nav>
+              <div class="social hidden-xs">
+                <a class="facebook" href="https://www.facebook.com/AlayliArcelik/" target="_blank" title="Alaylı Facebook"></a>
+                <a class="instagram" href="https://www.instagram.com/alayliarcelik/" target="_blank" title="Alaylı Facebook"></a>
+                <a class="twitter" href="https://twitter.com/alayliarcelik" target="_blank" title="Alaylı Facebook"></a>
+              </div>
+             
+              <img src="img/35.png" class="pull-right m-10" alt="Alaylı 35. Yıl"/>
+               <a href="Iletisim" class="sizi-arayalim">
+                BİZ SİZİ ARAYALIM
+              </a>
+            </div>
+        </div>
+    </div>
+    </header>
+        <asp:ContentPlaceHolder ID="Icerik" runat="server">
+        </asp:ContentPlaceHolder>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-6 col-xs-12">
+                             <h3>MERKEZ MAĞAZA</h3>
+                             <p>
+                                Sakarya Cad. No:58 <br/>
+                                Adapazarı / SAKARYA <br/>
+                                <strong>Telefon:</strong> 0 264 278 22 30<br/>
+                                <strong>E-Posta:</strong><br/>
+                                info@alayli.com.tr<br/>
+                             </p>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                             <h3>ŞUBE</h3>
+                             <p>
+                                Atatürk Bulvarı No:58 <br/>
+                                Adapazarı / SAKARYA <br/>
+                                <strong>Telefon:</strong> 0 264 278 09 78<br/>
+                                <strong>E-Posta:</strong><br/>
+                                info@alayli.com.tr<br/>
+                             </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                            <h4>İLETİŞİM FORMU</h3>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="form-control" name="name" placeholder="Ad Soyad"/>
+                                <input type="telephone" class="form-control" name="telefon" placeholder="Telefon"/>
+                                <input type="email" class="form-control" name="email" placeholder="E-Mail"/>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <textarea name="mesaj" class="form-control" placeholder="Mesajınız"></textarea>
+                                <asp:Button Id="btnSend" Css="btn pull-right" runat="server" Text="Gönder"></asp:Button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <span>Sitede yer alan görseller ve yazılı içerikler <strong>Alaylı Mağazaları</strong>'na aittir.Her hakkı saklıdır.<br/><strong>2017 ALAYLI MAĞAZALARI</strong></span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <a class="sosyobyte pull-right" href="http://www.sosyobyte.com"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </form>
+   
+ <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

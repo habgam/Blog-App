@@ -1,0 +1,182 @@
+﻿@model CloudApp.Data.Model.COrganization
+@{
+ 
+}
+
+
+
+<div class="rightpanel">
+
+    @*<ul class="breadcrumbs">
+            <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li>Kategori Ekle</li>
+
+        </ul>*@
+
+    @*@Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)*@
+
+    <div class="pageheader">
+        @*<form action="results.html" method="post" class="searchbar">
+                <input type="text" name="keyword" placeholder="To search type and hit enter..." />
+            </form>*@
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Organizasyon</h5>
+           
+                <h1>Organizasyon Düzenle</h1>
+            
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+
+            <div class="widget">
+                <h4 class="widgettitle">Organizasyon</h4>
+                <div class="widgetcontent">
+                    @using (Html.BeginForm("EditOrganization", "Organization", FormMethod.Post, new { @id = "frmNewAssignment", @class = "form", @enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Site Çevrimiçi</label>
+                            <div class="col-md-10">
+                                <select name="isOffline" id="isOffline" class="form-control select-inline">
+                                    <option value="False">Kapalı</option>
+                                    <option value="True">Açık</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                       
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Firma İsmi</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control input-default", @placeholder = "Firma İsmi" })
+                               
+                            </div>
+                        </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Firma Başlığı</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control input-default", @placeholder = "Firma Başlığı" })
+
+        </div>
+    </div>
+
+
+    @*<div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Firma Logosu</label>
+        <div class="col-md-10">
+            <div><img src="/blog/Admin/Image/300X300/@Model.OrganizationId.Value/@Model.ImageUrl" width="100px" /></div>
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="input-append">
+                    <div class="uneditable-input">
+                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
+                        <span class="fileupload-preview"></span>
+                    </div>
+
+
+                    <span class="btn btn-default btn-file">
+                        <span class="fileupload-new">Dosyayı Seç</span>
+                        <span class="fileupload-exists">Değiştir</span>
+                        <input name="uploadFile" id="uploadFile" type="file" />
+                    </span>
+                    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Google Analytics Profile Id</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.GoogleAnalyticsProfileId, new { @class = "form-control input-default", @placeholder = "Google Analytics Profile Id" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp Server</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SmtpServer, new { @class = "form-control input-default", @placeholder = "Smtp Server" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp UserName</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SmtpUserName, new { @class = "form-control input-default", @placeholder = "Smtp UserName" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp WhoMail</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SmtpWhoMail, new { @class = "form-control input-default", @placeholder = "Smtp WhoMail" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp Password</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SmtpPassword, new { @class = "form-control input-default", @placeholder = "Smtp Password" })
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp Port</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SmtpPort, new { @class = "form-control input-default", @placeholder = "Smtp Port" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Smtp User SSL</label>
+        <div class="col-md-10">
+            <select name="useSSL" id="useSSL" class="form-control select-inline">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+    </div>
+
+
+                        <br /><br />
+                        <button type="submit" class="btn btn-default">Kaydet</button>
+    <a style="color:#333333;" href="/blog/Admin/Organization/ResetPassword" class="btn btn-default">Şifre Sıfırla</a>
+
+
+                    }
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+@section scripts{
+    <script>
+    $(document).ready(function () {
+        $("#useSSL").val('@Model.SmtpUseSSL');
+        $("#isOffline").val('@Model.IsOffline');
+        });
+    </script>
+    }

@@ -1,0 +1,78 @@
+﻿
+
+@{
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+@Html.Raw(TempData["Message"])
+
+<div class="index-banner">
+    <img src="/blog/Theme/1/Content/img/figure.png" />
+    <h1> @CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_onerisikayet", culture: lang)</h1>
+    <img src="/blog/Theme/1/Content/img/figure2.png" />
+</div>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <div class="contact">
+                    @using (Html.BeginForm("InsertForm", "HomePage", new { url = "/yazi/site-yazilari-2/iletisim-5/", header = "Öneri Şikayet", subject = "Öneri Şikayet", whoSendMail = "kalite@ozgullu.com.tr", @enctype = "multipart/form-data" }))
+                    {
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="hidden" id="ExternalFormHeader_1" name="ExternalFormHeader_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_name", culture: lang)">
+                            <input type="text" name="ExternalFormElement_1" id="ExternalFormElement_1" class="form-control" placeholder="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_name", culture: lang)" required="" />
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="hidden" id="ExternalFormHeader_2" name="ExternalFormHeader_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_surname", culture: lang)">
+                            <input type="text" name="ExternalFormElement_2" id="ExternalFormElement_2" class="form-control" placeholder="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_surname", culture: lang)" required="" />
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="hidden" id="ExternalFormHeader_3" name="ExternalFormHeader_3" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_phone", culture: lang)">
+                            <input type="text" name="ExternalFormElement_3" id="ExternalFormElement_3" class="form-control" placeholder="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_phone", culture: lang)" required="" />
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="hidden" id="ExternalFormHeader_4" name="ExternalFormHeader_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_email", culture: lang)">
+                            <input type="text" name="ExternalFormElement_4" id="ExternalFormElement_4" class="form-control" placeholder="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_email", culture: lang)" required="" />
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 m-b-30">
+                            <input type="hidden" id="ExternalFormHeader_5" name="ExternalFormHeader_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_konuseciniz", culture: lang)">
+                            <label for="exampleFormControlSelect1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_konuseciniz", culture: lang)</label>
+                            <select class="form-control" name="ExternalFormElement_5" id="ExternalFormElement_5">
+                                <option value="Öneri">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_oneri", culture: lang)</option>
+                                <option value="Şikayet">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_sikayet", culture: lang)</option>
+                                <option value="Diğer">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_diger", culture: lang)</option>
+
+                            </select>
+                        </div>
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input type="hidden" id="ExternalFormHeader_7" name="ExternalFormHeader_7" value="Mesajınız">
+                            <textarea name="ExternalFormElement_7" id="ExternalFormElement_7" rows="2" cols="20" class="form-control" placeholder="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_message", culture: lang)" required=""></textarea>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="col-md-6 col-xs-12">
+                         <div class="g-recaptcha" data-sitekey="6LcYtmEUAAAAAFmUtMoSyo8WvSjAJ31yiTBV8YWx"></div>
+                         
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                         <button type="submit" class="btn pull-right m-t-b-30">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_sendmessage", culture: lang)</button>
+                    
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            @{
+
+                CloudApp.Web.Models.ViewPartialObject mainMenu123 = pg.GetCategoryPartial(21, Request);
+                if (mainMenu123 != null)
+                {
+                    Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FastMenuHumanResources.cshtml", mainMenu123.ViewModel);
+                }
+
+            }
+        </div>
+    </div>
+</div>
+

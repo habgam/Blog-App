@@ -1,0 +1,27 @@
+﻿
+@model CloudApp.Data.Model.CCategory
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+ <a href="#" id="marktoggle">@(Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Name : "-" )</a>
+
+  <div id="mark" style="display:none;">
+
+@foreach (var item in Model.Texts.Where(f => f.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active))
+{
+    <a href="/@seo.GetUrlString(item.Id,CloudApp.Data.Enum.EMenuType.Text,item.OrganizationId.Value,lang)">@(item.LanguageValues.FirstOrDefault(h => h.Lang.ToLower() == lang.ToLower()) != null ? item.LanguageValues.FirstOrDefault(h => h.Lang.ToLower() == lang.ToLower()).Name : "")</a>
+}
+ </div>
+
+<script src="/blog/Theme/1/Content/js/jquery-1.10.2.min.js"></script>
+	<script src="/blog/Theme/1/Content/js/bootstrap.min.js"></script>
+
+
+ <script>
+        $(document).ready(function(){
+            $("#marktoggle").click(function(){
+                $("#mark").slideToggle(600);
+            });
+        });
+    </script>

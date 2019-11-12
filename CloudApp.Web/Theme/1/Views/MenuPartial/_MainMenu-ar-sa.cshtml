@@ -1,0 +1,49 @@
+﻿@model List<CloudApp.Data.ViewModel.ViewMenuItem>
+@{
+    CloudApp.Web.Core.SeoUrlController sc = new CloudApp.Web.Core.SeoUrlController();
+ string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+<ul>
+<li><a href="/@lang/Home">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_homepage", culture: lang) </a></li>
+    @foreach (var item in Model)
+    {
+        <li><a href="/@item.Url">@item.Name</a></li>
+    }
+
+    @*<li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="urunler.html">Ürün Ailesi</a></li>
+    <li><a href="sutun-yolculugu.html">Sütün Yolculuğu</a></li>
+    <li><a href="iletisim.html">Bize Ulaşın</a></li>*@
+</ul>
+
+@*<div class="container">
+        <a href="index.html" class="logo hidden-xs"></a>
+        <div class="col-md-6">
+            <div class="inner">
+                <nav class="menu">
+                    <a href="#" class="menuAc">
+                        ≡
+                    </a>
+                    <ul>
+                        <li><a href="@Model.FirstOrDefault().Url">@Model.FirstOrDefault().Name</a></li>
+                        <li><a href="@Model.Skip(1).FirstOrDefault().Url">@Model.Skip(1).FirstOrDefault().Name</a></li>
+                        <li class="hidden-lg hidden-md hidden-sm"><a href="/@Model.Skip(2).FirstOrDefault().Url">@Model.Skip(2).FirstOrDefault().Name</a> </li>
+                        <li class="hidden-lg hidden-md hidden-sm"><a href="@Model.Skip(3).FirstOrDefault().Url">@Model.Skip(3).FirstOrDefault().Name</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-6 hidden-xs">
+            <div class="inner">
+                <nav class="menu2">
+                    <ul>
+                        <li><a href="/@Model.Skip(2).FirstOrDefault().Url">@Model.Skip(2).FirstOrDefault().Name</a></li>
+                        <li><a href="@Model.Skip(3).FirstOrDefault().Url">@Model.Skip(3).FirstOrDefault().Name</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>*@
+

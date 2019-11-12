@@ -1,0 +1,519 @@
+﻿@model CloudApp.Data.Model.CText
+@using CloudApp.Data.Model
+@{
+    string querystring = Request.QueryString["CatId"] != null ? Request.QueryString["CatId"].ToString() : "0";
+    List<string> languages = (List<string>)ViewBag.Languages;
+}
+
+
+
+<div class="rightpanel">
+
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5><span class="spnHeader"></h5>
+            @if (Model.Id != 0)
+            {
+                <h1><span class="spnHeader"></span> Düzenle</h1>
+            }
+            else
+            {
+                <h1><span class="spnHeader"></span> Ekle</h1>
+            }
+
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+
+            <div class="widget">
+                <h4 class="widgettitle"><span class="spnHeader"></span> Ekle</h4>
+                <div class="widgetcontent">
+                    @using (Html.BeginForm("Insert", "Text", FormMethod.Post, new { @id = "frmTextInsert", @class = "form", @enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="form-group" id="dvKategori">
+                            <label for="firstname" class="col-md-2 control-label">Kategori</label>
+                            <div class="col-md-10">
+                                <select name="SubCategoryId" id="SubCategoryId" class="form-control select-inline"></select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label"><span class="spnHeader"></span> Teması</label>
+                            <div class="col-md-10">
+                                <select name="ThemeId" id="ThemeId" class="form-control select-inline"></select>
+                            </div>
+                        </div>
+
+                        foreach (var k in languages)
+                        {
+                            CTextLanguage textLanguage = null;
+                            if (Model != null && Model.LanguageValues != null)
+                            {
+                                textLanguage = Model.LanguageValues.FirstOrDefault(f => f.Lang == k && f.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active);
+                            }
+                           
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label"><span class="spnHeader"></span> Adı (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|Name" name="@k|Name" value="@textLanguage.Name" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|Name" name="@k|Name" class="form-control input-default" />
+                                    }
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label"><span class="spnHeader"></span> Açıklama (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|Description" name="@k|Description" value="@textLanguage.Description" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|Description" name="@k|Description" class="form-control input-default" />
+                                    }
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label">Meta Title (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|PageTitle" name="@k|PageTitle" value="@textLanguage.PageTitle" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|PageTitle" name="@k|PageTitle" class="form-control input-default" />
+                                    }
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label">Meta Keyword (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|PageKeyword" name="@k|PageKeyword" value="@textLanguage.PageKeyword" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|PageKeyword" name="@k|PageKeyword" class="form-control input-default" />
+                                    }
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label">Meta Description (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|PageDescription" name="@k|PageDescription" value="@textLanguage.PageDescription" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|PageDescription" name="@k|PageDescription" class="form-control input-default" />
+                                    }
+
+
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Dosya</label>
+                            <div class="col-md-10">
+                                <div><img src="/blog/Admin/Image/300X150/@(Model.OrganizationId.HasValue==true?Model.OrganizationId.Value:0)/@Model.ImageUrl" width="100px" /></div>
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="input-append">
+                                        <div class="uneditable-input">
+                                            <i class="glyphicon glyphicon-file fileupload-exists"></i>
+                                            <span class="fileupload-preview"></span>
+                                        </div>
+
+
+                                        <span class="btn btn-default btn-file">
+                                            <span class="fileupload-new">Dosyayı Seç</span>
+                                            <span class="fileupload-exists">Değiştir</span>
+                                            <input name="uploadFile" id="uploadFile" type="file" />
+                                        </span>
+                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        foreach (var k in languages)
+                        {
+                            CTextLanguage textLanguage = null;
+                            if (Model != null && Model.LanguageValues != null)
+                            {
+                                textLanguage = Model.LanguageValues.FirstOrDefault(f => f.Lang == k && f.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active);
+                            }
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label"><span class="spnHeader"></span> İçeriği (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    <div>
+                                        @if (textLanguage != null)
+                                        {
+                                            <textarea id="@k|Content" name="@k|Content" style="width:80%" rows="15" cols="80" class="form-control input-default tinymce">@textLanguage.Content</textarea>
+                                        }
+                                        else
+                                        {
+                                            <textarea id="@k|Content" name="@k|Content" style="width:80%" rows="15" cols="80" class="form-control input-default tinymce" ></textarea>
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-group dvCustom1" id="dvCustom1">
+                                <label for="firstname" id="Custom1" class="col-md-2 control-label Custom1">
+                                    Özel Alan 1 (Dil:@k)
+                                </label> (Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty1" name="@k|CustomProperty1" class="form-control input-default">@textLanguage.CustomProperty1</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty1" name="@k|CustomProperty1" class="form-control input-default" ></textarea>
+                                    }
+
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom2" id="dvCustom2">
+                                <label for="firstname" id="Custom2" class="col-md-2 control-label Custom2">Özel Alan 2 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty2" name="@k|CustomProperty2" class="form-control input-default">@textLanguage.CustomProperty2</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty2" name="@k|CustomProperty2" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom3" id="dvCustom3">
+                                <label for="firstname" id="Custom3" class="col-md-2 control-label Custom3">Özel Alan 3 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty3" name="@k|CustomProperty3" class="form-control input-default">@textLanguage.CustomProperty3</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty3" name="@k|CustomProperty3" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom4" id="dvCustom4">
+                                <label for="firstname" id="Custom4" class="col-md-2 control-label Custom4">Özel Alan 4 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty4" name="@k|CustomProperty4" class="form-control input-default">@textLanguage.CustomProperty4</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty4" name="@k|CustomProperty4" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom5" id="dvCustom5">
+                                <label for="firstname" id="Custom5" class="col-md-2 control-label Custom5">Özel Alan 5 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty5" name="@k|CustomProperty5" class="form-control input-default">@textLanguage.CustomProperty5</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty5" name="@k|CustomProperty5" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom6" id="dvCustom6">
+                                <label for="firstname" id="Custom6" class="col-md-2 control-label Custom6">Özel Alan 6 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty6" name="@k|CustomProperty6" class="form-control input-default">@textLanguage.CustomProperty6</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty6" name="@k|CustomProperty6" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom7" id="dvCustom7">
+                                <label for="firstname" id="Custom7" class="col-md-2 control-label Custom7">Özel Alan 7 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty7" name="@k|CustomProperty7" class="form-control input-default">@textLanguage.CustomProperty7</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty7" name="@k|CustomProperty7" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom8" id="dvCustom8">
+                                <label for="firstname" id="Custom8" class="col-md-2 control-label Custom8">Özel Alan 8 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty8" name="@k|CustomProperty8" class="form-control input-default">@textLanguage.CustomProperty8</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty8" name="@k|CustomProperty8" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom9" id="dvCustom9">
+                                <label for="firstname" id="Custom9" class="col-md-2 control-label Custom9">Özel Alan 9 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty9" name="@k|CustomProperty9" class="form-control input-default">@textLanguage.CustomProperty9</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty9" name="@k|CustomProperty9" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group dvCustom10" id="dvCustom10">
+                                <label for="firstname" id="Custom10" class="col-md-2 control-label Custom10">Özel Alan 10 (Dil:@k)</label>(Dil:@k)
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <textarea id="@k|CustomProperty10" name="@k|CustomProperty10" class="form-control input-default">@textLanguage.CustomProperty10</textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea id="@k|CustomProperty10" name="@k|CustomProperty10" class="form-control input-default"></textarea>
+                                    }
+                                </div>
+                            </div>
+
+                        }
+
+
+                        <br /><br />
+                        <button type="submit" class="btn btn-default">Kaydet</button>
+
+
+                    }
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+@section scripts{
+    <script>
+    $.getJSON('/blog/Admin/Category/GetFullCategory', {}, function (listCat) {
+        var list = $('select#SubCategoryId');
+        $(listCat).each(function (index, item) {
+            list.append('<option value="' + item.Value + '">' + item.Text + '</option>');
+        });
+
+
+        if( @ViewBag.CatId!=0  )
+        {
+            var element = document.getElementById('SubCategoryId');
+            element.value = @ViewBag.CatId;
+        }
+        @if(querystring!="0")
+        {
+           @: var element = document.getElementById('SubCategoryId');
+           @: element.value = @querystring;
+        }
+        getCategoryInformation($('select#SubCategoryId').val());
+    });
+
+    $.getJSON('/blog/Admin/ItemTheme/GetThemeByType?type=3', {}, function (ThemeList) {
+        var list = $('select#ThemeId');
+        $(ThemeList).each(function (index, item) {
+            list.append('<option value="' + item.Value + '">' + item.Text + '</option>');
+        });
+
+        if(  @ViewBag.ItemThemeId!=0  )
+        {
+
+            var element = document.getElementById('ThemeId');
+            element.value =  @ViewBag.ItemThemeId;
+
+
+        }
+    });
+    function getCategoryInformation(catid) {
+        $.ajax({
+            url: '/blog/Admin/Category/GetCategoryCustomProperty',
+            data: { catId: catid },
+            type: 'GET',
+            success: function (data) {
+                console.log(data);
+                if (data.custom1 != "") {
+                    $('.Custom1').text(data.custom1);
+                    $('.dvCustom1').attr("style","display:block;");
+                }
+                else
+                {
+                    $('.dvCustom1').attr("style", "display:none;");
+                }
+
+                if (data.custom2 != "") {
+                    $('.Custom2').text(data.custom2);
+                    $('.dvCustom2').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom2').attr("style", "display:none;");
+                }
+
+                if (data.custom3 != "") {
+                    $('.Custom3').text(data.custom3);
+                    $('.dvCustom3').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom3').attr("style", "display:none;");
+                }
+
+                if (data.custom4 != "") {
+                    $('.Custom4').text(data.custom4);
+                    $('.dvCustom4').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom4').attr("style", "display:none;");
+                }
+
+                if (data.custom5 != "") {
+                    $('.Custom5').text(data.custom5);
+                    $('.dvCustom5').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom5').attr("style", "display:none;");
+                }
+
+                if (data.custom6 != "") {
+                    $('.Custom6').text(data.custom6);
+                    $('.dvCustom6').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom6').attr("style", "display:none;");
+                }
+
+                if (data.custom7 != "") {
+                    $('.Custom7').text(data.custom7);
+                    $('.dvCustom7').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom7').attr("style", "display:none;");
+                }
+
+                if (data.custom8 != "") {
+                    $('.Custom8').text(data.custom8);
+                    $('.dvCustom8').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom8').attr("style", "display:none;");
+                }
+
+                if (data.custom9 != "") {
+                    $('.Custom9').text(data.custom9);
+                    $('.dvCustom9').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom9').attr("style", "display:none;");
+                }
+
+                if (data.custom10 != "") {
+                    $('.Custom10').text(data.custom10);
+                    $('.dvCustom10').attr("style", "display:block;");
+                }
+                else {
+                    $('.dvCustom10').attr("style", "display:none;");
+                }
+
+
+
+            }
+        })
+    }
+    $(document).ready(function () {
+
+        $('#SubCategoryId').change(function () {
+            getCategoryInformation(this.value);
+        });
+
+        $.ajax({
+            url: '/blog/Admin/Category/GetCategoryName',
+            data: { id: @querystring },
+            type: 'GET',
+            success: function (data) {
+                $(".spnHeader").text(data);
+
+            }
+        });
+        @if(querystring!="0")
+        {
+            @: $("#dvKategori").attr("style","display:none;");
+                        }
+        else
+        {
+             @: $("#dvKategori").attr("style","display:block;");
+                }
+
+    });
+
+    </script>}

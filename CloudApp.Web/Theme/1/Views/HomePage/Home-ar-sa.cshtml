@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/blog/Theme/1/Views/Shared/_Layout-ar-sa.cshtml";
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+<div class="index-banner vh100">
+    <div class="scroll-downs">
+        <div class="mousey">
+            <div class="scroller"></div>
+        </div>
+    </div>
+
+    @{
+
+        CloudApp.Web.Models.ViewPartialObject mainMenu1 = pg.GetSliderPartial(2, Request, lang);
+        if (mainMenu1 != null)
+        {
+            Html.RenderPartial(mainMenu1.ViewName, mainMenu1.ViewModel);
+        }
+    }
+
+
+</div>
+@{
+
+    CloudApp.Web.Models.ViewPartialObject mainMenu2 = pg.GetSliderPartial(1, Request, lang);
+    if (mainMenu2 != null)
+    {
+        Html.RenderPartial(mainMenu2.ViewName, mainMenu2.ViewModel);
+    }
+}
+
+<div class="about">
+    @{
+
+        CloudApp.Web.Models.ViewPartialObject mainMenu6 = pg.GetSliderPartial(5, Request, lang);
+        if (mainMenu6 != null)
+        {
+            Html.RenderPartial(mainMenu6.ViewName, mainMenu6.ViewModel);
+        }
+    }
+
+</div>
+<div class="bottom-wrap">
+    <div class="container">
+        <div class="row">
+            <!--
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="where">
+                    @{
+
+                        CloudApp.Web.Models.ViewPartialObject mainMenu3 = pg.GetSliderPartial(4, Request, lang);
+                        if (mainMenu3 != null)
+                        {
+                            Html.RenderPartial(mainMenu3.ViewName, mainMenu3.ViewModel);
+                        }
+                    }
+
+                    <i class="fa fa-map-pin"></i>
+                    <span>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_where", culture: lang)</span>
+                    @using (Html.BeginForm("SalesPoint", "HomePage",new { lang = lang }))
+                    {
+                    <select class="form-control" id="frmWhere" name="frmWhere">
+                        <option>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_select_city", culture: lang)</option>
+
+                        <option value="20">İzmir</option>
+                        <option value="19">Ankara</option>
+                        <option value="18">İstanbul</option>
+                        <option value="17">Sakarya</option>
+                    </select>
+                    <button type="submit" id="btnSales" class="btn">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_search", culture: lang)</button>
+
+                    }
+                </div>
+            </div>-->
+            <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="product" style="background: url(/blog/Theme/1/Content/img/lezzetler.jpg) no-repeat center center; background-size:cover;">
+                    <a href="#">
+                        <span>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_savory_flavors", culture: lang)</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="product" style="background: url(/blog/Theme/1/Content/img/reklam.jpg) no-repeat center center; background-size:cover;">
+                    <a href="sayfalar/sayfalar-11/reklam-flimlerimiz-14/">
+                        <span>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_advert_movie", culture: lang)</span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="product" style="background: url(/blog/Theme/1/Content/img/urun-ailesi.jpg) no-repeat center center; background-size:cover;">
+                    <a href="yazilar/urun-ailesi-14/">
+                        <span>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_product_family", culture: lang)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    
+}
+

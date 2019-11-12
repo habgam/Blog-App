@@ -1,0 +1,881 @@
+﻿[
+  {
+    "Key": "r_gen_where",
+    "LocalizedValue": {
+      "tr-TR": "Nerede",
+      "en-US": "Where"
+    }
+  },
+  {
+    "Key": "r_gen_savory_flavors",
+    "LocalizedValue": {
+      "tr-TR": "Bizli Lezzetler",
+      "en-US": "Savory Flavors"
+    }
+  },
+  {
+    "Key": "r_gen_select_city",
+    "LocalizedValue": {
+      "tr-TR": "İl Seçiniz",
+      "en-US": "Select Country"
+    }
+  },
+  {
+    "Key": "r_gen_search",
+    "LocalizedValue": {
+      "tr-TR": "Arama",
+      "en-US": "Search"
+    }
+  },
+  {
+    "Key": "r_gen_advert_movie",
+    "LocalizedValue": {
+      "tr-TR": "Reklam Filimlerimiz",
+      "en-US": "Our Advertising Films"
+    }
+  },
+  {
+    "Key": "r_gen_product_family",
+    "LocalizedValue": {
+      "tr-TR": "Ürün Ailesi",
+      "en-US": "Product Family"
+    }
+  },
+  {
+    "Key": "r_gen_about_us",
+    "LocalizedValue": {
+      "tr-TR": "Hakkımızda",
+      "en-US": "About Us"
+    }
+  },
+  {
+    "Key": "r_gen_homapage",
+    "LocalizedValue": {
+      "tr-TR": "Anasayfa",
+      "en-US": "HomePage",
+      "ar-SA": "الصفحة الرئيسية"
+    }
+  },
+  {
+    "Key": "r_gen_pages",
+    "LocalizedValue": {
+      "tr-TR": "Sayfalar",
+      "en-US": "Pages"
+    }
+  },
+  {
+    "Key": "r_gen_contact",
+    "LocalizedValue": {
+      "tr-TR": "İletişim",
+      "en-US": "Contact"
+    }
+  },
+  {
+    "Key": "r_gen_fast_menu",
+    "LocalizedValue": {
+      "tr-TR": "Hızlı Menü",
+      "en-US": "Quick Menu"
+    }
+  },
+  {
+    "Key": "r_url_menu_texts",
+    "LocalizedValue": {
+      "tr-TR": "Sayfalar",
+      "en-US": "Pages",
+      "ar-SA": "Pages"
+    }
+  },
+  {
+    "Key": "r_url_menu_categories",
+    "LocalizedValue": {
+      "tr-TR": "Yazilar",
+      "en-US": "Categories",
+      "ar-SA": "Categories"
+    }
+  },
+  {
+    "Key": "r_contact_us",
+    "LocalizedValue": {
+      "tr-TR": "Bize Ulaşın",
+      "en-US": "Contact Us"
+    }
+  },
+  {
+    "Key": "r_contact_information",
+    "LocalizedValue": {
+      "tr-TR": "İletişim Bilgilerimiz",
+      "en-US": "Contact Information"
+    }
+  },
+  {
+    "Key": "r_contact_map",
+    "LocalizedValue": {
+      "tr-TR": "Ulaşım Haritası",
+      "en-US": "Transportation Map"
+    }
+  },
+  {
+    "Key": "r_contact_form",
+    "LocalizedValue": {
+      "tr-TR": "İletişim Formu",
+      "en-US": "Contact Form"
+    }
+  },
+  {
+    "Key": "r_contact_form_name",
+    "LocalizedValue": {
+      "tr-TR": "İsim",
+      "en-US": "Name"
+    }
+  },
+  {
+    "Key": "r_contact_form_surname",
+    "LocalizedValue": {
+      "tr-TR": "Soyisim",
+      "en-US": "Surname"
+    }
+  },
+  {
+    "Key": "r_contact_form_phone",
+    "LocalizedValue": {
+      "tr-TR": "Telefon",
+      "en-US": "Phone"
+    }
+  },
+  {
+    "Key": "r_contact_form_message",
+    "LocalizedValue": {
+      "tr-TR": "Mesajınız",
+      "en-US": "Message"
+    }
+  },
+  {
+    "Key": "r_contact_form_sendmessage",
+    "LocalizedValue": {
+      "tr-TR": "Gönder",
+      "en-US": "Send"
+    }
+  },
+  {
+    "Key": "r_human_resources",
+    "LocalizedValue": {
+      "tr-TR": "İNSAN KAYNAKLARI",
+      "en-US": "HUMAN RESOURCES"
+    }
+  },
+  {
+    "Key": "r_contact_form_email",
+    "LocalizedValue": {
+      "tr-TR": "Email",
+      "en-US": "Email"
+    }
+  },
+  {
+    "Key": "r_contact_form_cv",
+    "LocalizedValue": {
+      "tr-TR": "Cv",
+      "en-US": "Cv"
+    }
+  },
+  {
+    "Key": "r_contact_form_cv_desc",
+    "LocalizedValue": {
+      "tr-TR": "CV Dosyanız (sadece .pdf ve .docx dosyaları yükleyebilirsiniz.)",
+      "en-US": "Your CV File (You can only upload .pdf and .docx files.)"
+    }
+  },
+  {
+    "Key": "r_contact_form_schoolname",
+    "LocalizedValue": {
+      "tr-TR": "Okul Adı",
+      "en-US": "School Name"
+    }
+  },
+  {
+    "Key": "r_contact_form_departmentname",
+    "LocalizedValue": {
+      "tr-TR": "Bölüm Adı",
+      "en-US": "Department Name"
+    }
+  },
+  {
+    "Key": "r_contact_form_stajheader",
+    "LocalizedValue": {
+      "tr-TR": "Staj Başvuru",
+      "en-US": "EN-Staj Başvuru"
+    }
+  },
+  {
+    "Key": "r_contact_form_why_ozgullu",
+    "LocalizedValue": {
+      "tr-TR": "Neden Özgüllü",
+      "en-US": "EN-Neden Özgüllü"
+    }
+  },
+  {
+    "Key": "r_contact_form_onerisikayet",
+    "LocalizedValue": {
+      "tr-TR": "Öneri Şikayet",
+      "en-US": "EN-Öneri Şikayet"
+    }
+  },
+  {
+    "Key": "r_contact_form_konuseciniz",
+    "LocalizedValue": {
+      "tr-TR": "Konu Seçiniz",
+      "en-US": "EN-Konu Seçiniz"
+    }
+  },
+  {
+    "Key": "r_contact_form_oneri",
+    "LocalizedValue": {
+      "tr-TR": "Öneri",
+      "en-US": "EN-Öneri"
+    }
+  },
+  {
+    "Key": "r_contact_form_sikayet",
+    "LocalizedValue": {
+      "tr-TR": "Şikayet",
+      "en-US": "EN-Şikayet"
+    }
+  },
+  {
+    "Key": "r_contact_form_diger",
+    "LocalizedValue": {
+      "tr-TR": "Diğer",
+      "en-US": "EN-Diğer"
+    }
+  },
+  {
+    "Key": "r_contact_form_diger",
+    "LocalizedValue": {
+      "tr-TR": "Diğer",
+      "en-US": "EN-Diğer"
+    }
+  },
+  {
+    "Key": "r_customerform_header",
+    "LocalizedValue": {
+      "tr-TR": "MÜŞTERİ MEMNUNİYETİ ANKETİ",
+      "en-US": "EN-MÜŞTERİ MEMNUNİYETİ ANKETİ"
+    }
+  },
+  {
+    "Key": "r_customerform_question1",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ürünlerinden hangilerini kullanmaktanız?",
+      "en-US": "EN-Özgüllü ürünlerinden hangilerini kullanmaktanız?"
+    }
+  },
+  {
+    "Key": "r_customerform_kasarpeyniri",
+    "LocalizedValue": {
+      "tr-TR": "Kaşar Peyniri",
+      "en-US": "EN-Kaşar Peyniri"
+    }
+  },
+  {
+    "Key": "r_customerform_beyazpeynir",
+    "LocalizedValue": {
+      "tr-TR": "Beyaz Peynir",
+      "en-US": "EN-Beyaz Peynir"
+    }
+  },
+  {
+    "Key": "r_customerform_lorpeyniri",
+    "LocalizedValue": {
+      "tr-TR": "Lor Peyniri",
+      "en-US": "EN-Lor Peyniri"
+    }
+  },
+  {
+    "Key": "r_customerform_orgupeyniri",
+    "LocalizedValue": {
+      "tr-TR": "Örgü Peyniri",
+      "en-US": "EN-Örgü Peyniri"
+    }
+  },
+  {
+    "Key": "r_customerform_telpeyniri",
+    "LocalizedValue": {
+      "tr-TR": "Tel Peyniri",
+      "en-US": "EN-Tel Peyniri"
+    }
+  },
+  {
+    "Key": "r_customerform_dilpeyniri",
+    "LocalizedValue": {
+      "tr-TR": "Dil Peyniri",
+      "en-US": "EN-Dil Peyniri"
+    }
+  },
+  {
+    "Key": "r_customerform_peynir",
+    "LocalizedValue": {
+      "tr-TR": "Peynir",
+      "en-US": "EN-Peynir"
+    }
+  },
+  {
+    "Key": "r_customerform_ayran",
+    "LocalizedValue": {
+      "tr-TR": "Ayran",
+      "en-US": "EN-Ayran"
+    }
+  },
+  {
+    "Key": "r_customerform_yogurt",
+    "LocalizedValue": {
+      "tr-TR": "Yoğurt",
+      "en-US": "EN-Yoğurt"
+    }
+  },
+  {
+    "Key": "r_customerform_tereyagi",
+    "LocalizedValue": {
+      "tr-TR": "Tereyağı",
+      "en-US": "EN-Tereyağı"
+    }
+  },
+  {
+    "Key": "r_customerform_cinsiyetiniz",
+    "LocalizedValue": {
+      "tr-TR": "Cinsiyetiniz",
+      "en-US": "EN-Cinsiyetiniz"
+    }
+  },
+  {
+    "Key": "r_customerform_kadin",
+    "LocalizedValue": {
+      "tr-TR": "Kadın",
+      "en-US": "EN-Kadın"
+    }
+  },
+  {
+    "Key": "r_customerform_erkek",
+    "LocalizedValue": {
+      "tr-TR": "Erkek",
+      "en-US": "EN-Erkek"
+    }
+  },
+  {
+    "Key": "r_customerform_yasiniz",
+    "LocalizedValue": {
+      "tr-TR": "Yaşınız",
+      "en-US": "EN-Yaşınız"
+    }
+  },
+  {
+    "Key": "r_customerform_20vealti",
+    "LocalizedValue": {
+      "tr-TR": "20 ve altı",
+      "en-US": "EN-20 ve altı"
+    }
+  },
+  {
+    "Key": "r_customerform_61veuzeri",
+    "LocalizedValue": {
+      "tr-TR": "61 ve üzeri",
+      "en-US": "EN-61 ve üzeri"
+    }
+  },
+  {
+    "Key": "r_customerform_meslek",
+    "LocalizedValue": {
+      "tr-TR": "Meslek",
+      "en-US": "EN-Meslek"
+    }
+  },
+  {
+    "Key": "r_customerform_memur",
+    "LocalizedValue": {
+      "tr-TR": "Memur",
+      "en-US": "EN-Memur"
+    }
+  },
+  {
+    "Key": "r_customerform_isci",
+    "LocalizedValue": {
+      "tr-TR": "İşçi",
+      "en-US": "EN-İşçi"
+    }
+  },
+  {
+    "Key": "r_customerform_evhanimi",
+    "LocalizedValue": {
+      "tr-TR": "Ev Hanımı",
+      "en-US": "EN-Ev Hanımı"
+    }
+  },
+  {
+    "Key": "r_customerform_emekli",
+    "LocalizedValue": {
+      "tr-TR": "Emekli",
+      "en-US": "EN-Emekli"
+    }
+  },
+  {
+    "Key": "r_customerform_diger",
+    "LocalizedValue": {
+      "tr-TR": "Diğer",
+      "en-US": "EN-Diğer"
+    }
+  },
+  {
+    "Key": "r_customerform_question8",
+    "LocalizedValue": {
+      "tr-TR": "Ortalama aylık gelir düzeyiniz",
+      "en-US": "EN-Ortalama aylık gelir düzeyiniz"
+    }
+  },
+  {
+    "Key": "r_customerform_puan",
+    "LocalizedValue": {
+      "tr-TR": "Puan",
+      "en-US": "EN-Puan"
+    }
+  },
+  {
+    "Key": "r_customerform_rakambelirt",
+    "LocalizedValue": {
+      "tr-TR": "(Rakam belirtiniz)",
+      "en-US": "EN-(Rakam belirtiniz)"
+    }
+  },
+  {
+    "Key": "r_customerform_puanaciklama",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ile olan ilişkilerinizden memnuniyetiniz için puan vermeniz gerekir ise (10 puan üzerinden) kaç puan verirdiniz?",
+      "en-US": "EN-Özgüllü ile olan ilişkilerinizden memnuniyetiniz için puan vermeniz gerekir ise (10 puan üzerinden) kaç puan verirdiniz?"
+    }
+  },
+  {
+    "Key": "r_customerform_bintlvealti",
+    "LocalizedValue": {
+      "tr-TR": "1.000 tl ve altı",
+      "en-US": "EN-1.000 tl ve altı"
+    }
+  },
+  {
+    "Key": "r_customerform_4bintlveustu",
+    "LocalizedValue": {
+      "tr-TR": "4.000 tl ve üzeri",
+      "en-US": "EN-4.000 tl ve üzeri"
+    }
+  },
+  {
+    "Key": "r_customerform_ogrenci",
+    "LocalizedValue": {
+      "tr-TR": "Öğrenci",
+      "en-US": "EN-Öğrenci"
+    }
+  },
+  {
+    "Key": "r_customerform_serbestmeslek",
+    "LocalizedValue": {
+      "tr-TR": "Serbest Meslek",
+      "en-US": "EN-Serbest Meslek"
+    }
+  },
+  {
+    "Key": "r_customerform_question2",
+    "LocalizedValue": {
+      "tr-TR": "Süt ürünlerinin (kaşar peyniri, beyaz peynir, yoğurt, tereyağ vs.) seçiminde dikkat ettiğiniz en önemli üç özelliği belirtiniz?",
+      "en-US": "EN-Süt ürünlerinin (kaşar peyniri, beyaz peynir, yoğurt, tereyağ vs.) seçiminde dikkat ettiğiniz en önemli üç özelliği belirtiniz?"
+    }
+  },
+  {
+    "Key": "r_customerform_sut",
+    "LocalizedValue": {
+      "tr-TR": "Süt",
+      "en-US": "EN-Süt"
+    }
+  },
+  {
+    "Key": "r_customerform_tazelik",
+    "LocalizedValue": {
+      "tr-TR": "Tazelik",
+      "en-US": "EN-Tazelik"
+    }
+  },
+  {
+    "Key": "r_customerform_hijyentemizlik",
+    "LocalizedValue": {
+      "tr-TR": "Hijyen Temizlik",
+      "en-US": "EN-Hijyen Temizlik"
+    }
+  },
+  {
+    "Key": "r_customerform_lezzet",
+    "LocalizedValue": {
+      "tr-TR": "Lezzet",
+      "en-US": "EN-Lezzet"
+    }
+  },
+  {
+    "Key": "r_customerform_fiyat",
+    "LocalizedValue": {
+      "tr-TR": "Fiyat",
+      "en-US": "EN-Fiyat"
+    }
+  },
+  {
+    "Key": "r_customerform_uruncesitliligi",
+    "LocalizedValue": {
+      "tr-TR": "Ürün Çeşitliliği",
+      "en-US": "EN-Ürün Çeşitliliği"
+    }
+  },
+  {
+    "Key": "r_customerform_dogallik",
+    "LocalizedValue": {
+      "tr-TR": "Doğallık",
+      "en-US": "EN-Doğallık"
+    }
+  },
+  {
+    "Key": "r_customerform_tat",
+    "LocalizedValue": {
+      "tr-TR": "Tat",
+      "en-US": "EN-Tat"
+    }
+  },
+  {
+    "Key": "r_customerform_tatdoku",
+    "LocalizedValue": {
+      "tr-TR": "Tat / Doku",
+      "en-US": "EN-Tat / Doku"
+    }
+  },
+  {
+    "Key": "r_customerform_koku",
+    "LocalizedValue": {
+      "tr-TR": "Koku",
+      "en-US": "EN-Koku"
+    }
+  },
+  {
+    "Key": "r_customerform_ambalajcekiciligi",
+    "LocalizedValue": {
+      "tr-TR": "Ambalaj Çekiciliği",
+      "en-US": "EN-Ambalaj Çekiciliği"
+    }
+  },
+  {
+    "Key": "r_customerform_sorumluluk",
+    "LocalizedValue": {
+      "tr-TR": "Sorumluluk",
+      "en-US": "EN-Sorumluluk"
+    }
+  },
+  {
+    "Key": "r_customerform_sonkullanimtarihi",
+    "LocalizedValue": {
+      "tr-TR": "Son Kullanım Tarihi",
+      "en-US": "EN-Son Kullanım Tarihi"
+    }
+  },
+  {
+    "Key": "r_customerform_indirimolmasi",
+    "LocalizedValue": {
+      "tr-TR": "İndirim Olması",
+      "en-US": "EN-İndirim Olması"
+    }
+  },
+  {
+    "Key": "r_customerform_markaimaji",
+    "LocalizedValue": {
+      "tr-TR": "Marka İmajı",
+      "en-US": "EN-Marka İmajı"
+    }
+  },
+  {
+    "Key": "r_customerform_kalite",
+    "LocalizedValue": {
+      "tr-TR": "Kalite",
+      "en-US": "EN-Kalite"
+    }
+  },
+  {
+    "Key": "r_customerform_saglik",
+    "LocalizedValue": {
+      "tr-TR": "Sağlık",
+      "en-US": "EN-Sağlık"
+    }
+  },
+  {
+    "Key": "r_customerform_pahalı",
+    "LocalizedValue": {
+      "tr-TR": "Pahalı",
+      "en-US": "EN-Pahalı"
+    }
+  },
+  {
+    "Key": "r_customerform_kampanyaveindirimler",
+    "LocalizedValue": {
+      "tr-TR": "Kampanya ve İndirimler",
+      "en-US": "EN-Kampanya ve İndirimler"
+    }
+  },
+  {
+    "Key": "r_customerform_raftabulunabilirlik",
+    "LocalizedValue": {
+      "tr-TR": "Rafta Bulunabilirlik",
+      "en-US": "EN-Rafta Bulunabilirlik"
+    }
+  },
+  {
+    "Key": "r_customerform_bilinirmarkaolması",
+    "LocalizedValue": {
+      "tr-TR": "Bilinir Marka Olması",
+      "en-US": "EN-Bilinir Marka Olması"
+    }
+  },
+  {
+    "Key": "r_customerform_raftakigoruntusu",
+    "LocalizedValue": {
+      "tr-TR": "Raftaki Görüntüsü",
+      "en-US": "EN-Raftaki Görüntüsü"
+    }
+  },
+  {
+    "Key": "r_customerform_lezzettedegismezlik",
+    "LocalizedValue": {
+      "tr-TR": "Lezzette Değişmezlik",
+      "en-US": "EN-Lezzette Değişmezlik"
+    }
+  },
+  {
+    "Key": "r_customerform_markaguvenirligi",
+    "LocalizedValue": {
+      "tr-TR": "Marka Güvenirliliği",
+      "en-US": "EN-Marka Güvenirliliği"
+    }
+  },
+  {
+    "Key": "r_customerform_gorunum",
+    "LocalizedValue": {
+      "tr-TR": "Görünüm",
+      "en-US": "EN-Görünüm"
+    }
+  },
+  {
+    "Key": "r_customerform_question3",
+    "LocalizedValue": {
+      "tr-TR": "Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?",
+      "en-US": "EN-Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?"
+    }
+  },
+  {
+    "Key": "r_customerform_cokiyi",
+    "LocalizedValue": {
+      "tr-TR": "Çok İyi",
+      "en-US": "EN-Çok İyi"
+    }
+  },
+  {
+    "Key": "r_customerform_iyi",
+    "LocalizedValue": {
+      "tr-TR": "İyi",
+      "en-US": "EN-İyi"
+    }
+  },
+  {
+    "Key": "r_customerform_orta",
+    "LocalizedValue": {
+      "tr-TR": "Orta",
+      "en-US": "EN-Orta"
+    }
+  },
+  {
+    "Key": "r_customerform_kotu",
+    "LocalizedValue": {
+      "tr-TR": "Kötü",
+      "en-US": "EN-Kötü"
+    }
+  },
+  {
+    "Key": "r_customerform_cokkotu",
+    "LocalizedValue": {
+      "tr-TR": "Çok Kötü",
+      "en-US": "EN-Çok Kötü"
+    }
+  },
+  {
+    "Key": "r_customerform_question4",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ürünlerinden ne kadar memnunsunuz?",
+      "en-US": "EN-Özgüllü ürünlerinden ne kadar memnunsunuz?"
+    }
+  },
+  {
+    "Key": "r_customerform_tamamenmemnunum",
+    "LocalizedValue": {
+      "tr-TR": "Tamamen Memnunum",
+      "en-US": "EN-Tamamen Memnunum"
+    }
+  },
+  {
+    "Key": "r_customerform_cogunluklamemnunum",
+    "LocalizedValue": {
+      "tr-TR": "Çoğunlukla memnunum",
+      "en-US": "EN-Çoğunlukla memnunum"
+    }
+  },
+  {
+    "Key": "r_customerform_nememnunumnedememnundegilim",
+    "LocalizedValue": {
+      "tr-TR": "Ne Memnunum ne de memnun değilim",
+      "en-US": "EN-Ne Memnunum ne de memnun değilim"
+    }
+  },
+  {
+    "Key": "r_customerform_hicmemnundegilim",
+    "LocalizedValue": {
+      "tr-TR": "Hiç memnun değilim",
+      "en-US": "EN-Hiç memnun değilim"
+    }
+  },
+  {
+    "Key": "r_customerform_cogunlukmemnundegilim",
+    "LocalizedValue": {
+      "tr-TR": "Çoğunluk memnun değilim",
+      "en-US": "EN-Çoğunluk memnun değilim"
+    }
+  },
+  {
+    "Key": "r_customerform_question5",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ürünlerini tüketicilere tavsiye eder misiniz?",
+      "en-US": "EN-Özgüllü ürünlerini tüketicilere tavsiye eder misiniz?"
+    }
+  },
+  {
+    "Key": "r_customerform_kesinlikleevet",
+    "LocalizedValue": {
+      "tr-TR": "Kesinlikle evet",
+      "en-US": "EN-Kesinlikle evet"
+    }
+  },
+  {
+    "Key": "r_customerform_muhtemelenevet",
+    "LocalizedValue": {
+      "tr-TR": "Muhtemelen evet",
+      "en-US": "EN-Muhtemelen evet"
+    }
+  },
+  {
+    "Key": "r_customerform_emindegilim",
+    "LocalizedValue": {
+      "tr-TR": "Emin değilim",
+      "en-US": "EN-Emin değilim"
+    }
+  },
+  {
+    "Key": "r_customerform_muhtemelenhayir",
+    "LocalizedValue": {
+      "tr-TR": "Muhtemelen hayır",
+      "en-US": "EN-Muhtemelen hayır"
+    }
+  },
+  {
+    "Key": "r_customerform_kesinliklehayir",
+    "LocalizedValue": {
+      "tr-TR": "Kesinlikle hayır",
+      "en-US": "EN-Kesinlikle hayır"
+    }
+  },
+  {
+    "Key": "r_customerform_question6",
+    "LocalizedValue": {
+      "tr-TR": "Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?",
+      "en-US": "EN-Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?"
+    }
+  },
+  {
+    "Key": "r_customerform_hickatilmiyorum",
+    "LocalizedValue": {
+      "tr-TR": "Hiç Katılmıyorum",
+      "en-US": "EN-Hiç Katılmıyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_kismenkatilmiyorum",
+    "LocalizedValue": {
+      "tr-TR": "Kısmen Katılmıyorum",
+      "en-US": "EN-Kısmen Katılmıyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_ekonomik",
+    "LocalizedValue": {
+      "tr-TR": "Ekonomik",
+      "en-US": "EN-Ekonomik"
+    }
+  },
+  {
+    "Key": "r_customerform_nekatiliyorumnedekatilmiyorum",
+    "LocalizedValue": {
+      "tr-TR": "Ne Katılıyorum Ne de Katılmıyorum",
+      "en-US": "EN-Ne Katılıyorum Ne de Katılmıyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_kismenkatiliyorum",
+    "LocalizedValue": {
+      "tr-TR": "Kısmen Katılıyorum",
+      "en-US": "EN-Kısmen Katılıyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_tamamenkatiliyorum",
+    "LocalizedValue": {
+      "tr-TR": "Tamamen Katılıyorum",
+      "en-US": "EN-Tamamen Katılıyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_answer1",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ürünlerinden memnunum",
+      "en-US": "EN-Özgüllü ürünlerinden memnunum"
+    }
+  },
+  {
+    "Key": "r_customerform_answer2",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ürünlerini dostlarıma tavsiye ederim",
+      "en-US": "EN-Özgüllü ürünlerini dostlarıma tavsiye ederim"
+    }
+  },
+  {
+    "Key": "r_customerform_answer3",
+    "LocalizedValue": {
+      "tr-TR": "Süt ürünlerini alırken, Özgüllü ürünlerini özellikle ararım",
+      "en-US": "EN-Süt ürünlerini alırken, Özgüllü ürünlerini özellikle ararım"
+    }
+  },
+  {
+    "Key": "r_customerform_answer4",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü mamüllerine güveniyorum",
+      "en-US": "EN-Özgüllü mamüllerine güveniyorum"
+    }
+  },
+  {
+    "Key": "r_customerform_question7",
+    "LocalizedValue": {
+      "tr-TR": "Özgüllü ismi size ne çağrıştırmaktadır?",
+      "en-US": "EN-Özgüllü ismi size ne çağrıştırmaktadır?"
+    }
+  },
+  {
+    "Key": "r_customerform_guven",
+    "LocalizedValue": {
+      "tr-TR": "Güven",
+      "en-US": "EN-Güven"
+    }
+  }
+
+]

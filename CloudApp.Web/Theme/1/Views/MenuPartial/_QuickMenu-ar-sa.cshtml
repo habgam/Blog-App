@@ -1,0 +1,10 @@
+﻿
+@model List<CloudApp.Data.ViewModel.ViewMenuItem>
+@{
+    CloudApp.Web.Core.SeoUrlController sc = new CloudApp.Web.Core.SeoUrlController();
+
+}
+@foreach (var item in Model)
+{
+    <a href="/@item.Url">@item.Name</a>
+}

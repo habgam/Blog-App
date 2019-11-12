@@ -1,0 +1,62 @@
+﻿@model List<CloudApp.Data.Model.CSlider>
+@{
+   
+}
+
+
+<div class="rightpanel">
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Sliderler</h5>
+            <h1>Slider Görüntüle</h1>
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+            <h4 class="widgettitle">Liste</h4>
+            <table class="table table-bordered responsive">
+                <thead>
+                    <tr>
+                        @*<th class="centeralign"><input type="checkbox" class="checkall" /></th>*@
+                        <th>Kimlik</th>
+                        <th>İsim</th>
+                        <th>Resimler</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @*<td class="centeralign"><input type="checkbox" /></td>*@
+                            <td style="vertical-align:middle"> @item.Id</td>
+                            <td style="vertical-align:middle">@item.Name</td>
+                            <td style="vertical-align:middle"><a style="color:white;" href="/blog/Admin/Images/Index/?Id=@item.Id&type=2" class="btn btn-primary">@item.Images.Where(p => p.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active).Count()</a> </td>
+                            <td class="centeralign" style="vertical-align:middle"><a href="/blog/Admin/Slider/InsertSlider/@item.Id" class="deleterow"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td class="centeralign" style="vertical-align:middle"><a style="cursor:pointer;" onclick="return ConfirmButton('Silme Onayı', 'Slideri silmek üzeresiniz.',@item.Id,'slider' )" class="deleterow"><span class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+
+
+            @Html.Partial("../Shared/_ListPaging", new CloudApp.Data.ViewModel.PagingModel { TotalCount = Convert.ToInt32(ViewBag.ListCount), CurrentPage = Convert.ToInt32(ViewBag.CurrentPage) })
+
+            @Html.Partial("../Shared/_Footer")
+            <!--footer-->
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->

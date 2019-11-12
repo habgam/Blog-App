@@ -1,0 +1,235 @@
+﻿@model CloudApp.Data.Model.CMenuItem
+@using CloudApp.Data.Model
+@{
+    List<string> languages = (List<string>)ViewBag.Languages;
+}
+
+<div class="rightpanel">
+
+    @*<ul class="breadcrumbs">
+            <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li>Kategori Ekle</li>
+
+        </ul>*@
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+        @*<form action="results.html" method="post" class="searchbar">
+                <input type="text" name="keyword" placeholder="To search type and hit enter..." />
+            </form>*@
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Alt Menü</h5>
+            @if (Model.Id != 0)
+            {
+                <h1>Alt Menü Düzenle</h1>
+            }
+            else
+            {
+                <h1>Alt Menü Ekle</h1>
+            }
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+
+            <div class="widget">
+                <h4 class="widgettitle">Alt Menü Ekle</h4>
+                <div class="widgetcontent">
+                    @using (Html.BeginForm("InsertSubMenu", "Menu", FormMethod.Post, new { @id = "frmNewAssignment", @class = "form", @enctype = "multipart/form-data" }))
+                    {
+                        <input type="hidden" value="@ViewBag.QueryMenuId" id="QueryMenuId" name="QueryMenuId" />
+                        <input type="hidden" value="@ViewBag.QueryId" id="QueryId" name="QueryId" />
+                        <input type="hidden" value="@ViewBag.QuerySubMenuId" id="QuerySubMenuId" name="QuerySubMenuId" />
+
+                        foreach (var k in languages)
+                        {
+  
+                            CMenuItemLanguage textLanguage = null;
+                            if (Model != null && Model.LanguageValues != null)
+                            {
+                                textLanguage = Model.LanguageValues.FirstOrDefault(f => f.Lang == k && f.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active);
+                            }
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-2 control-label">Menü İsmi (Dil:@k)</label>
+                                <div class="col-md-10">
+                                    @if (textLanguage != null)
+                                    {
+                                        <input type="text" id="@k|Name" name="@k|Name" value="@textLanguage.Name" class="form-control input-default" />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" id="@k|Name" name="@k|Name" class="form-control input-default" />
+                                    }
+                                </div>
+                            </div>
+                        }
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Menü Tipi</label>
+                            <div class="col-md-10">
+                                <select name="MenuType" id="MenuType" class="form-control select-inline">
+                                    @foreach (var item in Enum.GetValues(typeof(CloudApp.Data.Enum.EMenuType)))
+                                    {
+                                        <option value="@((int)item)">@item.ToString()</option>
+                                    }
+                                    @*<option value="0">Üst Kategori</option>*@
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="dvMenuConnect">
+                            <label for="firstname" class="col-md-2 control-label">Menü Bağlam</label>
+                            <div class="col-md-10">
+                                <select name="MenuConnect" id="MenuConnect" class="form-control select-inline"></select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="dvMenuUrl">
+                            <label for="firstname" class="col-md-2 control-label">Menü Url</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(item => item.Url, "", new { @class = "form-control", @placeholder = "Menü Url" })
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="dvOrder">
+                            <label for="firstname" class="col-md-2 control-label">Sırası</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(item => item.Order, "", new { @class = "form-control", @placeholder = "Sırası" })
+                            </div>
+                        </div>
+
+
+
+
+
+                        <br /><br />
+                        <button type="submit" class="btn btn-default">Kaydet</button>
+
+
+                    }
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+@section scripts{
+    <script>
+
+    function ClearOptionsFast() {
+        var select = document.getElementById("MenuConnect");
+        $('#MenuConnect')
+ .find('option')
+ .remove()
+ .end()
+
+        ;
+    }
+
+    function fillCategory() {
+        $.getJSON('/blog/Admin/Category/GetFullCategory', {}, function (listCat) {
+            var list = $('select#MenuConnect');
+            ClearOptionsFast();
+            $(listCat).each(function (index, item) {
+                list.append('<option value="' + item.Value + '">' + item.Text + '</option>');
+            });
+
+            if(@ViewBag.CategoryId!=0)
+            {
+
+                var element = document.getElementById('MenuConnect');
+                element.value =  @ViewBag.CategoryId;
+            }
+            @*if( @ViewBag.SubCatId!=0  )
+                {
+                    var element = document.getElementById('SubCategoryId');
+                    element.value =  @ViewBag.SubCatId;
+                }*@
+        });
+    }
+
+    function fillText() {
+        $.getJSON('/blog/Admin/Text/GetFullText', {}, function (listCat) {
+            var list = $('select#MenuConnect');
+            ClearOptionsFast();
+            $(listCat).each(function (index, item) {
+                list.append('<option value="' + item.Value + '">' + item.Text + '</option>');
+            });
+
+            if(@ViewBag.TextId!=0)
+            {
+                var element = document.getElementById('MenuConnect');
+                element.value =  @ViewBag.TextId;
+
+            }
+
+            @*if( @ViewBag.SubCatId!=0  )
+                {
+                    var element = document.getElementById('SubCategoryId');
+                    element.value =  @ViewBag.SubCatId;
+                }*@
+        });
+    }
+
+    function SetMenuTypeView(typeId) {
+
+        if (typeId == 0) {
+            $('#dvMenuConnect').attr("style", "display:none;")
+            $('#dvMenuUrl').attr("style", "display:none;")
+        }
+        else if (typeId == 1) {
+            $('#dvMenuConnect').attr("style", "display:block;")
+            $('#dvMenuUrl').attr("style", "display:none;")
+
+            fillText();
+        }
+        else if (typeId == 2) {
+            $('#dvMenuConnect').attr("style", "display:block;")
+            $('#dvMenuUrl').attr("style", "display:none;")
+
+            fillCategory();
+        }
+        else if (typeId == 3) {
+            $('#dvMenuConnect').attr("style", "display:none;")
+            $('#dvMenuUrl').attr("style", "display:block;")
+
+        }
+        else if (typeId == 4) {
+            $('#dvMenuConnect').attr("style", "display:block;")
+            $('#dvMenuUrl').attr("style", "display:none;")
+            fillCategory();
+        }
+    }
+    $(document).ready(function () {
+
+
+        if(@ViewBag.MenuType!=0)
+        {
+            var element = document.getElementById('MenuType');
+            element.value =  @ViewBag.MenuType;
+            SetMenuTypeView(@ViewBag.MenuType);
+        }
+        else
+        {
+            var typeId = $("#MenuType").val();
+            SetMenuTypeView(typeId);
+            $('#MenuType').change(function () {
+                SetMenuTypeView(this.value);
+            });
+        }
+    })
+    </script>
+}

@@ -1,0 +1,135 @@
+﻿@model List<CloudApp.Data.Model.CText>
+@{
+    string querystring = Request.QueryString["Id"] != null ? Request.QueryString["Id"].ToString() : "0";
+    //CloudApp.Admin.Controllers.CategoryController cg = new CloudApp.Admin.Controllers.CategoryController();
+    //string catName = cg.GetCategoryName(querystring);
+    
+}
+
+
+
+<div class="rightpanel">
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5><span class="spnHeader"></span></h5>
+            <h1><span class="spnHeader"></span> Görüntüle</h1>
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+@if (querystring != "0")
+        {
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="form-group" style="margin-top:10px; margin-left:10px;">
+                    <a class="btn btn-default" href="/blog/Admin/Text/Insert/?CatId=@querystring"><span class="spnHeader"></span> Ekle</a>
+                </div>
+
+
+
+            </nav>
+}
+        @if (querystring == "0")
+        { 
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="form-group" style="margin-top:6px;">
+                    <label for="firstname" class="col-md-2 control-label">Kategori</label>
+                    <div class="col-md-10">
+                        <select name="SubCategoryId" id="SubCategoryId" class="form-control select-inline">
+                            <option value="0">Tüm Kategoriler</option>
+                        </select>
+                    </div>
+                </div>
+            </nav>
+            
+        }
+            <h4 class="widgettitle">Liste</h4>
+            <table class="table table-bordered responsive">
+                <thead>
+                    <tr>
+                        @*<th class="centeralign"><input type="checkbox" class="checkall" /></th>*@
+                        <th>Kimlik</th>
+                        <th><span class="spnHeader"></span> Resmi</th>
+                        <th><span class="spnHeader"></span> İsmi</th>
+                        <th>Resimler</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @*<td class="centeralign"><input type="checkbox" /></td>*@
+
+                            <td style="vertical-align:middle"> @item.Id</td>
+                            <td><img width="100px" src="~/Image/300X150/@item.OrganizationId.Value/@item.ImageUrl" /></td>
+                            <td style="vertical-align:middle">@(item.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR") != null ? item.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR").Name : "" )</td>
+                            <td style="vertical-align:middle"><a style="color:white;" href="/blog/Admin/Images/Index/?Id=@item.Id&type=1" class="btn btn-primary">@item.Images.Where(p => p.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active).Count()</a> </td>
+                            <td class="centeralign" style="vertical-align:middle"><a href="/blog/Admin/Text/Insert/@item.Id?CatId=@querystring" class="deleterow"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td class="centeralign" style="vertical-align:middle"><a style="cursor:pointer;" onclick="return ConfirmButton('Silme Onayı', 'Yazıyı Kaldırmak Üzeresiniz. Onaylıyor musunuz ?',@item.Id,'text' )" class="deleterow"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            @*<td style="vertical-align:middle"><a style="color:white;" href="/blog/Admin/Category/GetCategory/?Id=@item.Id&page=1" class="btn btn-primary">@item.SubCategory.Count</a> </td>
+                                <td style="vertical-align:middle"><a class="btn btn-primary">@item.Texts.Count</a></td>
+                                <td class="centeralign" style="vertical-align:middle"><a href="/blog/Admin/Category/InsertCategory/@item.Id" class="deleterow"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td class="centeralign" style="vertical-align:middle"><a style="cursor:pointer;" onclick="return ConfirmButton('Silme Onayı', 'İçeriği kaldırırsanız. Bunu altındaki içeriklere ulaşamazsını. Onaylıyor musunuz ?',@item.Id,'cat' )" class="deleterow"><span class="glyphicon glyphicon-trash"></span></a></td>*@
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+
+
+            @Html.Partial("../Shared/_ListPaging", new CloudApp.Data.ViewModel.PagingModel { TotalCount = Convert.ToInt32(ViewBag.ListCount), CurrentPage = Convert.ToInt32(ViewBag.CurrentPage) })
+
+            @Html.Partial("../Shared/_Footer")
+            <!--footer-->
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+@section scripts{
+    <script>
+        $.getJSON('/blog/Admin/Category/GetFullCategory', {}, function (listCat) {
+            var list = $('select#SubCategoryId');
+            $(listCat).each(function (index, item) {
+                list.append('<option value="' + item.Value + '">' + item.Text + '</option>');
+            });
+
+            $('#SubCategoryId').val(getParameterByName('Id'));
+          
+        });
+
+        $(document).ready(function () {
+
+            $('#SubCategoryId').change(function () {
+                var id = this.value;
+                window.location.href = "/blog/Admin/Text/Index/?Id=" + id + "&page=1";
+            });
+         
+
+
+                $.ajax({
+                    url: '/blog/Admin/Category/GetCategoryName',
+                    data: { id: @Request.QueryString["id"].ToString() },
+                    type: 'GET',
+                    success: function (data) {
+                        $(".spnHeader").text(data);
+                      
+                    }
+                })
+            
+
+
+
+        });
+    </script>
+    
+    }

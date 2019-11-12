@@ -1,0 +1,70 @@
+﻿
+@{
+   
+}
+
+
+<div class="rightpanel">
+
+    <ul class="breadcrumbs">
+        <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+        <li>Html Çevirici</li>
+
+    </ul>
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Html Çevirici</h5>
+            <h1>Html Çevirici</h1>
+        </div>
+    </div><!--pageheader-->
+    <div class="maincontent">
+
+
+
+        <div class="maincontentinner">
+@using (Html.BeginForm("Index", "HtmlConvert", FormMethod.Post, new { @id = "frmHtmlConvert", @class = "form", @enctype = "multipart/form-data" }))
+                        {
+
+            <div class="widget">
+                <h4 class="widgettitle"><span class="spnHeader"></span> Çevirici</h4>
+                <div class="widgetcontent">
+
+
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-2 control-label">Dosya</label>
+                        <div class="col-md-10">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="input-append">
+                                    <div class="uneditable-input">
+                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
+                                        <span class="fileupload-preview"></span>
+                                    </div>
+
+
+                                    <span class="btn btn-default btn-file">
+                                        <span class="fileupload-new">Dosyayı Seç</span>
+                                        <span class="fileupload-exists">Değiştir</span>
+                                        <input name="uploadFile" id="uploadFile" type="file" />
+                                    </span>
+                                    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <button type="submit" class="btn btn-default">Kaydet</button>
+                    </div>
+                </div>
+
+
+}
+                </div>
+            </div>
+
+
+        </div><!--rightpanel-->
+

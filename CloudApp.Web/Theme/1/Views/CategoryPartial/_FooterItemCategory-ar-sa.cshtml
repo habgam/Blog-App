@@ -1,0 +1,9 @@
+﻿@model CloudApp.Data.Model.CCategory
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+@foreach (var item in Model.Texts.Where(f => f.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active))
+{
+    <a href="/@seo.GetUrlString(item.Id,CloudApp.Data.Enum.EMenuType.Text,item.OrganizationId.Value,lang)">@(item.LanguageValues.FirstOrDefault(h => h.Lang.ToLower() == lang.ToLower()) != null ? item.LanguageValues.FirstOrDefault(h => h.Lang.ToLower() == lang.ToLower()).Name : "")</a>
+}

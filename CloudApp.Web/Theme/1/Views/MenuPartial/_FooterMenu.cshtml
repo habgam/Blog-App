@@ -1,0 +1,19 @@
+﻿@model List<CloudApp.Data.ViewModel.ViewMenuItem>
+@{
+    CloudApp.Web.Core.SeoUrlController sc = new CloudApp.Web.Core.SeoUrlController();
+
+}
+
+
+@foreach (var item in Model)
+{
+    if (item.Name == "PROJELER")
+    {
+        <a class="col-md-3 col-xs-6" href="/@item.Url">@item.Name</a>
+    }
+    else
+    {
+        <a class="col-md-3 col-xs-6" href="@item.Url">@item.Name</a>
+    }
+}
+

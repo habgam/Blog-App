@@ -1,0 +1,26 @@
+﻿@model List<CloudApp.Data.ViewModel.ViewBreadCrumb>
+@{
+    
+    
+}
+
+<ul class="breadcrumbs">
+   @if(Model!=null)
+   { 
+    foreach (var item in Model)
+    {
+        if (item.Level == -1)
+        {
+            <li><a href="@item.Url"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+        }
+        if (item.Url != "" && item.Level != -1)
+        {
+        <li><a href="@item.Url">@item.Name</a> <span class="separator"></span></li>
+        }
+        else
+        {
+            <li>@item.Name </li>
+        }
+    }
+   }
+</ul>

@@ -1,0 +1,55 @@
+﻿@model List<CloudApp.Data.Model.CText>
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    var header = Model.FirstOrDefault();
+    CloudApp.Data.Model.CCategory category = null;
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+    string PageHeader = "";
+    if (header != null)
+    {
+        PageHeader = header.Category.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang) != null ? header.Category.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang).Name : "-";
+        category = header.Category.TopCategory;
+    }
+}
+
+<div class="index-banner">
+    <img src="/blog/Theme/1/Content/img/figure.png" />
+    <h1>@PageHeader</h1>
+    <img src="/blog/Theme/1/Content/img/figure2.png" />
+</div>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                @foreach (var item in Model)
+                {
+                    <div class="pin m-15">
+                        <div><stong> @(item.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? item.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Name : "") </stong></div>
+                        <div><i class="fa fa-map-pin"></i> @(item.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? item.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Description : "")</div>
+                    </div>
+                }
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="where">
+                    <img src="/blog/Theme/1/Content/img/satis-noktamiz.png" alt="Satış Noktamız" class="m-w-100" />
+                    <i class="fa fa-map-pin"></i>
+                    <span>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_where", culture: lang)</span>
+                    @using (Html.BeginForm("SalesPoint", "HomePage", new { lang = lang }))
+                    {
+                        <select class="form-control" id="frmWhere" name="frmWhere">
+                            <option>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_select_city", culture: lang)</option>
+
+                            <option value="20">İzmir</option>
+                            <option value="19">Ankara</option>
+                            <option value="18">İstanbul</option>
+                            <option value="17">Sakarya</option>
+                        </select>
+                        <button type="submit" id="btnSales" class="btn">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_search", culture: lang)</button>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

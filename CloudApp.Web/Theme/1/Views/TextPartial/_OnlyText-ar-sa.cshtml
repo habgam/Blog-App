@@ -1,0 +1,95 @@
+﻿@model CloudApp.Data.Model.CText
+@{ 
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+
+
+
+<div class="index-banner">
+    <img src="~/blog/Theme/1/Content/img/figure.png" />
+    <h1>@(Model.LanguageValues.FirstOrDefault(s=>s.Lang.ToLower() == lang.ToLower()) != null ? Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Name : "-" )</h1>
+    <img src="~/blog/Theme/1/Content/img/figure2.png" />
+</div>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">
+               @Html.Raw((Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Content : "-"))
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="side">
+                    <div class="title">
+                        <i class="fa fa-ellipsis-v"></i>
+                        @CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_fast_menu", culture: lang)
+                    </div>
+                    <div class="inner">
+                        @{
+
+                            CloudApp.Web.Models.ViewPartialObject mainMenu = pg.GetMenuPartial(3, Request, lang);
+                            if (mainMenu != null)
+                            {
+                                Html.RenderPartial(mainMenu.ViewName, mainMenu.ViewModel);
+                            }
+
+                        }
+                    
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@*<section class="section-blog-post">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-9 col-lg-12">
+                    <div class="post-image wow fadeInUp">
+                        <div class="post-img-holder">
+                            @if (Model.ImageUrl == "ERROR.png")
+                            {
+                                <img src="/blog/Theme/3/Content/media/blog/1140X400.jpg" class="img-responsive" alt="/">
+                            }
+                            else
+                            {
+                                <img src="blog/admin/Image/1140X400/3/@Model.ImageUrl" class="img-responsive" alt="/">
+                            }
+                        </div>
+                        <div class="post-data">
+                            <span>@Model.CreatedDate.ToString("dd MMMMM yyyy")</span>
+                        </div>
+                    </div>
+                    <div class="b-posts-holder wow fadeInUp">
+                        <div class="b-post-main clearfix">
+                            <div class="post-caption">
+
+                                <div class="caption">
+                                    <h5 class="heading-line">@Model.Name</h5>
+                                    <div class="post-description">
+                                        @Html.Raw( Model.Content)
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>*@

@@ -1,0 +1,83 @@
+﻿@model List<CloudApp.Data.Model.CCategory>
+@{
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    var header = Model.FirstOrDefault();
+    string PageHeader = "";
+    if (header != null)
+    {
+        PageHeader = header.TopCategory.Name;
+    }
+}
+
+<div class="page-head">
+    <div class="page-slogan">
+        "yaşamı kolaylaştıran,<br />modern mimariye sahip<br /> güvenilir yapılar inşaa ediyoruz."
+    </div>
+</div>
+<div class="page-title">
+    <h1>Projeler</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="top-project m-t-30">
+                <div class="readmore">
+                    <a href="#">Projeyi İncele ></a>
+                </div>
+                <img src="img/top-project.png" alt="Referance Serdivan" class="w-100" />
+            </div>
+
+            <div class="projectss">
+                <div class="title">
+                    <h2>DİĞER PROJELERİMİZ</h1>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 box">
+                    <img src="img/project1.jpg" alt="Proje Adı" />
+                    <a class="name" href="Detay.html">Referans Tarsus<span class="city">/ Mersin</span></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 box">
+                    <img src="img/project2.jpg" alt="Proje Adı" />
+                    <a class="name" href="Detay.html">Mavera Park<span class="city">/ Mersin</span></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 box">
+                    <img src="img/project3.jpg" alt="Proje Adı" />
+                    <a class="name" href="Detay.html">Nirvana Life<span class="city">/ Mersin</span></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 box">
+                    <img src="img/project1.jpg" alt="Proje Adı" />
+                    <a class="name" href="Detay.html">Referans Tarsus<span class="city">/ Mersin</span></a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@*<div class="about-banner">
+        <h4><i>@PageHeader</i></h4>
+    </div>
+    <div class="container">
+        <div class="row m-t-30">
+            @foreach (var item in Model.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active))
+            {
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="product">
+                        <div class="info-back"></div>
+                        <div class="info">
+                            <span class="name">@item.Name</span>
+                            <span class="line1"></span>
+                            <span class="detail"><a href="/@seo.GetUrlString(item.Id,CloudApp.Data.Enum.EMenuType.Category,item.OrganizationId.Value)">Ürünleri İncele</a></span>
+                        </div>
+                        <img src="blog/admin/Image/Orji/3/@item.ImageUrl" width="360px" height="320px" alt="" />
+                    </div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>*@
+
+

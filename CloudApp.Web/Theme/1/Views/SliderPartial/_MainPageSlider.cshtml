@@ -1,0 +1,41 @@
+﻿
+@model List<CloudApp.Data.Model.CImage>
+@{ int seek = 0;}
+
+<div id="myCarousel" class="carousel">
+    <ol class="carousel-indicators">
+        @foreach (var item in Model)
+        {
+            if (Model.IndexOf(item) == 0)
+            {
+                <li data-target="#myCarousel" data-slide-to="@seek" class="active"></li>
+            }
+            else
+            {
+                <li data-target="#myCarousel" data-slide-to="@seek" class=""></li>
+            }
+            { seek++; }
+        }
+
+    </ol>
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        @foreach (var item in Model)
+        {
+            if (Model.IndexOf(item) == 0)
+            {
+                <div class="item active">
+                    <img src="blog/admin/Image/Orji/1/@item.ImageUrl" alt="" class="cover w-100" />
+                </div>
+            }
+            else
+            {
+                <div class="item">
+                    <img src="blog/admin/Image/Orji/1/@item.ImageUrl" alt="" class="cover w-100" />
+                </div>
+            }
+        }
+
+    </div>
+
+</div>

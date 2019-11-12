@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta charset="UTF-8"/>
+    <title>ReklamoTV | Digital Signage</title>
+    <meta name="description" content="ReklamoTV Digital Signage'" />
+    <meta name="keywords" content="Otobüs reklamları, Minibüs reklamları, dolmuş reklamları, dijital reklam ekranları, dijital pazarlama," />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+     <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+            <div class="container">
+                <a class="logo" href="index.html"></a>
+                <div class="top">
+                <nav class="menu">
+                        <a href="#" class="menuAc">
+                        ≡
+                        </a>
+                            <ul>
+                                <li><a href="https://reklamotv.com/">Anasayfa</a></li>
+                                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                                <li><a href="urunler.html">Ürün Ailesi</a></li>
+                                <li><a href="sutun-yolculugu.html">Sütün Yolculuğu</a></li>
+                                <li><a href="iletisim.html">Bize Ulaşın</a></li>
+                            </ul>
+                </nav>
+                <div class="social">
+                    <a href="https://www.facebook.com/reklamotv/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/reklamotv/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCJOUJVLAC-7vqQGy8I1BCBg" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
+                <a class="language">
+                    EN
+                </a>
+                <div class="clearfix"></div>
+            </div>
+            </div>
+    </header>
+    <div class="index-banner">
+        <img src="img/figure.png"/>
+        <h1>MÜŞTERİ MEMNUNİYETİ ANKETİ</h1>
+        <img src="img/figure2.png"/>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                   <strong style="color:#ce1820; display:block;" class="m-15">Özgüllü ürünlerinden hangilerini kullanmaktanız?</strong> 
+                    <div class="clearfix"></div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Kaşar Peyniri</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Beyaz Peynir</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Lor Peyniri</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Örgü Peyniri</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Tel Peyniri</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Dil Peyniri</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Ayran</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Yoğurt</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Tereyağı</label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Süt ürünlerinin (kaşar peyniri, beyaz peynir, yoğurt, tereyağ vs.) seçiminde dikkat ettiğiniz en önemli üç özelliği belirtiniz?</strong> 
+                    
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Tazelik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Hijyen / Temizlik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Lezzet</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Fiyat</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Ürün Çeşitliliği</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Doğallık</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Tat</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Koku</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Ambalaj Çekiciliği</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Son Kullanım Tarihi</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">İndirim Olması</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Bilinir Marka Olması</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Raftaki Görüntüsü</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Lezzette Değişmezlik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Marka Güvenirliliği</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Görünüm</label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?</strong> 
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8 text-center" style="font-weight: bold;">
+                            <div class="row">
+                                <div class="col-md-2">Çok İyi</div>
+                                <div class="col-md-2">İyi</div>
+                                <div class="col-md-2">Orta</div>
+                                <div class="col-md-2">Kötü</div>
+                                <div class="col-md-2">Çok Kötü</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Lezzet</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Tazelik</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Tat / Koku</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Fiyat</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Ürün Çeşitliliği</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Marka İmajı</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Kampanya ve İndirimler</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios7" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios7" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios7" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios7" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios7" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Rafta Bulunabirlilik</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios8" id="exampleRadios8" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios8" id="exampleRadios8" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios8" id="exampleRadios8" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios8" id="exampleRadios8" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios8" id="exampleRadios8" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Ambalaj Çekiciliği</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios9" id="exampleRadios9" value="Çok İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios9" id="exampleRadios9" value="İyi">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios9" id="exampleRadios9" value="Orta">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios9" id="exampleRadios9" value="Kötü">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios9" id="exampleRadios9" value="Çok Kötü">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Özgüllü ürünlerinden ne kadar memnunsunuz?</strong> 
+                    
+                            <div class="form-check m-15">
+                                <input class="form-check-input pull-left m-r-10" type="radio" name="memnunradio1" id="memnunradio1" value="Tamamen Memnunum">
+                                <label class="form-check-label pull-left m-r-10" for="memnunradio1">
+                                    Tamamen memnunum
+                                  </label>
+                            </div>
+                   
+                            <div class="form-check m-15">
+                                <input class="form-check-input pull-left m-r-10" type="radio" name="memnunradio1" id="memnunradio2" value="Çoğunlukla memnunum">
+                                <label class="form-check-label pull-left m-r-10" for="memnunradio2">
+                                    Çoğunlukla memnunum
+                                  </label>
+                            </div>
+                            <div class="form-check m-15">
+                                <input class="form-check-input pull-left m-r-10" type="radio" name="memnunradio1" id="memnunradio2" value=" Ne Memnunum ne de memnun değilim">
+                                <label class="form-check-label pull-left m-r-10" for="memnunradio2">
+                                    Ne Memnunum ne de memnun değilim
+                                  </label>
+                            </div>
+                            <div class="form-check m-15">
+                                <input class="form-check-input pull-left m-r-10" type="radio" name="memnunradio1" id="memnunradio3" value="Hiç memnun değilim">
+                                <label class="form-check-label pull-left m-r-10" for="memnunradio3">
+                                    Hiç memnun değilim
+                                  </label>
+                            </div>
+                            <div class="form-check m-15">
+                                <input class="form-check-input pull-left m-r-10" type="radio" name="memnunradio1" id="memnunradio4" value="Çoğunluk memnun değilim">
+                                <label class="form-check-label pull-left m-r-10" for="memnunradio4">
+                                    Çoğunluk memnun değilim
+                                  </label>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <strong style="color:#ce1820; display:block;" class="m-15">Özgüllü ürünlerini tüketicilere tavsiye eder misiniz?</strong> 
+                            
+                                    <div class="form-check m-15">
+                                        <input class="form-check-input pull-left m-r-10" type="radio" name="kesinradio1" id="kesinradio1" value="Kesinlikle evet">
+                                        <label class="form-check-label pull-left m-r-10" for="memnunradio1">
+                                            Kesinlikle evet
+                                          </label>
+                                    </div>
+                           
+                                    <div class="form-check m-15">
+                                        <input class="form-check-input pull-left m-r-10" type="radio" name="kesinradio1" id="kesinradio2" value="Çoğunlukla memnunum">
+                                        <label class="form-check-label pull-left m-r-10" for="kesinradio2">
+                                            Muhtemelen evet
+                                          </label>
+                                    </div>
+                                    <div class="form-check m-15">
+                                        <input class="form-check-input pull-left m-r-10" type="radio" name="kesinradio1" id="kesinradio3" value=" Ne Memnunum ne de memnun değilim">
+                                        <label class="form-check-label pull-left m-r-10" for="kesinradio3">
+                                            Emin değilim
+                                          </label>
+                                    </div>
+                                    <div class="form-check m-15">
+                                        <input class="form-check-input pull-left m-r-10" type="radio" name="kesinradio1" id="kesinradio4" value="Hiç memnun değilim">
+                                        <label class="form-check-label pull-left m-r-10" for="kesinradio4">
+                                            Muhtemelen hayır
+                                          </label>
+                                    </div>
+                                    <div class="form-check m-15">
+                                        <input class="form-check-input pull-left m-r-10" type="radio" name="kesinradio1" id="kesinradio5" value="Çoğunluk memnun değilim">
+                                        <label class="form-check-label pull-left m-r-10" for="kesinradio5">
+                                            Kesinlikle hayır
+                                          </label>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Aşağıdaki özellikler açısından Özgüllü ürünlerini nasıl buluyorsunuz?</strong> 
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8 text-center" style="font-weight: bold;">
+                            <div class="row">
+                                <div class="col-md-2 m-r-10">Hiç Katılmıyorum</div>
+                                <div class="col-md-2 m-r-10">Kısmen Katılmıyorum</div>
+                                <div class="col-md-2 m-r-10">Ne Katılıyorum Ne de Katılmıyorum</div>
+                                <div class="col-md-2 m-r-10">Kısmen Katılıyorum</div>
+                                <div class="col-md-2 m-r-10">Tamamen Katılıyorum</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Özgüllü ürünlerinden memnunum</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Hiç Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Kısmen Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Ne Katılıyorum Ne de Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Kısmen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Tamamen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Özgüllü ürünlerini dostlarıma tavsiye ederim</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Hiç Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Kısmen Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Ne Katılıyorum Ne de Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Kısmen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="Tamamen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Süt ürünlerini alırken, Özgüllü ürünlerini özellikle ararım</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Hiç Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Kısmen Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Ne Katılıyorum Ne de Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Kısmen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="Tamamen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">Özgüllü mamüllerine güveniyorum</div>
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Hiç Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Kısmen Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Ne Katılıyorum Ne de Katılmıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Kısmen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="Tamamen Katılıyorum">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Özgüllü ismi size ne çağrıştırmaktadır?</strong> 
+                    
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Tazelik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Hijyen / Temizlik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Lezzet</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Süt</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Kalite</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Güven</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Doğallık</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Sorumluluk</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Pahalı</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Sağlık</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Sakarya</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Ekonomik</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Ayran</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Peynir</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Tereyağı</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Yoğurt</label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Cinsiyetiniz</strong> 
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="cinsiyetradio1" id="cinsiyetradio1" value="Kadın">
+                        <label class="form-check-label pull-left m-r-10" for="cinsiyetradio1">
+                            Kadın
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="cinsiyetradio1" id="cinsiyetradio2" value="Erkek">
+                        <label class="form-check-label pull-left m-r-10" for="cinsiyetradio2">
+                            Erkek
+                          </label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Yaşınız</strong> 
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio1" value="20 ve altı">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio1">
+                            20 ve altı
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio2" value="21 - 30">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio2">
+                            21 - 30
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio3" value="31 - 40">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio3">
+                            31 - 40
+                          </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio4" value="41 - 50">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio4">
+                            41 - 50
+                          </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio5" value="51 - 60">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio5">
+                            51 - 60
+                          </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="yasradio1" id="yasradio6" value="61 ve üzeri">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio6">
+                            61 ve üzeri
+                          </label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Meslek</strong> 
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio1" value="Memur">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio1">
+                            Memur
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio2" value="İşçi">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio2">
+                            İşçi
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio3" value="Serbest Meslek">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio3">
+                            Serbest Meslek
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio4" value="Ev Hanımı">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio4">
+                            Ev Hanımı
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio5" value="Emekli">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio5">
+                            Emekli
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio6" value="Öğrenci">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio6">
+                            Öğrenci
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="meslekradio1" id="meslekradio7" value="Diğer">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio7">
+                            Diğer
+                          </label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">Ortalama aylık gelir düzeyiniz</strong> 
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio1" value="1.000 TL ve altı">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio1">
+                            1.000 TL ve altı
+                          </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio2" value="1.001 TL - 2.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio2">
+                            1.001 TL - 2.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio3" value="2.001 TL - 3.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio3">
+                            2.001 TL - 3.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio4" value="3.001 TL - 4.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio4">
+                            3.001 TL - 4.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio5" value="4.001 TL ve üzeri">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio5">
+                            4.001 TL ve üzeri
+                          </label>
+                    </div>
+
+                      <div class="m-15">
+                            <div class="clearfix"></div>
+                            <strong style="color:#ce1820; display:block;" class="m-15">Özgüllü ile olan ilişkilerinizden memnuniyetiniz için puan vermeniz gerekir ise (10 puan üzerinden) kaç puan verirdiniz?</strong> 
+                            <div class="form-group">
+                                <label for="puan">Puan</label>
+                                <input type="text" class="form-control" id="puan" aria-describedby="puan1" placeholder="">
+                                <small id="puan1" class="form-text text-muted">(rakam belirtiniz)</small>
+                              </div>
+                            <div class="contact">
+                        <button type="button" class="btn pull-right">GÖNDER</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="side">
+                        <div class="title">
+                            <i class="fa fa-ellipsis-v"></i>
+                            HIZLI MENÜ
+                        </div>
+                        <div class="inner">
+                                <a href="musteri-memnuniyeti-anketi.html">Müşteri Memnuyeti Anketi</a>
+                            <a href="staj-basvuru.formu.html">Staj Başvuru Formu</a>
+                            <a href="insan-kaynaklari.html">İnsan Kaynakları</a>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <img src="img/footer-logo.png" alt="ReklamoTV - Footer Logo"/>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <h4>Sayfalar</h4>
+                    <a href="https://reklamotv.com/">Ana Sayfa</a>
+                    <a href="iletisim.html">Bize Ulaşın</a>
+                    <a href="bilgi-toplumu-hizmetleri.html">Bilgi Toplumu Hizmetleri</a>
+                    <a href="reklam-filmlerimiz.html">Reklam Filmlerimiz</a>
+                    <a href="gizlilik.html">Gizlilik</a>
+                    <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                        <h4>Hakkımızda</h4>
+                        <a href="hakkimizda.html">Tarihçemiz</a>
+                        <a href="kurucumuz.html">Kurucumuz</a>
+                        <a href="sicrama-anlari.html">Sıçrama Anları</a>
+                        <a href="hedeflerimiz.html">Kurumsal Önceliklerimiz <br/> ve Hedeflerimiz</a>
+                        <a href="uretim.html">Üretim Tesislerimiz <br/> ve Dağıtım</a>
+                        <a href="kalite-politikamiz.html">Kalite Politikamız</a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                        <h4>Ürün Ailesi</h4>
+                        <a href="kasar-peyniri.html">Kaşar Peyniri</a>
+                        <a href="beyaz-peynir.html">Beyaz Peynir</a>
+                        <a href="lor-peyniri.html">Lor Peyniri</a>
+                        <a href="orgu-peyniri.html">Örgü Peyniri</a>
+                        <a href="tel-peyniri.html">Tel Peyniri</a>
+                        <a href="dil-peyniri.html">Dil Peyniri</a>
+                        <a href="ayran.html">Ayran</a>
+                        <a href="yogurt.html">Yoğurt</a>
+                        <a href="tereyagi.html">Tereyağı</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="/js/jquery-1.10.2.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+     <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+
+
+      <script type="text/javascript">
+        $(function () {
+            var a = 0;
+            $('.menuAc').click(function () {
+                if (a == 0) {
+                    $(this).text('x');
+                    a++;
+                } else {
+                    $(this).text('≡');
+                    a = 0;
+                }
+                $(this).next('ul').slideToggle(600);
+            });
+        });
+    </script>
+
+</html>

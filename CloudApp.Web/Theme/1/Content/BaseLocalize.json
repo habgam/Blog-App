@@ -1,0 +1,156 @@
+﻿[
+  {
+    "Key": "r_gen_where",
+    "LocalizedValue": {
+      "tr-TR": "Nerede",
+      "en-US": "Where"
+    }
+  },
+  {
+    "Key": "r_gen_savory_flavors",
+    "LocalizedValue": {
+      "tr-TR": "Bizli Lezzetler",
+      "en-US": "Savory Flavors"
+    }
+  },
+  {
+    "Key": "r_gen_select_city",
+    "LocalizedValue": {
+      "tr-TR": "İl Seçiniz",
+      "en-US": "Select Country"
+    }
+  },
+  {
+    "Key": "r_gen_search",
+    "LocalizedValue": {
+      "tr-TR": "Arama",
+      "en-US": "Search"
+    }
+  },
+  {
+    "Key": "r_gen_advert_movie",
+    "LocalizedValue": {
+      "tr-TR": "Reklam Filimlerimiz",
+      "en-US": "Our Advertising Films"
+    }
+  },
+  {
+    "Key": "r_gen_product_family",
+    "LocalizedValue": {
+      "tr-TR": "Ürün Ailesi",
+      "en-US": "Product Family"
+    }
+  },
+  {
+    "Key": "r_gen_about_us",
+    "LocalizedValue": {
+      "tr-TR": "Hakkımızda",
+      "en-US": "About Us"
+    }
+  },
+  {
+    "Key": "r_gen_homapage",
+    "LocalizedValue": {
+      "tr-TR": "Anasayfa",
+      "en-US": "HomePage"
+    }
+  },
+  {
+    "Key": "r_gen_pages",
+    "LocalizedValue": {
+      "tr-TR": "Sayfalar",
+      "en-US": "Pages"
+    }
+  },
+  {
+    "Key": "r_gen_contact",
+    "LocalizedValue": {
+      "tr-TR": "İletişim",
+      "en-US": "Contact"
+    }
+  },
+  {
+    "Key": "r_gen_fast_menu",
+    "LocalizedValue": {
+      "tr-TR": "Hızlı Menü",
+      "en-US": "Quick Menu"
+    }
+  },
+  {
+    "Key": "r_url_menu_texts",
+    "LocalizedValue": {
+      "tr-TR": "Sayfalar",
+      "en-US": "Pages"
+    }
+  },
+  {
+    "Key": "r_url_menu_categories",
+    "LocalizedValue": {
+      "tr-TR": "Yazilar",
+      "en-US": "Categories"
+    }
+  },
+  {
+    "Key": "r_contact_us",
+    "LocalizedValue": {
+      "tr-TR": "Bize Ulaşın",
+      "en-US": "Contact Us"
+    }
+  },
+  {
+    "Key": "r_contact_information",
+    "LocalizedValue": {
+      "tr-TR": "İletişim Bilgilerimiz",
+      "en-US": "Contact Information"
+    }
+  },
+  {
+    "Key": "r_contact_map",
+    "LocalizedValue": {
+      "tr-TR": "Ulaşım Haritası",
+      "en-US": "Transportation Map"
+    }
+  },
+  {
+    "Key": "r_contact_form",
+    "LocalizedValue": {
+      "tr-TR": "İletişim Formu",
+      "en-US": "Contact Form"
+    }
+  },
+  {
+    "Key": "r_contact_form_name",
+    "LocalizedValue": {
+      "tr-TR": "İsim",
+      "en-US": "Name"
+    }
+  },
+  {
+    "Key": "r_contact_form_surname",
+    "LocalizedValue": {
+      "tr-TR": "Soyisim",
+      "en-US": "Surname"
+    }
+  },
+  {
+    "Key": "r_contact_form_phone",
+    "LocalizedValue": {
+      "tr-TR": "Telefon",
+      "en-US": "Phone"
+    }
+  },
+  {
+    "Key": "r_contact_form_message",
+    "LocalizedValue": {
+      "tr-TR": "Mesajınız",
+      "en-US": "Message"
+    }
+  },
+  {
+    "Key": "r_contact_form_sendmessage",
+    "LocalizedValue": {
+      "tr-TR": "Gönder",
+      "en-US": "Send"
+    }
+  }
+]

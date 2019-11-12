@@ -1,0 +1,288 @@
+﻿@{
+    CloudApp.Admin.Core.UtilitiesControl hc = new CloudApp.Admin.Core.UtilitiesControl();
+    List<CloudApp.Data.ViewModel.ViewMenuItem> menu = hc.GetAdminMenu(((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(item => item.Type.ToString() == "OrganizationId").Value);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Panel V1.0</title>
+    <link rel="stylesheet" href="~/Content/css/style.default.css" />
+    <link rel="stylesheet" href="~/Content/css/responsive-tables.css">
+    <link rel="stylesheet" href="~/Content/css/isotope.css" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap-fileupload.min.css" />
+  
+    @*<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />*@
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/bootstrap-fileupload.min.js"></script>
+    <script src="~/Content/js/modernizr.min.js"></script>
+    <script src="~/Content/js/jquery.cookies.js"></script>
+    <script src="~/Content/js/jquery.uniform.min.js"></script>
+    <script src="~/Content/js/flot/jquery.flot.min.js"></script>
+    <script src="~/Content/js/flot/jquery.flot.resize.min.js"></script>
+    <script src="~/Content/js/responsive-tables.js"></script>
+    <script src="~/Content/js/jquery.slimscroll.js"></script>
+    <script src="~/Content/js/tinymce/jquery.tinymce.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/wysiwyg.js"></script>
+    <script src="~/Content/js/jquery.alerts.js"></script>
+    <script src="~/Content/js/elements.js"></script>
+    <script src="~/Content/prettify/prettify.js"></script>
+    <script src="~/Content/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/js/jquery.bxSlider.min.js"></script>
+    <script src="~/Content/js/jquery.colorbox-min.js"></script>
+</head>
+<!--[if lte IE 8]>
+<script src="js/excanvas.min.js"></script>
+<![endif]-->
+
+<body>
+    <div id="mainwrapper" class="mainwrapper">
+
+        <div class="header">
+            <div class="logo">
+                @*<a href="/blog/Admin/Home/Dashboard"><img src="/blog/Admin/Content/images/flogo.png" alt="" /></a>*@
+                <a href="/blog/Admin/Home/Dashboard"><img src="~/Image/300X150/@Html.Raw(((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(item => item.Type.ToString() == "OrganizationId").Value)/@Html.Raw( ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(item => item.Type.ToString() == "ImageUrl").Value)" alt="" /></a>
+            </div>
+            <div class="headerinner">
+                <ul class="headmenu">
+                    <li class="odd">
+                        <a class="dropdown-toggle" href="/blog/Admin/Home/Dashboard">
+                            <span class="count"></span>
+                            <span class="head-icon head-users"></span>
+                            <span class="headmenu-label">Dashboard</span>
+                        </a>
+
+                    </li>
+                    @*<li class="odd">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="count"></span>
+                            <span class="head-icon head-message"></span>
+                            <span class="headmenu-label">Duyurular</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-header">Messages</li>
+                            <li><a href=""><span class="glyphicon glyphicon-envelope"></span> New message from <strong>Jack</strong> <small class="muted"> - 19 hours ago</small></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-envelope"></span> New message from <strong>Daniel</strong> <small class="muted"> - 2 days ago</small></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-envelope"></span> New message from <strong>Jane</strong> <small class="muted"> - 3 days ago</small></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-envelope"></span> New message from <strong>Tanya</strong> <small class="muted"> - 1 week ago</small></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-envelope"></span> New message from <strong>Lee</strong> <small class="muted"> - 1 week ago</small></a></li>
+                            <li class="viewmore"><a href="/blog/Admin/Announcement/Index">Tüm Mesajlar</a></li>
+                        </ul>
+
+                    </li>*@
+                    
+                    <li class="odd">
+                        <a class="dropdown-toggle" target="_blank" href="/blog/Admin/Home/ViewSite">
+                            <span class="count"></span>
+                            <span class="head-icon head-bar"></span>
+                            <span class="headmenu-label">Siteyi Görüntüle</span>
+                        </a>
+
+                    </li>
+                    <li class="right">
+                        <div class="userloggedinfo">
+                            <img src="~/Content/images/photos/thumb1.png" alt="" />
+                            <div class="userinfo">
+                                <h5> @Html.Raw(((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(item => item.Type.ToString() == "UserName").Value)<small>- @Html.Raw(((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(item => item.Type.ToString() == "FullName").Value)</small></h5>
+                                <ul>
+
+                                    <li><a href="/blog/Admin/Organization/EditOrganization">Organizasyon Ayarları</a></li>
+                                    <li><a href="/blog/Admin/Home/LogOut">Çıkış</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul><!--headmenu-->
+            </div>
+        </div>
+
+        <div class="leftpanel">
+            
+            @Html.Partial("~/Views/Shared/_MenuPartial.cshtml", menu)
+                    </div><!-- leftpanel -->
+                    @RenderBody()
+
+
+                </div><!--mainwrapper-->
+                <script type="text/javascript">
+                    jQuery(document).ready(function () {
+
+                      
+
+
+                        //datepicker
+                        jQuery('#datepicker').datepicker();
+
+                        // tabbed widget
+                        jQuery('.tabbedwidget').tabs();
+
+
+
+
+
+
+
+                    });
+                    function ConfirmButton(title, desc, catId, type) {
+                        jConfirm(desc, title, function (r) {
+                            //return true;
+                            if (r == true && type == "cat") {
+                                $.ajax({
+                                    url: '/blog/Admin/Category/DeleteCategory',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+                            if (r == true && type == "module") {
+                                $.ajax({
+                                    url: '/blog/Admin/ItemTheme/Delete',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "text") {
+                                $.ajax({
+                                    url: '/blog/Admin/Text/DeleteText',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "menu") {
+                                $.ajax({
+                                    url: '/blog/Admin/Menu/DeleteMenu',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "form") {
+                                $.ajax({
+                                    url: '/blog/Admin/Form/DeleteForm',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "formlist") {
+                                $.ajax({
+                                    url: '/blog/Admin/Form/DeleteFormList',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "subMenu") {
+                                $.ajax({
+                                    url: '/blog/Admin/Menu/DeleteSubMenu',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            if (r == true && type == "picture") {
+                                $.ajax({
+                                    url: '/blog/Admin/Images/DeleteImage',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+                            if (r == true && type == "slider") {
+                                $.ajax({
+                                    url: '/blog/Admin/Slider/DeleteSlider',
+                                    data: { id: catId },
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        location.reload();
+                                    }
+                                });
+                            }
+
+                            //jAlert('Confirmed: ' + r, 'Confirmation Results');
+                        });
+                    }
+                    function getParameterByName(name) {
+                        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                            results = regex.exec(location.search);
+                        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                    }
+                </script>
+                <script>
+                    $.ajax({
+                        url: '/blog/Admin/Home/ThrowError',
+                        type: 'GET',
+                        success: function (data) {
+
+                            $.each(data, function (dataItem, value) {
+                                if (value.AlertType === 1)
+                                    jQuery.alerts.dialogClass = 'alert-success';
+                                else if (value.AlertType === 2)
+                                    jQuery.alerts.dialogClass = 'alert-danger';
+                                else if (value.AlertType === 3)
+                                    jQuery.alerts.dialogClass = 'alert-warning';
+                                else if (value.AlertType === 4)
+                                    jQuery.alerts.dialogClass = 'alert-info';
+                                else
+                                    jQuery.alerts.dialogClass = 'alert-inverse';
+                                jAlert(value.Desc, value.Title, function () {
+                                    jQuery.alerts.dialogClass = null; // reset to default
+                                });
+
+                            });
+                        }
+                    });
+                </script>
+                @RenderSection("scripts", required: false)
+            </body>
+            </html>

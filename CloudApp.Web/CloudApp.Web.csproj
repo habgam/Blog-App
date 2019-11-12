@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8545EE6-664D-412C-ADCE-E8561B2F7CC4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudApp.Web</RootNamespace>
+    <AssemblyName>CloudApp.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Content\CategoryController.cs" />
+    <Compile Include="Content\HomeController.cs" />
+    <Compile Include="Content\TextController.cs" />
+    <Compile Include="Controllers\CategoryViewController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\TextViewController.cs" />
+    <Compile Include="Core\BaseWebController.cs" />
+    <Compile Include="Core\CloudAppViewEngine.cs" />
+    <Compile Include="Core\MailService.cs" />
+    <Compile Include="Core\SeoUrlController.cs" />
+    <Compile Include="Core\StaticWebUtilities.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\LocalizationHelper.cs" />
+    <Compile Include="Localization\LocalizationModel.cs" />
+    <Compile Include="Models\ViewNavigation.cs" />
+    <Compile Include="Models\ViewPartialObject.cs" />
+    <Compile Include="Models\ViewTextSearch.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\BaseLocalize.json" />
+    <Content Include="bin\CloudApp.Web.dll" />
+    <Content Include="bin\CloudApp.Web.pdb" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\trtrt.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Theme\1\Content\ayran.html" />
+    <Content Include="Theme\1\Content\beyaz-peynir.html" />
+    <Content Include="Theme\1\Content\bilgi-toplumu-merkezi.html" />
+    <Content Include="Theme\1\Content\css\bootstrap-theme.css" />
+    <Content Include="Theme\1\Content\css\bootstrap-theme.min.css" />
+    <Content Include="Theme\1\Content\css\bootstrap.css" />
+    <Content Include="Theme\1\Content\css\bootstrap.min.css" />
+    <Content Include="Theme\1\Content\css\font-awesome.css" />
+    <Content Include="Theme\1\Content\css\font-awesome.min.css" />
+    <Content Include="Theme\1\Content\css\fonts.css" />
+    <Content Include="Theme\1\Content\css\full-slider.css" />
+    <Content Include="Theme\1\Content\css\gallery.css" />
+    <Content Include="Theme\1\Content\css\jquery.bxslider.css" />
+    <Content Include="Theme\1\Content\css\lightbox.min.css" />
+    <Content Include="Theme\1\Content\css\lightgallery.css" />
+    <Content Include="Theme\1\Content\css\lytebox.css" />
+    <Content Include="Theme\1\Content\css\menu.css" />
+    <Content Include="Theme\1\Content\css\normalize.min.css" />
+    <Content Include="Theme\1\Content\css\style.css" />
+    <Content Include="Theme\1\Content\dil-peyniri.html" />
+    <Content Include="Theme\1\Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Theme\1\Content\fonts\fonts.css" />
+    <Content Include="Theme\1\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\1\Content\fonts\lg.svg" />
+    <Content Include="Theme\1\Content\hakkimizda.html" />
+    <Content Include="Theme\1\Content\hedeflerimiz.html" />
+    <Content Include="Theme\1\Content\iletisim.html" />
+    <Content Include="Theme\1\Content\images\close.png" />
+    <Content Include="Theme\1\Content\images\loading.gif" />
+    <Content Include="Theme\1\Content\images\next.png" />
+    <Content Include="Theme\1\Content\images\prev.png" />
+    <Content Include="Theme\1\Content\img\About-Bg.jpg" />
+    <Content Include="Theme\1\Content\img\banner-product.jpg" />
+    <Content Include="Theme\1\Content\img\bbanner-bg.png" />
+    <Content Include="Theme\1\Content\img\bottom-bg.jpg" />
+    <Content Include="Theme\1\Content\img\contact-bg.jpg" />
+    <Content Include="Theme\1\Content\img\desen1.png" />
+    <Content Include="Theme\1\Content\img\desen2.png" />
+    <Content Include="Theme\1\Content\img\figure.png" />
+    <Content Include="Theme\1\Content\img\figure2.png" />
+    <Content Include="Theme\1\Content\img\footer-bg.jpg" />
+    <Content Include="Theme\1\Content\img\footer-logo.png" />
+    <Content Include="Theme\1\Content\img\golge.png" />
+    <Content Include="Theme\1\Content\img\hikayemiz.jpg" />
+    <Content Include="Theme\1\Content\img\lezzetler.jpg" />
+    <Content Include="Theme\1\Content\img\log-mobile.png" />
+    <Content Include="Theme\1\Content\img\logo.png" />
+    <Content Include="Theme\1\Content\img\mucizeyle-baslar.png" />
+    <Content Include="Theme\1\Content\img\product\1.jpg" />
+    <Content Include="Theme\1\Content\img\product\2.jpg" />
+    <Content Include="Theme\1\Content\img\product\3.jpg" />
+    <Content Include="Theme\1\Content\img\product\4.jpg" />
+    <Content Include="Theme\1\Content\img\product\5.jpg" />
+    <Content Include="Theme\1\Content\img\product\6.jpg" />
+    <Content Include="Theme\1\Content\img\product\7.jpg" />
+    <Content Include="Theme\1\Content\img\product\8.jpg" />
+    <Content Include="Theme\1\Content\img\product\9.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-1.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-2.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-3.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-4.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-5.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-6.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-7.jpg" />
+    <Content Include="Theme\1\Content\img\product\banner-8.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-1.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-2.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-3.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-4.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-5.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-6.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-7.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-8.jpg" />
+    <Content Include="Theme\1\Content\img\product\detay-9.jpg" />
+    <Content Include="Theme\1\Content\img\reklam.jpg" />
+    <Content Include="Theme\1\Content\img\satis-noktamiz.png" />
+    <Content Include="Theme\1\Content\img\side-bottom.jpg" />
+    <Content Include="Theme\1\Content\img\side-top.jpg" />
+    <Content Include="Theme\1\Content\img\side-top.png" />
+    <Content Include="Theme\1\Content\img\site-bottom.jpg" />
+    <Content Include="Theme\1\Content\img\slide\1.jpg" />
+    <Content Include="Theme\1\Content\img\slide\2.jpg" />
+    <Content Include="Theme\1\Content\img\slide\3.jpg" />
+    <Content Include="Theme\1\Content\img\t-01.jpg" />
+    <Content Include="Theme\1\Content\img\t-02.jpg" />
+    <Content Include="Theme\1\Content\img\t-03.jpg" />
+    <Content Include="Theme\1\Content\img\t-04.jpg" />
+    <Content Include="Theme\1\Content\img\t-05.jpg" />
+    <Content Include="Theme\1\Content\img\tarihce-1.jpg" />
+    <Content Include="Theme\1\Content\img\tarihce-2.jpg" />
+    <Content Include="Theme\1\Content\img\urun-ailesi.jpg" />
+    <Content Include="Theme\1\Content\img\where-bg.png" />
+    <Content Include="Theme\1\Content\img\zaim-gullu.png" />
+    <Content Include="Theme\1\Content\index.html" />
+    <Content Include="Theme\1\Content\insan-kaynaklari.html" />
+    <Content Include="Theme\1\Content\js\bootstrap.js" />
+    <Content Include="Theme\1\Content\js\bootstrap.min.js" />
+    <Content Include="Theme\1\Content\js\demos.js" />
+    <Content Include="Theme\1\Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Theme\1\Content\js\jquery.bxslider 2.js" />
+    <Content Include="Theme\1\Content\js\jquery.bxslider.js" />
+    <Content Include="Theme\1\Content\js\jquery.bxslider.min.js" />
+    <Content Include="Theme\1\Content\js\jquery.mousewheel.min.js" />
+    <Content Include="Theme\1\Content\js\lg-fullscreen.js" />
+    <Content Include="Theme\1\Content\js\lg-thumbnail.js" />
+    <Content Include="Theme\1\Content\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Theme\1\Content\js\lightgallery.js" />
+    <Content Include="Theme\1\Content\js\npm.js" />
+    <Content Include="Theme\1\Content\js\prettify.js" />
+    <Content Include="Theme\1\Content\kasar-peyniri.html" />
+    <Content Include="Theme\1\Content\kurucumuz.html" />
+    <Content Include="Theme\1\Content\lor-peyniri.html" />
+    <Content Include="Theme\1\Content\musteri-memnuniyeti-anketi.html" />
+    <Content Include="Theme\1\Content\oneri-sikayet-formu.html" />
+    <Content Include="Theme\1\Content\orgu-peyniri.html" />
+    <Content Include="Theme\1\Content\reklam-filmlerimiz.html" />
+    <Content Include="Theme\1\Content\satis-noktalari.html" />
+    <Content Include="Theme\1\Content\sicrama-anlari.html" />
+    <Content Include="Theme\1\Content\staj-basvuru.formu.html" />
+    <Content Include="Theme\1\Content\sutun-yolculugu.html" />
+    <Content Include="Theme\1\Content\sutun-yolcululugu.html" />
+    <Content Include="Theme\1\Content\tarihcemiz.html" />
+    <Content Include="Theme\1\Content\tel-peyniri.html" />
+    <Content Include="Theme\1\Content\tereyagi.html" />
+    <Content Include="Theme\1\Content\urunler.html" />
+    <Content Include="Theme\1\Content\yogurt.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\TextView\GetTextDetail.cshtml" />
+    <Content Include="Views\CategoryView\GetDetail.cshtml" />
+    <Content Include="Views\CategoryView\Index.cshtml" />
+    <Content Include="Views\HomePage\AppOffline.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_TextCategory.cshtml" />
+    <Content Include="Theme\1\Views\CategoryView\GetCategory.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\AppOffline.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Home.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_MainMenu.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_FooterMenu.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_CategoryNavigation.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_Layout.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_Navigation.cshtml" />
+    <Content Include="Theme\1\Views\TextView\GetTextDetail.cshtml" />
+    <Content Include="Theme\1\Views\TextView\GetTexts.cshtml" />
+    <Content Include="Theme\1\Views\Web.config" />
+    <Content Include="Views\HomePage\SiteMap.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_OnlyText.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_Contact.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_MainPageSlider.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_ProductCategory.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_ProductCategory.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_ProductDetail.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_TextCategory.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Iletisim.cshtml" />
+    <Content Include="Views\HomePage\Kurumsal.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Kurumsal.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Kariyer.cshtml" />
+    <Content Include="Theme\1\Content\.DS_Store" />
+    <Content Include="Theme\1\Content\css\.DS_Store" />
+    <Content Include="Theme\1\Content\css\bootstrap-theme.css.map" />
+    <Content Include="Theme\1\Content\css\bootstrap-theme.min.css.map" />
+    <Content Include="Theme\1\Content\css\bootstrap.css.map" />
+    <Content Include="Theme\1\Content\css\bootstrap.min.css.map" />
+    <Content Include="Theme\1\Content\fonts\.DS_Store" />
+    <Content Include="Theme\1\Content\fonts\Athelas.ttc" />
+    <Content Include="Theme\1\Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Theme\1\Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Theme\1\Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Theme\1\Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Theme\1\Content\fonts\FontAwesome.otf" />
+    <Content Include="Theme\1\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Theme\1\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Theme\1\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Theme\1\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Theme\1\Content\fonts\lg.eot" />
+    <Content Include="Theme\1\Content\fonts\lg.ttf" />
+    <Content Include="Theme\1\Content\fonts\lg.woff" />
+    <Content Include="Theme\1\Content\img\.DS_Store" />
+    <Content Include="Theme\1\Content\img\slide\.DS_Store" />
+    <Content Include="Theme\1\Content\js\.DS_Store" />
+    <Content Include="Theme\1\Views\SliderPartial\_HomePageSlogan.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_SalePoint.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_HomePageSlogan2.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_FooterItemCategory.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_QuickMenu.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_SalesPoint.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_SalesPoint.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_SalesPoint.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_HumanResource.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_CustomerForm.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_OneriSikayet.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_StajBasvuru.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_FastMenuHumanResources.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_OurBrand.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_Layout-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Home-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Iletisim-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Kariyer-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\HomePage\Kurumsal-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryView\GetCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_FastMenuHumanResources-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_FooterItemCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_OurBrand-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\_SalesPoint-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_ProductCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_SalesPoint-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Category_TextCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_ProductCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_SalesPoint-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\CategoryPartial\Item_TextCategory-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_FooterMenu-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_MainMenu-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\MenuPartial\_QuickMenu-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_Navigation-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\Shared\_CategoryNavigation-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_HomePageSlogan-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_HomePageSlogan2-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_MainPageSlider-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\SliderPartial\_SalePoint-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_Contact-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_CustomerForm-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_HumanResource-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_OneriSikayet-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_OnlyText-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_ProductDetail-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextPartial\_StajBasvuru-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextView\GetTextDetail-ar-sa.cshtml" />
+    <Content Include="Theme\1\Views\TextView\GetTexts-ar-sa.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudApp.Data\CloudApp.Data.csproj">
+      <Project>{972778a6-5d88-4423-9a5c-f085d4468b54}</Project>
+      <Name>CloudApp.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52439</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52439/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

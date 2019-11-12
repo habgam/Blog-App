@@ -1,0 +1,171 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Web.Mvc.Html
+
+@{
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    CloudApp.Web.Core.SeoUrlController sc = new CloudApp.Web.Core.SeoUrlController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta charset="UTF-8" />
+    <title>ReklamoTV | Digital Signage</title>
+    <meta name="description" content="ReklamoTV Digital Signage'" />
+    <meta name="keywords" content="Otobüs reklamları, Minibüs reklamları, dolmuş reklamları, dijital reklam ekranları, dijital pazarlama," />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link href="/blog/Theme/1/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/blog/Theme/1/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/blog/Theme/1/Content/css/style.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126801009-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126801009-1');
+</script>
+
+
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    @RenderSection("head", required: false)
+</head>
+<body>
+
+    
+    <header>
+        <div class="container">
+            <a class="logo" style="background-image:url('/blog/Theme/1/Content/img/@lang-logo.png')" href="/@lang/Home"></a>
+            <div class="top">
+                <nav class="menu">
+                    <a href="#" class="menuAc">
+                        ≡
+                    </a>
+                    @{
+
+                        CloudApp.Web.Models.ViewPartialObject mainMenu = pg.GetMenuPartial(1, Request, lang);
+                        if (mainMenu != null)
+                        {
+                            Html.RenderPartial(mainMenu.ViewName, mainMenu.ViewModel);
+                        }
+
+                    }
+                </nav>
+                <div class="social">
+                    <a href="https://www.facebook.com/ozgulluturkiye/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/reklamotv/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCJOUJVLAC-7vqQGy8I1BCBg" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
+
+                <div class="language">
+                    @if (lang.ToLower() == "tr-tr")
+                    {
+                        <a style="color:white;" href="/en-us/Home">EN</a>
+                    }
+                    else
+                    {
+                        <a style="color:white;" href="/tr-tr/Home">TR</a>
+                    }
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <img src="/blog/Theme/1/Content/img/footer-logo.png" alt="ReklamoTV - Footer Logo" />
+                    <div>
+                        <img src="/blog/Theme/1/Content/img/whatsapp.png" class="m-t-b-30" alt="Whatsapp Tüketici Hattı" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <h4>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_pages", culture: lang)</h4>
+                    <a href="/">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_homapage", culture: lang)</a>
+                    <a href="/@sc.GetUrlString(34,CloudApp.Data.Enum.EMenuType.Text,1,lang)">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_contact", culture: lang)</a>
+                    @{
+
+                        CloudApp.Web.Models.ViewPartialObject mainMenu12 = pg.GetCategoryPartial(11, Request);
+                        if (mainMenu12 != null)
+                        {
+                            Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FooterItemCategory-ar-sa.cshtml", mainMenu12.ViewModel);
+                        }
+
+                    }
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <h4>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_about_us", culture: lang)</h4>
+                    @{
+
+                        CloudApp.Web.Models.ViewPartialObject mainMenu121 = pg.GetCategoryPartial(12, Request);
+                        if (mainMenu121 != null)
+                        {
+                            Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FooterItemCategory-ar-sa.cshtml", mainMenu121.ViewModel);
+                        }
+
+                    }
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <h4>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_product_family", culture: lang)</h4>
+                    @{
+
+                        CloudApp.Web.Models.ViewPartialObject mainMenu123 = pg.GetCategoryPartial(14, Request);
+                        if (mainMenu123 != null)
+                        {
+                            Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FooterItemCategory-ar-sa.cshtml", mainMenu123.ViewModel);
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/blog/Theme/1/Content/js/jquery-1.10.2.min.js"></script>
+    <script src="/blog/Theme/1/Content/js/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+
+    </script>
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+
+    </script>
+    @RenderSection("scripts", false)
+</body>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        var a = 0;
+        $('.menuAc').click(function () {
+            if (a == 0) {
+                $(this).text('x');
+                a++;
+            } else {
+                $(this).text('≡');
+                a = 0;
+            }
+            $(this).next('ul').slideToggle(600);
+        });
+    });
+</script>
+
+</html>
+

@@ -1,0 +1,114 @@
+﻿@model CloudApp.Data.Model.CText
+@{
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+@section head{
+
+
+}
+
+<div class="index-banner" style="background: url(blog/admin/Image/Orji/1/@(Model.Images.FirstOrDefault(h=>h.Language.ToLower()==lang.ToLower() && h.Name=="Banner")!=null?Model.Images.FirstOrDefault(h=>h.Language.ToLower()==lang.ToLower() && h.Name=="Banner").ImageUrl:"")) no-repeat bottom right; background-size:cover; ">
+    <img src="/blog/Theme/1/Content/img/figure.png" />
+    <h1>@(Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Name : "-" )</h1>
+    <img src="/blog/Theme/1/Content/img/figure2.png" />
+</div>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12 contact">
+                <img src="blog/admin/Image/Orji/1/@(Model.Images.FirstOrDefault(h=>h.Language.ToLower()==lang.ToLower() && h.Name=="Detail")!=null?Model.Images.FirstOrDefault(h=>h.Language.ToLower()==lang.ToLower() && h.Name=="Detail").ImageUrl:"")"  class="m-w-100 m-b-30">
+                <p>@Html.Raw(Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()) != null ? Model.LanguageValues.FirstOrDefault(s => s.Lang.ToLower() == lang.ToLower()).Content : "-" )</p>
+              
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="side">
+                    <div class="title">
+                        <i class="fa fa-ellipsis-v"></i>
+                        @CloudApp.Web.Localization.LocalizationHelper.Localize("r_gen_product_family", culture: lang)
+                    </div>
+                    <div class="inner">
+                        @{
+
+                            CloudApp.Web.Models.ViewPartialObject mainMenu12 = pg.GetCategoryPartial(14, Request);
+                            if (mainMenu12 != null)
+                            {
+                                Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FooterItemCategory-ar-sa.cshtml", mainMenu12.ViewModel);
+                            }
+
+                        }
+@{
+
+                            CloudApp.Web.Models.ViewPartialObject mainMenu123 = pg.GetCategoryPartial(22, Request);
+                            if (mainMenu123 != null)
+                            {
+                                Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_OurBrand-ar-sa.cshtml", mainMenu123.ViewModel);
+                            }
+
+                        }
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="page-head" style="background: url(/blog/Theme/3/Content/img/referance-bg.jpg) no-repeat;">
+        <div class="page-logo"></div>
+        <div class="page-slogan">
+            "yaşamı kolaylaştıran,<br />modern mimariye sahip<br /> güvenilir yapılar inşaa ediyoruz."
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-title2">
+            <h1>Referance Serdivan</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 m-t-30">
+                <div class="pro-detail">
+                    <div class="col-md-5 col-xs-12">
+                        <h2>Proje Bilgileri</h2>
+                        <p>@Html.Raw(Model.Content)</p>
+                    </div>
+                    <div class="col-md-7 col-xs-12">
+                        <h2>Proje Noktası</h2>
+                        <iframe src="@Model.CustomProperty1" width="100%" height="450" frameborder="0" style="border:2px solid #eee;" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="pro-detail">
+                    <div><h2>Proje Görselleri</h3></div>
+                    @foreach (var h in Model.Images.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active && s.Name!=null && s.Name.StartsWith("p-")))
+                    {
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <a href="blog/admin/Image/Orji/3/@h.ImageUrl" data-lightbox="example-set" data-title="">
+                                <img class="example-image lbimg" data-="" alt="" src="blog/admin/Image/300X150/3/@h.ImageUrl" />
+                            </a>
+                        </div>
+                    }
+                    <div class="clearfix"></div>
+                </div>
+                <div class="pro-detail">
+                    <div><h2>Şantiye Görselleri</h3></div>
+                    @foreach (var h in Model.Images.Where(s => s.ActiveStatus == CloudApp.Data.Enum.EActiveStatus.Active && s.Name != null && s.Name.StartsWith("s-")))
+                    {
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <a href="blog/admin/Image/Orji/@h.ImageUrl" data-lightbox="example-set" data-title="">
+                                <img class="example-image lbimg" data-="" alt="" src="blog/admin/Image/300X150/@h.ImageUrl" />
+                            </a>
+                        </div>
+                    }
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>*@
+
+@section scripts{
+
+
+}
+

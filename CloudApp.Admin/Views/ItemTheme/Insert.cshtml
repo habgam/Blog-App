@@ -1,0 +1,110 @@
+﻿@model CloudApp.Data.Model.CItemTheme
+@{
+
+}
+
+<div class="rightpanel">
+
+    @*<ul class="breadcrumbs">
+            <li><a href="dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li>Kategori Ekle</li>
+
+        </ul>*@
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+        @*<form action="results.html" method="post" class="searchbar">
+                <input type="text" name="keyword" placeholder="To search type and hit enter..." />
+            </form>*@
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Modül Temaları</h5>
+            @if (Model.Id != 0)
+            {
+                <h1>Tema Düzenle</h1>
+            }
+            else
+            {
+                <h1>Tema Ekle</h1>
+            }
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+         
+            <div class="widget">
+                <h4 class="widgettitle">Modül Ekle</h4>
+                <div class="widgetcontent">
+                    @using (Html.BeginForm("Insert", "ItemTheme", FormMethod.Post, new { @id = "frmNewAssignment", @class = "form", @enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Tema Tipi</label>
+                            <div class="col-md-10">
+                                <select name="ThemeType" id="ThemeType" class="form-control select-inline">
+                                    @foreach (var item in Enum.GetValues(typeof(CloudApp.Data.Enum.EItemTheme)))
+                                    {
+                                        <option value="@((int)item)">@item.ToString()</option>
+                                    }
+                                    @*<option value="0">Üst Kategori</option>*@
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-2 control-label">Tema İsmi</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(item => item.Name, "", new { @class = "form-control", @placeholder = "Tema İsmi" })
+                                @Html.ValidationMessageFor(item => item.Name, "", new { @style = "color:red;" })
+                            </div>
+                        </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-md-2 control-label">Tema Yolu</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(item => item.ThemePath, "", new { @class = "form-control", @placeholder = "Tema Yolu" })
+            @Html.ValidationMessageFor(item => item.ThemePath, "", new { @style = "color:red;" })
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+                        <br /><br />
+                        <button type="submit" class="btn btn-default">Kaydet</button>
+
+
+                    }
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            if (@((int)Model.ThemeType)!=0)
+                $('#ThemeType').val('@((int)Model.ThemeType)');
+
+        });
+     </script>
+}

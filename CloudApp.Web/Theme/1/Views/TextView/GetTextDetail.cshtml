@@ -1,0 +1,53 @@
+﻿@model CloudApp.Data.Model.CText
+@{
+    /**/
+
+    CloudApp.Web.Core.SeoUrlController seo = new CloudApp.Web.Core.SeoUrlController();
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    CloudApp.Web.Controllers.TextViewController tx = new CloudApp.Web.Controllers.TextViewController();
+    Layout = "~/blog/Theme/1/Views/Shared/_Layout.cshtml";
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+@{
+
+
+    @*<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h1>@Model.Name</h1>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <ul class="breadcrumb pull-right">
+                        @foreach (var k in tx.GetTextNavigation(Model, Request).Where(s => s.Name != "Hizmetler" && s.Name != "Site Yazıları").OrderBy(s => s.Level))
+                        {
+                            <li>
+                                <a href="/@k.Url">@k.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>*@
+
+
+CloudApp.Web.Models.ViewPartialObject mainMenu = pg.GetTextPartial(Model.Id, Request);
+if (mainMenu != null)
+{
+    Html.RenderPartial(mainMenu.ViewName, mainMenu.ViewModel);
+}
+}
+@section head
+    {
+    <link href="~/blog/Theme/3/Content/css/lightbox.min.css" rel="stylesheet" />
+    <title> @(Model.LanguageValues.FirstOrDefault(h=> h.Lang == lang)!=null? Model.LanguageValues.FirstOrDefault(h => h.Lang == lang).PageTitle : "") </title>
+    <meta name="description" content="@(Model.LanguageValues.FirstOrDefault(h=> h.Lang == lang)!=null? Model.LanguageValues.FirstOrDefault(h => h.Lang == lang).PageDescription : "")">
+    <meta name="keywords" content="@(Model.LanguageValues.FirstOrDefault(h=> h.Lang == lang)!=null? Model.LanguageValues.FirstOrDefault(h => h.Lang == lang).PageKeyword : "")">
+}
+
+@section scripts{
+   
+}

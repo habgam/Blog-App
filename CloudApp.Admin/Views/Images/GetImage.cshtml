@@ -1,0 +1,101 @@
+﻿@model CloudApp.Data.Model.CImage
+@using CloudApp.Data.Model
+@{
+    Layout = null;
+    List<string> languages = (List<string>)ViewBag.Languages;
+}
+@using (Html.BeginForm("GetImage", "Images", FormMethod.Post, new { @id = "frmNewAssignment", @class = "form", @enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="queryType" id="queryType" value="@ViewBag.type" />
+    <input type="hidden" name="queryId" id="queryId" value="@ViewBag.id" />
+    <input type="hidden" name="queryPictureId" id="queryPictureId" value="@ViewBag.PictureId" />
+    <div class="mediaWrapper row-fluid">
+        <div class="span5 imginfo" style="width:45%; margin-right:5%; float:left;">
+            @if (!String.IsNullOrEmpty(Request.QueryString["pictureId"]))
+            {
+
+                <img src="~/Image/300X150/@Model.OrganizationId.Value/@Model.ImageUrl" alt="" class="imgpreview img-polaroid" />
+                <div>
+
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="input-append">
+                            <div class="uneditable-input">
+                                <i class="glyphicon glyphicon-file fileupload-exists"></i>
+                                <span class="fileupload-preview"></span>
+                            </div>
+
+
+                            <span class="btn btn-default btn-file">
+                                <span class="fileupload-new">Dosyayı Seç</span>
+                                <span class="fileupload-exists">Değiştir</span>
+                                <input name="uploadFile" id="uploadFile" type="file" />
+                            </span>
+                            <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="glyphicon glyphicon-file fileupload-exists"></i>
+                            <span class="fileupload-preview"></span>
+                        </div>
+
+
+                        <span class="btn btn-default btn-file">
+                            <span class="fileupload-new">Dosyayı Seç</span>
+                            <span class="fileupload-exists">Değiştir</span>
+                            <input name="uploadFile" id="uploadFile" type="file" />
+                        </span>
+                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                    </div>
+                </div>
+            }
+
+            <p style="margin-top: 10px;">
+
+            </p>
+            <p>
+
+            </p>
+        </div><!--span3-->
+        <div class="span7 imgdetails" style="width:45%;  float:left;">
+            <p>
+                <label>Dil</label>
+                @Html.DropDownListFor(h => h.Language, new List<SelectListItem>() { new SelectListItem() { Value = "tr-TR", Text = "Türkçe" }, new SelectListItem() { Value = "en-US", Text = "İngilizce" } });
+            </p>
+           
+                <p>
+                    <label>İsmi:</label>
+                   @Html.TextBoxFor(g=>g.Name,new {@class= "input-block-level" })
+                       
+                </p>
+                <p>
+                    <label>Alt Text: </label>
+                    @Html.TextBoxFor(g => g.AltText, new { @class = "input-block-level" })
+                  
+                </p>
+
+                <p>
+
+                    <label>Açıklama: </label>
+                    @Html.TextBoxFor(g => g.Description, new { @class = "input-block-level" })
+                   
+                </p>
+          
+            <br />
+            <p>
+                <button type="submit" class="btn btn-primary"><span class="icon-ok icon-white"></span> Save Changes</button>
+                @if (!String.IsNullOrEmpty(Request.QueryString["pictureId"]))
+                {
+                    <a onclick="return ConfirmButton('Silme Onayı', 'Resmi Kaldırmak Üzeresiniz. Onaylıyor musunuz ?',@ViewBag.PictureId,'picture' )" class="btn"><span class="icon-trash"></span> Delete</a>
+                }
+            </p>
+        </div><!--span3-->
+    </div><!--imageWrapper-->
+
+}
+

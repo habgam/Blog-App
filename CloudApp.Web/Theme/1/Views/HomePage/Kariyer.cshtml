@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/blog/Theme/3/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-head" style="background: url(/blog/Theme/3/Content/img/kariyer-bg.jpg) no-repeat;">
+    <div class="page-slogan">
+        "yaşamı kolaylaştıran,<br />modern mimariye sahip<br /> güvenilir yapılar inşaa ediyoruz."
+    </div>
+</div>
+<div class="page-title">
+    <h1>Toprak TMF Kariyer</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 m-t-30">
+            <div class="form">
+                @using (Html.BeginForm("InsertForm", "HomePage", FormMethod.Post, new { url = "/yazi/site-yazilari-2/iletisim-5/", @header = "Kariyer", @subject = "Kariyer", @enctype = "multipart/form-data" }))
+    {
+            <input type="hidden" id="header" name="header" value="Kariyer">
+            <input type="hidden" id="subject" name="subject" value="Kariyer">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="hidden" id="ExternalFormHeader_1" name="ExternalFormHeader_1" value="Ad">
+                <input type="text" name="ExternalFormElement_1" id="ExternalFormElement_1" class="form-control" placeholder="Ad" required="" />
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="hidden" id="ExternalFormHeader_2" name="ExternalFormHeader_2" value="Soyad">
+                <input type="text" name="ExternalFormElement_2" id="ExternalFormElement_2" class="form-control" placeholder="Soyadınız" required="" />
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="hidden" id="ExternalFormHeader_3" name="ExternalFormHeader_3" value="Telefon">
+                <input type="text" name="ExternalFormElement_3" id="ExternalFormElement_3" class="form-control" placeholder="Telefon" required="" />
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="hidden" id="ExternalFormHeader_4" name="ExternalFormHeader_4" value="Email">
+                <input type="text" name="ExternalFormElement_4" id="ExternalFormElement_4" class="form-control" placeholder="Email" required="" />
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 m-b-30">
+                <label for="exampleFormControlFile1">CV Dosyanız (sadece .pdf ve .docx dosyaları yükleyebilirsiniz.)</label>
+
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <input type="hidden" id="ExternalFormHeader_5" name="ExternalFormHeader_5" value="Mesaj">
+                <textarea name="ExternalFormElement_5" id="ExternalFormElement_5" rows="2" cols="20" class="form-control" placeholder="Mesajınız" required=""></textarea>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn pull-right">GÖNDER</button>
+                <div class="g-recaptcha" data-sitekey="6LcmkF8UAAAAAF0xQwOgdZnLLXxl0NbOpZZ2yDYh"></div>
+            </div>
+}
+            </div>
+        </div>
+    </div>
+
+</div>

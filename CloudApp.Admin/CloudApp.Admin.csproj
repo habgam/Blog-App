@@ -1,0 +1,2064 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E37550F-1B32-4542-ABCC-ACAD6BECECDE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudApp.Admin</RootNamespace>
+    <AssemblyName>CloudApp.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>e336055a</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DiffPlex">
+      <HintPath>..\packages\DiffPlex.1.2.1\lib\portable-net40+sl50+win+wpa81+wp80\DiffPlex.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Analytics.v3">
+      <HintPath>..\packages\Google.Apis.Analytics.v3.1.10.0.1210\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Analytics.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.Mvc4">
+      <HintPath>..\packages\Google.Apis.Auth.Mvc.1.10.0\lib\net40\Google.Apis.Auth.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.10.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\GoogleAnalytics\GoogleAnalyticsApi.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AnnouncementController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HtmlConvertController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\ItemThemeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
+    <Compile Include="Controllers\TextController.cs" />
+    <Compile Include="Core\BaseController.cs" />
+    <Compile Include="Core\DiffMatchPatch.cs" />
+    <Compile Include="Core\ImageController.cs" />
+    <Compile Include="Core\UtilitiesControl.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\IdentityModels.cs" />
+    <Compile Include="Membership\MyPasswordHasher.cs" />
+    <Compile Include="Membership\UserStoreService.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\BouncyCastle.Crypto.pdb" />
+    <Content Include="bin\CloudApp.Admin.dll" />
+    <Content Include="bin\CloudApp.Admin.pdb" />
+    <Content Include="bin\CloudApp.Data.dll" />
+    <Content Include="bin\CloudApp.Data.pdb" />
+    <Content Include="bin\DiffPlex.dll" />
+    <Content Include="bin\Elmah.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Google.Apis.Analytics.v3.dll" />
+    <Content Include="bin\Google.Apis.Analytics.v3.pdb" />
+    <Content Include="bin\Google.Apis.Analytics.v3.xml" />
+    <Content Include="bin\Google.Apis.Auth.dll" />
+    <Content Include="bin\Google.Apis.Auth.Mvc4.dll" />
+    <Content Include="bin\Google.Apis.Auth.Mvc4.pdb" />
+    <Content Include="bin\Google.Apis.Auth.Mvc4.xml" />
+    <Content Include="bin\Google.Apis.Auth.pdb" />
+    <Content Include="bin\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="bin\Google.Apis.Auth.PlatformServices.pdb" />
+    <Content Include="bin\Google.Apis.Auth.PlatformServices.xml" />
+    <Content Include="bin\Google.Apis.Auth.xml" />
+    <Content Include="bin\Google.Apis.Core.dll" />
+    <Content Include="bin\Google.Apis.Core.pdb" />
+    <Content Include="bin\Google.Apis.Core.xml" />
+    <Content Include="bin\Google.Apis.dll" />
+    <Content Include="bin\Google.Apis.pdb" />
+    <Content Include="bin\Google.Apis.PlatformServices.dll" />
+    <Content Include="bin\Google.Apis.PlatformServices.pdb" />
+    <Content Include="bin\Google.Apis.PlatformServices.xml" />
+    <Content Include="bin\Google.Apis.xml" />
+    <Content Include="bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\HtmlAgilityPack.pdb" />
+    <Content Include="bin\HtmlAgilityPack.xml" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\log4net.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Threading.Tasks.dll" />
+    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
+    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml" />
+    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Microsoft.Threading.Tasks.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\BouncyCastle.Crypto.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\CloudApp.Admin.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\CloudApp.Admin.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\CloudApp.Data.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\CloudApp.Data.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\DiffPlex.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\EntityFramework.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Analytics.v3.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Analytics.v3.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.Mvc4.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.Mvc4.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Auth.PlatformServices.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Core.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.Core.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.PlatformServices.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Google.Apis.PlatformServices.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\HtmlAgilityPack.pdb" />
+    <Content Include="bin\Release\PublishOutput\bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\log4net.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Threading.Tasks.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Owin.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.Helpers.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.Mvc.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.Optimization.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.Razor.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.WebPages.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\WebGrease.dll" />
+    <Content Include="bin\Release\PublishOutput\bin\Zlib.Portable.dll" />
+    <Content Include="bin\Release\PublishOutput\Content\404.html" />
+    <Content Include="bin\Release\PublishOutput\Content\ajax\audio.html" />
+    <Content Include="bin\Release\PublishOutput\Content\ajax\chat.html" />
+    <Content Include="bin\Release\PublishOutput\Content\ajax\doc.html" />
+    <Content Include="bin\Release\PublishOutput\Content\ajax\image.html" />
+    <Content Include="bin\Release\PublishOutput\Content\ajax\video.html" />
+    <Content Include="bin\Release\PublishOutput\Content\blank.html" />
+    <Content Include="bin\Release\PublishOutput\Content\blog.html" />
+    <Content Include="bin\Release\PublishOutput\Content\bootstrap.html" />
+    <Content Include="bin\Release\PublishOutput\Content\boxes.html" />
+    <Content Include="bin\Release\PublishOutput\Content\buttons.html" />
+    <Content Include="bin\Release\PublishOutput\Content\calendar.html" />
+    <Content Include="bin\Release\PublishOutput\Content\charts.html" />
+    <Content Include="bin\Release\PublishOutput\Content\chat.html" />
+    <Content Include="bin\Release\PublishOutput\Content\css\animate.delay.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\animate.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap-fileupload.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap-theme.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap-theme.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap-timepicker.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\bootstrap.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\colorbox.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\colorpicker.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\font-awesome.min.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\fullcalendar.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\isotope.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\jquery.alerts.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\jquery.chosen.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\jquery.jgrowl.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\jquery.tagsinput.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\jquery.ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\lato.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\prettyPhoto.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\responsive-tables.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\roboto.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.brown.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.default.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.green.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.navyblue.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.palegreen.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\style.red.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\ui.spinner.css" />
+    <Content Include="bin\Release\PublishOutput\Content\css\uniform.tp.css" />
+    <Content Include="bin\Release\PublishOutput\Content\dashboard.html" />
+    <Content Include="bin\Release\PublishOutput\Content\discussion.html" />
+    <Content Include="bin\Release\PublishOutput\Content\editprofile.html" />
+    <Content Include="bin\Release\PublishOutput\Content\elements.html" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bla-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BlaIta-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bol-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BolIta-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Hai-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-HaiIta-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Lig-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-LigIta-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Reg-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-RegIta-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\SIL Open Font License 1.1.txt" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Google Android License.txt" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Black-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BlackItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensed-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Condensed-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-CondensedItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Italic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-LightItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-MediumItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Thin-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-ThinItalic-webfont.svg" />
+    <Content Include="bin\Release\PublishOutput\Content\forms.html" />
+    <Content Include="bin\Release\PublishOutput\Content\images\barmenu.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\bcarrow.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\bg1.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\blockquote.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\blog.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\border.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\calarrow.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\chat.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\chatimg.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\chatthumb.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\check.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\check2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\chosen-sprite.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\close.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\blank.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_background.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_hex.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_hsb_b.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_hsb_h.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_hsb_s.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_indic.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_overlay.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_rgb_b.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_rgb_g.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_rgb_r.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_select.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\colorpicker_submit.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_background.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_hex.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_hsb_b.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_hsb_h.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_hsb_s.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_indic.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_rgb_b.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_rgb_g.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_rgb_r.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\custom_submit.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\select.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\select2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\slider.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\comlogo.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\controls.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\droparrow.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\fLogo.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\glyphicons-halflings-white.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\glyphicons-halflings.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\iconsweets-icons-white.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\iconsweets-icons.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\bar.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\icon-archive.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\icon-cart.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\icon-event.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\icon-help.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\icon-images.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\message.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\search.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\users.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\image.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\leftpanelbg.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader1.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader10.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader11.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader12.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader13.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader14.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader15.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader16.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader17.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader18.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader19.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader2.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader20.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader21.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader22.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader23.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader24.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader25.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader26.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader27.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader28.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader29.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader3.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader30.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader4.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader5.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader6.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader7.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader8.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loaders\loader9.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loading.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\images\loading_background.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\logo.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\menuarrow.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\minimize.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\next.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\on.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\overlay.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\1.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\audio.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\nothumb.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb1.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb10.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb3.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb4.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb5.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb6.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb7.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb8.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\thumb9.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\photos\video.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\prev.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\profilethumb.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\sliderhor.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\sliderver.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\spinner.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\audio.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\doc.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image1.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image3.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image4.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image5.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\image6.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb1.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb10.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb3.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb4.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb5.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb6.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb7.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb8.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\thumb9.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\thumbs\video.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\transwhite.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\transwhite2.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\uniform\bg-input-focus.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\uniform\bg-input.png" />
+    <Content Include="bin\Release\PublishOutput\Content\images\uniform\sprite.png" />
+    <Content Include="bin\Release\PublishOutput\Content\index.html" />
+    <Content Include="bin\Release\PublishOutput\Content\invoice.html" />
+    <Content Include="bin\Release\PublishOutput\Content\js\bootstrap-fileupload.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\bootstrap-timepicker.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\bootstrap.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\bootstrap.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\charCount.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\charts.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\chat.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\chosen.jquery.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\colorpicker.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\custom.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\detectizr.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\elements.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\excanvas.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\excanvas.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.colorhelpers.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.image.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.navigate.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.selection.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.stack.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.symbol.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\jquery.flot.threshold.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\flot\LICENSE.txt" />
+    <Content Include="bin\Release\PublishOutput\Content\js\forms.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\fullcalendar.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\GoogleAnalytics.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\html5shiv.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery-1.10.2.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery-2.1.4.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery-ui-1.10.3.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.alerts.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.autogrow-textarea.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.bxSlider.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.colorbox-min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.cookies.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.dataTables.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.isotope.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.jgrowl.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.slimscroll.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.smartWizard.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.tagsinput.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.uniform.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\jquery.validate.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\media.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\modernizr.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\respond.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\responsive-tables.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\jquery.tinymce.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\langs\en.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\license.txt" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\css\advhr.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\js\rule.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advhr\rule.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\css\advimage.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\image.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\img\sample.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\js\image.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\css\advlink.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\js\advlink.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlink\link.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlist\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autolink\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autosave\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\autosave\langs\en.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\directionality\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\emotions.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\js\emotions.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\dialog.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\img\example.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\js\dialog.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\langs\en.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\fullpage.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\iespell\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\alert.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\button.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\buttons.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\confirm.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\corners.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\horizontal.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\vertical.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\skins\themepixels\window.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\inlinepopups\template.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\layer\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\lists\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\css\media.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\js\embed.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\js\media.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\media.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\js\pastetext.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\js\pasteword.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\pastetext.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\paste\pasteword.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\preview\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\preview\example.html" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\preview\jscripts\embed.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\preview\preview.html" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\print\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\print\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\save\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\save\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\spellchecker\css\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\css\props.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\js\props.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\props.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\style\readme.txt" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\cell.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\css\cell.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\css\row.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\css\table.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\js\cell.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\js\merge_cells.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\js\row.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\js\table.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\merge_cells.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\row.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\table\table.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\blank.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\css\template.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\js\template.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\template\template.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\about.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\anchor.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\charmap.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\color_picker.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\editor_template.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\editor_template_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\image.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\arrow.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\flash.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\icons.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\iframe.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\quicktime.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\realmedia.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\shockwave.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\trans.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\video.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\about.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\anchor.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\charmap.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\color_picker.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\image.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\link.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\js\source_editor.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\langs\en.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\link.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\shortcuts.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\default\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\dialog.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\buttons.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\items.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\menu_arrow.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\menu_check.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\progress.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\img\tabs.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\skins\themepixels\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\advanced\source_editor.htm" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\editor_template.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\editor_template_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\langs\en.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\skins\default\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\tiny_mce.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\tiny_mce_popup.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\tiny_mce_src.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\utils\editable_selects.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\utils\form_utils.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\utils\mctabs.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\tinymce\utils\validate.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\ui.spinner.min.js" />
+    <Content Include="bin\Release\PublishOutput\Content\js\wysiwyg.js" />
+    <Content Include="bin\Release\PublishOutput\Content\lockscreen.html" />
+    <Content Include="bin\Release\PublishOutput\Content\media.html" />
+    <Content Include="bin\Release\PublishOutput\Content\messages.html" />
+    <Content Include="bin\Release\PublishOutput\Content\people.html" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-apollo.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-clj.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-css.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-go.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-hs.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-lisp.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-lua.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-ml.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-n.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-proto.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-scala.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-sql.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-tex.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-vb.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-vhdl.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-wiki.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-xq.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\lang-yaml.js" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\prettify.css" />
+    <Content Include="bin\Release\PublishOutput\Content\prettify\prettify.js" />
+    <Content Include="bin\Release\PublishOutput\Content\registration.html" />
+    <Content Include="bin\Release\PublishOutput\Content\results.html" />
+    <Content Include="bin\Release\PublishOutput\Content\table-dynamic.html" />
+    <Content Include="bin\Release\PublishOutput\Content\table-static.html" />
+    <Content Include="bin\Release\PublishOutput\Content\timeline.html" />
+    <Content Include="bin\Release\PublishOutput\Content\topic.html" />
+    <Content Include="bin\Release\PublishOutput\Content\typography.html" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\02_Laptop.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\03_Laptop.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\04_Laptop.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\05_Ipad.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\06_Ipad.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\07_Ipad.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\08_Ipad.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\09_Ipad.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\10_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\11_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\12_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\13_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\14_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\15_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\16_Iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\air.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\imac.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\iphone.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\images\mini.png" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\index.html" />
+    <Content Include="bin\Release\PublishOutput\Content\welcome\style.css" />
+    <Content Include="bin\Release\PublishOutput\Content\wizards.html" />
+    <Content Include="bin\Release\PublishOutput\Content\wysiwyg.html" />
+    <Content Include="bin\Release\PublishOutput\favicon.ico" />
+    <Content Include="bin\Release\PublishOutput\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bin\Release\PublishOutput\Global.asax" />
+    <Content Include="bin\Release\PublishOutput\Scripts\bootstrap.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\bootstrap.min.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery-1.10.2.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery.validate.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery.validate.min.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\modernizr-2.6.2.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\respond.js" />
+    <Content Include="bin\Release\PublishOutput\Scripts\respond.min.js" />
+    <None Include="bin\Release\PublishOutput\Scripts\_references.js" />
+    <Content Include="bin\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\Zlib.Portable.dll" />
+    <Content Include="Content\404.html" />
+    <Content Include="Content\ajax\audio.html" />
+    <Content Include="Content\ajax\chat.html" />
+    <Content Include="Content\ajax\doc.html" />
+    <Content Include="Content\ajax\image.html" />
+    <Content Include="Content\ajax\video.html" />
+    <Content Include="Content\blank.html" />
+    <Content Include="Content\blog.html" />
+    <Content Include="Content\bootstrap.html" />
+    <Content Include="Content\boxes.html" />
+    <Content Include="Content\buttons.html" />
+    <Content Include="Content\calendar.html" />
+    <Content Include="Content\charts.html" />
+    <Content Include="Content\chat.html" />
+    <Content Include="Content\css\animate.delay.css" />
+    <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\bootstrap-fileupload.min.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\colorbox.css" />
+    <Content Include="Content\css\colorpicker.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\fullcalendar.css" />
+    <Content Include="Content\css\isotope.css" />
+    <Content Include="Content\css\jquery.alerts.css" />
+    <Content Include="Content\css\jquery.chosen.css" />
+    <Content Include="Content\css\jquery.jgrowl.css" />
+    <Content Include="Content\css\jquery.tagsinput.css" />
+    <Content Include="Content\css\jquery.ui.css" />
+    <Content Include="Content\css\lato.css" />
+    <Content Include="Content\css\prettyPhoto.css" />
+    <Content Include="Content\css\responsive-tables.css" />
+    <Content Include="Content\css\roboto.css" />
+    <Content Include="Content\css\style.brown.css" />
+    <Content Include="Content\css\style.default.css" />
+    <Content Include="Content\css\style.green.css" />
+    <Content Include="Content\css\style.navyblue.css" />
+    <Content Include="Content\css\style.palegreen.css" />
+    <Content Include="Content\css\style.red.css" />
+    <Content Include="Content\css\ui.spinner.css" />
+    <Content Include="Content\css\uniform.tp.css" />
+    <Content Include="Content\dashboard.html" />
+    <Content Include="Content\discussion.html" />
+    <Content Include="Content\editprofile.html" />
+    <Content Include="Content\elements.html" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\lato\Lato-Bla-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-BlaIta-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-Bol-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-BolIta-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-Hai-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-HaiIta-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-Lig-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-LigIta-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-Reg-webfont.svg" />
+    <Content Include="Content\fonts\lato\Lato-RegIta-webfont.svg" />
+    <Content Include="Content\fonts\lato\SIL Open Font License 1.1.txt" />
+    <Content Include="Content\fonts\roboto\Google Android License.txt" />
+    <Content Include="Content\fonts\roboto\Roboto-Black-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-BlackItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensed-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Condensed-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-CondensedItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Italic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-LightItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-MediumItalic-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin-webfont.svg" />
+    <Content Include="Content\fonts\roboto\Roboto-ThinItalic-webfont.svg" />
+    <Content Include="Content\forms.html" />
+    <Content Include="Content\images\barmenu.png" />
+    <Content Include="Content\images\bcarrow.png" />
+    <Content Include="Content\images\bg1.png" />
+    <Content Include="Content\images\blockquote.png" />
+    <Content Include="Content\images\blog.png" />
+    <Content Include="Content\images\border.png" />
+    <Content Include="Content\images\calarrow.png" />
+    <Content Include="Content\images\chat.png" />
+    <Content Include="Content\images\chatimg.png" />
+    <Content Include="Content\images\chatthumb.png" />
+    <Content Include="Content\images\check.png" />
+    <Content Include="Content\images\check2.png" />
+    <Content Include="Content\images\chosen-sprite.png" />
+    <Content Include="Content\images\close.png" />
+    <Content Include="Content\images\colorpicker\blank.gif" />
+    <Content Include="Content\images\colorpicker\colorpicker_background.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_hex.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_hsb_b.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_hsb_h.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_hsb_s.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_indic.gif" />
+    <Content Include="Content\images\colorpicker\colorpicker_overlay.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_rgb_b.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_rgb_g.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_rgb_r.png" />
+    <Content Include="Content\images\colorpicker\colorpicker_select.gif" />
+    <Content Include="Content\images\colorpicker\colorpicker_submit.png" />
+    <Content Include="Content\images\colorpicker\custom_background.png" />
+    <Content Include="Content\images\colorpicker\custom_hex.png" />
+    <Content Include="Content\images\colorpicker\custom_hsb_b.png" />
+    <Content Include="Content\images\colorpicker\custom_hsb_h.png" />
+    <Content Include="Content\images\colorpicker\custom_hsb_s.png" />
+    <Content Include="Content\images\colorpicker\custom_indic.gif" />
+    <Content Include="Content\images\colorpicker\custom_rgb_b.png" />
+    <Content Include="Content\images\colorpicker\custom_rgb_g.png" />
+    <Content Include="Content\images\colorpicker\custom_rgb_r.png" />
+    <Content Include="Content\images\colorpicker\custom_submit.png" />
+    <Content Include="Content\images\colorpicker\select.png" />
+    <Content Include="Content\images\colorpicker\select2.png" />
+    <Content Include="Content\images\colorpicker\slider.png" />
+    <Content Include="Content\images\comlogo.png" />
+    <Content Include="Content\images\controls.png" />
+    <Content Include="Content\images\droparrow.png" />
+    <Content Include="Content\images\fLogo.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\iconsweets-icons-white.png" />
+    <Content Include="Content\images\iconsweets-icons.png" />
+    <Content Include="Content\images\icons\bar.png" />
+    <Content Include="Content\images\icons\icon-archive.png" />
+    <Content Include="Content\images\icons\icon-cart.png" />
+    <Content Include="Content\images\icons\icon-event.png" />
+    <Content Include="Content\images\icons\icon-help.png" />
+    <Content Include="Content\images\icons\icon-images.png" />
+    <Content Include="Content\images\icons\message.png" />
+    <Content Include="Content\images\icons\search.png" />
+    <Content Include="Content\images\icons\users.png" />
+    <Content Include="Content\images\image.png" />
+    <Content Include="Content\images\leftpanelbg.png" />
+    <Content Include="Content\images\loaders\loader1.gif" />
+    <Content Include="Content\images\loaders\loader10.gif" />
+    <Content Include="Content\images\loaders\loader11.gif" />
+    <Content Include="Content\images\loaders\loader12.gif" />
+    <Content Include="Content\images\loaders\loader13.gif" />
+    <Content Include="Content\images\loaders\loader14.gif" />
+    <Content Include="Content\images\loaders\loader15.gif" />
+    <Content Include="Content\images\loaders\loader16.gif" />
+    <Content Include="Content\images\loaders\loader17.gif" />
+    <Content Include="Content\images\loaders\loader18.gif" />
+    <Content Include="Content\images\loaders\loader19.gif" />
+    <Content Include="Content\images\loaders\loader2.gif" />
+    <Content Include="Content\images\loaders\loader20.gif" />
+    <Content Include="Content\images\loaders\loader21.gif" />
+    <Content Include="Content\images\loaders\loader22.gif" />
+    <Content Include="Content\images\loaders\loader23.gif" />
+    <Content Include="Content\images\loaders\loader24.gif" />
+    <Content Include="Content\images\loaders\loader25.gif" />
+    <Content Include="Content\images\loaders\loader26.gif" />
+    <Content Include="Content\images\loaders\loader27.gif" />
+    <Content Include="Content\images\loaders\loader28.gif" />
+    <Content Include="Content\images\loaders\loader29.gif" />
+    <Content Include="Content\images\loaders\loader3.gif" />
+    <Content Include="Content\images\loaders\loader30.gif" />
+    <Content Include="Content\images\loaders\loader4.gif" />
+    <Content Include="Content\images\loaders\loader5.gif" />
+    <Content Include="Content\images\loaders\loader6.gif" />
+    <Content Include="Content\images\loaders\loader7.gif" />
+    <Content Include="Content\images\loaders\loader8.gif" />
+    <Content Include="Content\images\loaders\loader9.gif" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\loading_background.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\menuarrow.png" />
+    <Content Include="Content\images\minimize.png" />
+    <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\on.png" />
+    <Content Include="Content\images\overlay.png" />
+    <Content Include="Content\images\photos\1.png" />
+    <Content Include="Content\images\photos\audio.png" />
+    <Content Include="Content\images\photos\nothumb.png" />
+    <Content Include="Content\images\photos\thumb1.png" />
+    <Content Include="Content\images\photos\thumb10.png" />
+    <Content Include="Content\images\photos\thumb2.png" />
+    <Content Include="Content\images\photos\thumb3.png" />
+    <Content Include="Content\images\photos\thumb4.png" />
+    <Content Include="Content\images\photos\thumb5.png" />
+    <Content Include="Content\images\photos\thumb6.png" />
+    <Content Include="Content\images\photos\thumb7.png" />
+    <Content Include="Content\images\photos\thumb8.png" />
+    <Content Include="Content\images\photos\thumb9.png" />
+    <Content Include="Content\images\photos\video.png" />
+    <Content Include="Content\images\prev.png" />
+    <Content Include="Content\images\profilethumb.png" />
+    <Content Include="Content\images\sliderhor.png" />
+    <Content Include="Content\images\sliderver.png" />
+    <Content Include="Content\images\spinner.png" />
+    <Content Include="Content\images\thumbs\audio.png" />
+    <Content Include="Content\images\thumbs\doc.png" />
+    <Content Include="Content\images\thumbs\image1.png" />
+    <Content Include="Content\images\thumbs\image2.png" />
+    <Content Include="Content\images\thumbs\image3.png" />
+    <Content Include="Content\images\thumbs\image4.png" />
+    <Content Include="Content\images\thumbs\image5.png" />
+    <Content Include="Content\images\thumbs\image6.png" />
+    <Content Include="Content\images\thumbs\thumb1.png" />
+    <Content Include="Content\images\thumbs\thumb10.png" />
+    <Content Include="Content\images\thumbs\thumb2.png" />
+    <Content Include="Content\images\thumbs\thumb3.png" />
+    <Content Include="Content\images\thumbs\thumb4.png" />
+    <Content Include="Content\images\thumbs\thumb5.png" />
+    <Content Include="Content\images\thumbs\thumb6.png" />
+    <Content Include="Content\images\thumbs\thumb7.png" />
+    <Content Include="Content\images\thumbs\thumb8.png" />
+    <Content Include="Content\images\thumbs\thumb9.png" />
+    <Content Include="Content\images\thumbs\video.png" />
+    <Content Include="Content\images\transwhite.png" />
+    <Content Include="Content\images\transwhite2.png" />
+    <Content Include="Content\images\uniform\bg-input-focus.png" />
+    <Content Include="Content\images\uniform\bg-input.png" />
+    <Content Include="Content\images\uniform\sprite.png" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\invoice.html" />
+    <Content Include="Content\js\bootstrap-fileupload.min.js" />
+    <Content Include="Content\js\bootstrap-timepicker.min.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\charCount.js" />
+    <Content Include="Content\js\charts.js" />
+    <Content Include="Content\js\chat.js" />
+    <Content Include="Content\js\chosen.jquery.min.js" />
+    <Content Include="Content\js\colorpicker.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\detectizr.min.js" />
+    <Content Include="Content\js\elements.js" />
+    <Content Include="Content\js\excanvas.min.js" />
+    <Content Include="Content\js\flot\excanvas.min.js" />
+    <Content Include="Content\js\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.image.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.selection.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.stack.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Content\js\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Content\js\flot\LICENSE.txt" />
+    <Content Include="Content\js\forms.js" />
+    <Content Include="Content\js\fullcalendar.min.js" />
+    <Content Include="Content\js\GoogleAnalytics.js" />
+    <Content Include="Content\js\html5shiv.js" />
+    <Content Include="Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\js\jquery-2.1.4.min.js" />
+    <Content Include="Content\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\js\jquery-ui-1.10.3.min.js" />
+    <Content Include="Content\js\jquery.alerts.js" />
+    <Content Include="Content\js\jquery.autogrow-textarea.js" />
+    <Content Include="Content\js\jquery.bxSlider.min.js" />
+    <Content Include="Content\js\jquery.colorbox-min.js" />
+    <Content Include="Content\js\jquery.cookies.js" />
+    <Content Include="Content\js\jquery.dataTables.min.js" />
+    <Content Include="Content\js\jquery.isotope.min.js" />
+    <Content Include="Content\js\jquery.jgrowl.js" />
+    <Content Include="Content\js\jquery.slimscroll.js" />
+    <Content Include="Content\js\jquery.smartWizard.min.js" />
+    <Content Include="Content\js\jquery.tagsinput.min.js" />
+    <Content Include="Content\js\jquery.uniform.min.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\media.js" />
+    <Content Include="Content\js\modernizr.min.js" />
+    <Content Include="Content\js\respond.min.js" />
+    <Content Include="Content\js\responsive-tables.js" />
+    <Content Include="Content\js\tinymce\jquery.tinymce.js" />
+    <Content Include="Content\js\tinymce\langs\en.js" />
+    <Content Include="Content\js\tinymce\license.txt" />
+    <Content Include="Content\js\tinymce\plugins\advhr\css\advhr.css" />
+    <Content Include="Content\js\tinymce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\advhr\js\rule.js" />
+    <Content Include="Content\js\tinymce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\advhr\rule.htm" />
+    <Content Include="Content\js\tinymce\plugins\advimage\css\advimage.css" />
+    <Content Include="Content\js\tinymce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\advimage\image.htm" />
+    <Content Include="Content\js\tinymce\plugins\advimage\img\sample.gif" />
+    <Content Include="Content\js\tinymce\plugins\advimage\js\image.js" />
+    <Content Include="Content\js\tinymce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\advlink\css\advlink.css" />
+    <Content Include="Content\js\tinymce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\advlink\js\advlink.js" />
+    <Content Include="Content\js\tinymce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\advlink\link.htm" />
+    <Content Include="Content\js\tinymce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\autosave\langs\en.js" />
+    <Content Include="Content\js\tinymce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\emotions\emotions.htm" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Content\js\tinymce\plugins\emotions\js\emotions.js" />
+    <Content Include="Content\js\tinymce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\example\dialog.htm" />
+    <Content Include="Content\js\tinymce\plugins\example\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\example\img\example.gif" />
+    <Content Include="Content\js\tinymce\plugins\example\js\dialog.js" />
+    <Content Include="Content\js\tinymce\plugins\example\langs\en.js" />
+    <Content Include="Content\js\tinymce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Content\js\tinymce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Content\js\tinymce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\alert.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\button.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\buttons.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\confirm.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\corners.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\horizontal.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\img\vertical.gif" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\skins\themepixels\window.css" />
+    <Content Include="Content\js\tinymce\plugins\inlinepopups\template.htm" />
+    <Content Include="Content\js\tinymce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\layer\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\lists\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\media\css\media.css" />
+    <Content Include="Content\js\tinymce\plugins\media\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\media\js\embed.js" />
+    <Content Include="Content\js\tinymce\plugins\media\js\media.js" />
+    <Content Include="Content\js\tinymce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\media\media.htm" />
+    <Content Include="Content\js\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Content\js\tinymce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\js\pastetext.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\js\pasteword.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\paste\pastetext.htm" />
+    <Content Include="Content\js\tinymce\plugins\paste\pasteword.htm" />
+    <Content Include="Content\js\tinymce\plugins\preview\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\preview\example.html" />
+    <Content Include="Content\js\tinymce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Content\js\tinymce\plugins\preview\preview.html" />
+    <Content Include="Content\js\tinymce\plugins\print\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\save\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Content\js\tinymce\plugins\spellchecker\css\content.css" />
+    <Content Include="Content\js\tinymce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Content\js\tinymce\plugins\style\css\props.css" />
+    <Content Include="Content\js\tinymce\plugins\style\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\style\js\props.js" />
+    <Content Include="Content\js\tinymce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\style\props.htm" />
+    <Content Include="Content\js\tinymce\plugins\style\readme.txt" />
+    <Content Include="Content\js\tinymce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\table\cell.htm" />
+    <Content Include="Content\js\tinymce\plugins\table\css\cell.css" />
+    <Content Include="Content\js\tinymce\plugins\table\css\row.css" />
+    <Content Include="Content\js\tinymce\plugins\table\css\table.css" />
+    <Content Include="Content\js\tinymce\plugins\table\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\table\js\cell.js" />
+    <Content Include="Content\js\tinymce\plugins\table\js\merge_cells.js" />
+    <Content Include="Content\js\tinymce\plugins\table\js\row.js" />
+    <Content Include="Content\js\tinymce\plugins\table\js\table.js" />
+    <Content Include="Content\js\tinymce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\table\merge_cells.htm" />
+    <Content Include="Content\js\tinymce\plugins\table\row.htm" />
+    <Content Include="Content\js\tinymce\plugins\table\table.htm" />
+    <Content Include="Content\js\tinymce\plugins\template\blank.htm" />
+    <Content Include="Content\js\tinymce\plugins\template\css\template.css" />
+    <Content Include="Content\js\tinymce\plugins\template\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\template\js\template.js" />
+    <Content Include="Content\js\tinymce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\plugins\template\template.htm" />
+    <Content Include="Content\js\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Content\js\tinymce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Content\js\tinymce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\about.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\anchor.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\charmap.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\color_picker.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\editor_template.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\editor_template_src.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\image.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\arrow.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\flash.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\icons.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\iframe.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\trans.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\video.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\about.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\anchor.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\charmap.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\color_picker.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\image.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\link.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\js\source_editor.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\langs\en.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Content\js\tinymce\themes\advanced\link.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\shortcuts.htm" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\content.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\content.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\dialog.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\buttons.png" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\items.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\menu_arrow.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\menu_check.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\progress.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\img\tabs.gif" />
+    <Content Include="Content\js\tinymce\themes\advanced\skins\themepixels\ui.css" />
+    <Content Include="Content\js\tinymce\themes\advanced\source_editor.htm" />
+    <Content Include="Content\js\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Content\js\tinymce\themes\simple\editor_template_src.js" />
+    <Content Include="Content\js\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Content\js\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Content\js\tinymce\themes\simple\skins\default\content.css" />
+    <Content Include="Content\js\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Content\js\tinymce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Content\js\tinymce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Content\js\tinymce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Content\js\tinymce\tiny_mce.js" />
+    <Content Include="Content\js\tinymce\tiny_mce_popup.js" />
+    <Content Include="Content\js\tinymce\tiny_mce_src.js" />
+    <Content Include="Content\js\tinymce\utils\editable_selects.js" />
+    <Content Include="Content\js\tinymce\utils\form_utils.js" />
+    <Content Include="Content\js\tinymce\utils\mctabs.js" />
+    <Content Include="Content\js\tinymce\utils\validate.js" />
+    <Content Include="Content\js\ui.spinner.min.js" />
+    <Content Include="Content\js\wysiwyg.js" />
+    <Content Include="Content\lockscreen.html" />
+    <Content Include="Content\media.html" />
+    <Content Include="Content\messages.html" />
+    <Content Include="Content\people.html" />
+    <Content Include="Content\prettify\lang-apollo.js" />
+    <Content Include="Content\prettify\lang-clj.js" />
+    <Content Include="Content\prettify\lang-css.js" />
+    <Content Include="Content\prettify\lang-go.js" />
+    <Content Include="Content\prettify\lang-hs.js" />
+    <Content Include="Content\prettify\lang-lisp.js" />
+    <Content Include="Content\prettify\lang-lua.js" />
+    <Content Include="Content\prettify\lang-ml.js" />
+    <Content Include="Content\prettify\lang-n.js" />
+    <Content Include="Content\prettify\lang-proto.js" />
+    <Content Include="Content\prettify\lang-scala.js" />
+    <Content Include="Content\prettify\lang-sql.js" />
+    <Content Include="Content\prettify\lang-tex.js" />
+    <Content Include="Content\prettify\lang-vb.js" />
+    <Content Include="Content\prettify\lang-vhdl.js" />
+    <Content Include="Content\prettify\lang-wiki.js" />
+    <Content Include="Content\prettify\lang-xq.js" />
+    <Content Include="Content\prettify\lang-yaml.js" />
+    <Content Include="Content\prettify\prettify.css" />
+    <Content Include="Content\prettify\prettify.js" />
+    <Content Include="Content\registration.html" />
+    <Content Include="Content\results.html" />
+    <Content Include="Content\table-dynamic.html" />
+    <Content Include="Content\table-static.html" />
+    <Content Include="Content\timeline.html" />
+    <Content Include="Content\topic.html" />
+    <Content Include="Content\typography.html" />
+    <Content Include="Content\welcome\images\02_Laptop.png" />
+    <Content Include="Content\welcome\images\03_Laptop.png" />
+    <Content Include="Content\welcome\images\04_Laptop.png" />
+    <Content Include="Content\welcome\images\05_Ipad.png" />
+    <Content Include="Content\welcome\images\06_Ipad.png" />
+    <Content Include="Content\welcome\images\07_Ipad.png" />
+    <Content Include="Content\welcome\images\08_Ipad.png" />
+    <Content Include="Content\welcome\images\09_Ipad.png" />
+    <Content Include="Content\welcome\images\10_Iphone.png" />
+    <Content Include="Content\welcome\images\11_Iphone.png" />
+    <Content Include="Content\welcome\images\12_Iphone.png" />
+    <Content Include="Content\welcome\images\13_Iphone.png" />
+    <Content Include="Content\welcome\images\14_Iphone.png" />
+    <Content Include="Content\welcome\images\15_Iphone.png" />
+    <Content Include="Content\welcome\images\16_Iphone.png" />
+    <Content Include="Content\welcome\images\air.png" />
+    <Content Include="Content\welcome\images\imac.png" />
+    <Content Include="Content\welcome\images\iphone.png" />
+    <Content Include="Content\welcome\images\mini.png" />
+    <Content Include="Content\welcome\index.html" />
+    <Content Include="Content\welcome\style.css" />
+    <Content Include="Content\wizards.html" />
+    <Content Include="Content\wysiwyg.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\.DS_Store" />
+    <Content Include="Content\fonts\.DS_Store" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\lato\Lato-Bla-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-Bla-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-Bla-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-BlaIta-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-BlaIta-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-BlaIta-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-Bol-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-Bol-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-Bol-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-BolIta-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-BolIta-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-BolIta-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-Hai-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-Hai-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-Hai-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-HaiIta-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-HaiIta-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-HaiIta-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-Lig-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-Lig-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-Lig-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-LigIta-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-LigIta-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-LigIta-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-Reg-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-Reg-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-Reg-webfont.woff" />
+    <Content Include="Content\fonts\lato\Lato-RegIta-webfont.eot" />
+    <Content Include="Content\fonts\lato\Lato-RegIta-webfont.ttf" />
+    <Content Include="Content\fonts\lato\Lato-RegIta-webfont.woff" />
+    <Content Include="Content\fonts\roboto\.DS_Store" />
+    <Content Include="Content\fonts\roboto\Roboto-Black-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Black-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Black-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-BlackItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-BlackItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-BlackItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensed-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensed-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensed-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-BoldItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Condensed-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Condensed-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Condensed-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-CondensedItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-CondensedItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-CondensedItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Italic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Italic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Italic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-LightItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-LightItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-LightItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-MediumItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-MediumItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-MediumItalic-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin-webfont.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-ThinItalic-webfont.eot" />
+    <Content Include="Content\fonts\roboto\Roboto-ThinItalic-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\Roboto-ThinItalic-webfont.woff" />
+    <Content Include="Content\images\.DS_Store" />
+    <Content Include="Content\images\colorpicker\Thumbs.db" />
+    <Content Include="Content\images\icons\.DS_Store" />
+    <Content Include="Content\js\.DS_Store" />
+    <Content Include="Api\GoogleAnalytics\ApiKey\AnalyticsYilmazerfightakademi-6964b64fdfb4.p12" />
+    <Content Include="bin\CloudApp.Admin.dll.config" />
+    <Content Include="bin\CloudApp.Data.dll.config" />
+    <Content Include="bin\Release\PublishOutput\Api\GoogleAnalytics\ApiKey\AnalyticsYilmazerfightakademi-6964b64fdfb4.p12" />
+    <Content Include="bin\Release\PublishOutput\bin\CloudApp.Data.dll.config" />
+    <Content Include="bin\Release\PublishOutput\Content\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bla-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bla-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bla-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BlaIta-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BlaIta-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BlaIta-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bol-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bol-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Bol-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BolIta-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BolIta-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-BolIta-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Hai-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Hai-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Hai-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-HaiIta-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-HaiIta-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-HaiIta-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Lig-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Lig-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Lig-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-LigIta-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-LigIta-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-LigIta-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Reg-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Reg-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-Reg-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-RegIta-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-RegIta-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\lato\Lato-RegIta-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Black-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Black-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Black-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BlackItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BlackItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BlackItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensed-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensed-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensed-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldCondensedItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-BoldItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Condensed-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Condensed-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Condensed-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-CondensedItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-CondensedItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-CondensedItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Italic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Italic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Italic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-LightItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-LightItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-LightItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-MediumItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-MediumItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-MediumItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Thin-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Thin-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-Thin-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-ThinItalic-webfont.eot" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-ThinItalic-webfont.ttf" />
+    <Content Include="bin\Release\PublishOutput\Content\fonts\roboto\Roboto-ThinItalic-webfont.woff" />
+    <Content Include="bin\Release\PublishOutput\Content\images\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\Content\images\colorpicker\Thumbs.db" />
+    <Content Include="bin\Release\PublishOutput\Content\images\icons\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\Content\js\.DS_Store" />
+    <Content Include="bin\Release\PublishOutput\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bin\Release\PublishOutput\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bin\Release\PublishOutput\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="bin\Release\PublishOutput\packages.config" />
+    <Content Include="bin\Release\PublishOutput\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\Login.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\Register.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ResetPassword.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\SendCode.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\VerifyCode.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Announcement\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Category\GetCategory.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Category\InsertCategory.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Form\CreateForm.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Form\FormDetail.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Form\FormList.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Form\List.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Home\Dashboard.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Home\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Home\OuthGoogle.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\HtmlConvert\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Images\GetImage.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Images\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\ItemTheme\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\ItemTheme\Insert.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Menu\GetMenu.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Menu\GetSubMenuItem.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Menu\InsertMenu.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Menu\InsertSubMenu.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Organization\EditOrganization.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Organization\ResetPassword.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\Error.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\Lockout.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_BreadCrumbs.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_Footer.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_Layout.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_ListPaging.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Slider\GetSlider.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Slider\InsertSlider.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Text\Index.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Text\Insert.cshtml" />
+    <Content Include="bin\Release\PublishOutput\Views\Web.config" />
+    <Content Include="bin\Release\PublishOutput\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\werwer.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Theme\1\Content\contact.html" />
+    <Content Include="Theme\1\Content\css\elastislide.css" />
+    <Content Include="Theme\1\Content\css\jquery.bxslider.css" />
+    <Content Include="Theme\1\Content\css\lytebox.css" />
+    <Content Include="Theme\1\Content\css\normalize.css" />
+    <Content Include="Theme\1\Content\css\reset.css" />
+    <Content Include="Theme\1\Content\css\Site.css" />
+    <Content Include="Theme\1\Content\css\style.css" />
+    <Content Include="Theme\1\Content\img\ajax-loader.gif" />
+    <Content Include="Theme\1\Content\img\black.png" />
+    <Content Include="Theme\1\Content\img\bornoz.jpg" />
+    <Content Include="Theme\1\Content\img\cicek-havlu.jpg" />
+    <Content Include="Theme\1\Content\img\dort-mevsim.jpg" />
+    <Content Include="Theme\1\Content\img\esuvari_bg.jpg" />
+    <Content Include="Theme\1\Content\img\esuvari_bottom.png" />
+    <Content Include="Theme\1\Content\img\Esuvari_Logo.png" />
+    <Content Include="Theme\1\Content\img\Esuvari__Mobile_Logo.png" />
+    <Content Include="Theme\1\Content\img\facebook.png" />
+    <Content Include="Theme\1\Content\img\gevseme-takimlari.jpg" />
+    <Content Include="Theme\1\Content\img\havlu-urun1.jpg" />
+    <Content Include="Theme\1\Content\img\havlu.jpg" />
+    <Content Include="Theme\1\Content\img\header_bg.png" />
+    <Content Include="Theme\1\Content\img\indir.png" />
+    <Content Include="Theme\1\Content\img\instagram.png" />
+    <Content Include="Theme\1\Content\img\line.jpg" />
+    <Content Include="Theme\1\Content\img\mail.png" />
+    <Content Include="Theme\1\Content\img\nakisli-havlu.jpg" />
+    <Content Include="Theme\1\Content\img\nav.png" />
+    <Content Include="Theme\1\Content\img\nav_thumbs.png" />
+    <Content Include="Theme\1\Content\img\next.png" />
+    <Content Include="Theme\1\Content\img\nextOver.png" />
+    <Content Include="Theme\1\Content\img\pattern.png" />
+    <Content Include="Theme\1\Content\img\phone.png" />
+    <Content Include="Theme\1\Content\img\pike.jpg" />
+    <Content Include="Theme\1\Content\img\prev.png" />
+    <Content Include="Theme\1\Content\img\prevOver.png" />
+    <Content Include="Theme\1\Content\img\slide.jpg" />
+    <Content Include="Theme\1\Content\img\slide.png" />
+    <Content Include="Theme\1\Content\img\slide2.jpg" />
+    <Content Include="Theme\1\Content\img\slide3.JPG" />
+    <Content Include="Theme\1\Content\img\twitter.png" />
+    <Content Include="Theme\1\Content\img\urun1.jpg" />
+    <Content Include="Theme\1\Content\img\uyku-setleri.jpg" />
+    <Content Include="Theme\1\Content\img\views.png" />
+    <Content Include="Theme\1\Content\img\wrap_bg.jpg" />
+    <Content Include="Theme\1\Content\img\yastik-yorgan.jpg" />
+    <Content Include="Theme\1\Content\img\yatak-ortusu.jpg" />
+    <Content Include="Theme\1\Content\img\yevtasarim.png" />
+    <Content Include="Theme\1\Content\index.html" />
+    <Content Include="Theme\1\Content\js\gallery.js" />
+    <Content Include="Theme\1\Content\js\jquery.bxslider.js" />
+    <Content Include="Theme\1\Content\js\jquery.bxslider.min.js" />
+    <Content Include="Theme\1\Content\js\jquery.easing.1.3.js" />
+    <Content Include="Theme\1\Content\js\jquery.elastislide.js" />
+    <Content Include="Theme\1\Content\js\jquery.js" />
+    <Content Include="Theme\1\Content\js\jquery.tmpl.min.js" />
+    <Content Include="Theme\1\Content\js\lytebox.js" />
+    <Content Include="Theme\1\Content\js\yevtasarim.js" />
+    <Content Include="Theme\1\Content\text-1.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Category\GetCategory.cshtml" />
+    <Content Include="Views\Category\InsertCategory.cshtml" />
+    <Content Include="Views\ItemTheme\Index.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_ListPaging.cshtml" />
+    <Content Include="Views\ItemTheme\Insert.cshtml" />
+    <Content Include="Views\Text\Index.cshtml" />
+    <Content Include="Views\Text\Insert.cshtml" />
+    <Content Include="Views\Menu\InsertMenu.cshtml" />
+    <Content Include="Views\Menu\GetMenu.cshtml" />
+    <Content Include="Views\Menu\GetSubMenuItem.cshtml" />
+    <Content Include="Views\Menu\InsertSubMenu.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
+    <Content Include="Views\Images\GetImage.cshtml" />
+    <Content Include="Views\Slider\GetSlider.cshtml" />
+    <Content Include="Views\Slider\InsertSlider.cshtml" />
+    <Content Include="Views\Organization\EditOrganization.cshtml" />
+    <Content Include="Views\Organization\ResetPassword.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Home\OuthGoogle.cshtml" />
+    <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\HtmlConvert\Index.cshtml" />
+    <Content Include="Views\Form\CreateForm.cshtml" />
+    <Content Include="Views\Form\List.cshtml" />
+    <Content Include="Views\Form\FormList.cshtml" />
+    <Content Include="Views\Form\FormDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Image\1140X400\" />
+    <Folder Include="Image\150X300\" />
+    <Folder Include="Image\300X150\" />
+    <Folder Include="Image\360X300\" />
+    <Folder Include="Image\800X800\3\" />
+    <Folder Include="Image\Orji\" />
+    <Folder Include="Temporary\1\HtmlConvert\ZipFile\" />
+    <Folder Include="Views\AuthCallback\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudApp.Data\CloudApp.Data.csproj">
+      <Project>{972778a6-5d88-4423-9a5c-f085d4468b54}</Project>
+      <Name>CloudApp.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53013</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53013/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

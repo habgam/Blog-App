@@ -1,0 +1,63 @@
+﻿@model List<CloudApp.Data.ViewModel.FormViewListModel>
+@{
+    List<string> headerList = (List<string>)ViewBag.HeaderList;
+}
+
+
+<div class="rightpanel">
+
+    @*@Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)*@
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Form</h5>
+            <h1>@ViewBag.PageHeader</h1>
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+            <h4 class="widgettitle">Liste</h4>
+            <table class="table table-bordered responsive">
+                <thead>
+                    <tr>
+                        @foreach (var item in headerList)
+                        {
+                            <th>@item</th>
+                        }
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @foreach (var itemIn in headerList)
+                            {
+                                <td style="vertical-align:middle"> @item.Parameters.FirstOrDefault(f => f.Key == itemIn).Value</td>
+                            }
+                            <td class="centeralign" style="vertical-align:middle"><a style="cursor:pointer;" onclick="return ConfirmButton('Silme Onayı', 'Kaydı Silmek Üzeresiniz. Onaylıyor musunuz ?',@item.FormListId,'formlist' )" class="deleterow"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            <td class="centeralign" style="vertical-align:middle"><a href="/blog/Admin/Form/FormDetail/@item.FormListId" class="deleterow"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+            @*@Html.Partial("../Shared/_ListPaging", new CloudApp.Data.ViewModel.PagingModel { TotalCount = Convert.ToInt32(ViewBag.ListCount), CurrentPage = Convert.ToInt32(ViewBag.CurrentPage) })*@
+
+            @Html.Partial("../Shared/_Footer")
+            <!--footer-->
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+@section scripts{
+
+}

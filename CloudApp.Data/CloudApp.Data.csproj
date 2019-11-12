@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{972778A6-5D88-4423-9A5C-F085D4468B54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudApp.Data</RootNamespace>
+    <AssemblyName>CloudApp.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CAddressBindingsConfiguration.cs" />
+    <Compile Include="Configuration\CAdminMenuConfiguration.cs" />
+    <Compile Include="Configuration\CAnnouncementConfiguration.cs" />
+    <Compile Include="Configuration\CCategoryConfiguration.cs" />
+    <Compile Include="Configuration\CCategoryLanguageConfiguration.cs" />
+    <Compile Include="Configuration\CFormListConfiguration.cs" />
+    <Compile Include="Configuration\CFormsConfiguration.cs" />
+    <Compile Include="Configuration\CImageConfiguration.cs" />
+    <Compile Include="Configuration\CItemThemeConfiguration.cs" />
+    <Compile Include="Configuration\CMenuConfiguration.cs" />
+    <Compile Include="Configuration\CMenuItemConfiguration.cs" />
+    <Compile Include="Configuration\COrganizationConfiguration.cs" />
+    <Compile Include="Configuration\CSliderConfiguration.cs" />
+    <Compile Include="Configuration\CTextConfiguration.cs" />
+    <Compile Include="Configuration\CTextLanguageConfiguration.cs" />
+    <Compile Include="Configuration\CUserConfiguration.cs" />
+    <Compile Include="DbDataContext.cs" />
+    <Compile Include="Enum\EActiveStatus.cs" />
+    <Compile Include="Enum\EAlertType.cs" />
+    <Compile Include="Enum\EImageType.cs" />
+    <Compile Include="Enum\EItemTheme.cs" />
+    <Compile Include="Enum\EMenuType.cs" />
+    <Compile Include="Enum\EResultType.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="Migrations\201707141643318_initial.cs" />
+    <Compile Include="Migrations\201707141643318_initial.Designer.cs">
+      <DependentUpon>201707141643318_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707151602102_addModelHeader.cs" />
+    <Compile Include="Migrations\201707151602102_addModelHeader.Designer.cs">
+      <DependentUpon>201707151602102_addModelHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805261317525_Add_Cform.cs" />
+    <Compile Include="Migrations\201805261317525_Add_Cform.Designer.cs">
+      <DependentUpon>201805261317525_Add_Cform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805261512074_Edit-CForm.cs" />
+    <Compile Include="Migrations\201805261512074_Edit-CForm.Designer.cs">
+      <DependentUpon>201805261512074_Edit-CForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806252016080_Language_Column.cs" />
+    <Compile Include="Migrations\201806252016080_Language_Column.Designer.cs">
+      <DependentUpon>201806252016080_Language_Column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806292023344_image-languages.cs" />
+    <Compile Include="Migrations\201806292023344_image-languages.Designer.cs">
+      <DependentUpon>201806292023344_image-languages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806301603233_editColumn.cs" />
+    <Compile Include="Migrations\201806301603233_editColumn.Designer.cs">
+      <DependentUpon>201806301603233_editColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\CAddressBindings.cs" />
+    <Compile Include="Model\CAdminMenu.cs" />
+    <Compile Include="Model\CAnnouncement.cs" />
+    <Compile Include="Model\CCategory.cs" />
+    <Compile Include="Model\CCategoryLanguage.cs" />
+    <Compile Include="Model\CForm.cs" />
+    <Compile Include="Model\CFormList.cs" />
+    <Compile Include="Model\CMenu.cs" />
+    <Compile Include="Model\CMenuItem.cs" />
+    <Compile Include="Model\CMenuItemLanguage.cs" />
+    <Compile Include="Model\CMenuItemLanguageConfiguration.cs" />
+    <Compile Include="Model\COrganization.cs" />
+    <Compile Include="Model\CItemTheme.cs" />
+    <Compile Include="Model\CSlider.cs" />
+    <Compile Include="Model\CText.cs" />
+    <Compile Include="Model\CImage.cs" />
+    <Compile Include="Model\CTextLanguage.cs" />
+    <Compile Include="Model\CUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CaptchaResponseViewModel.cs" />
+    <Compile Include="ViewModel\FormViewListModel.cs" />
+    <Compile Include="ViewModel\GoogleApiViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PagingModel.cs" />
+    <Compile Include="ViewModel\ViewAlert.cs" />
+    <Compile Include="ViewModel\ViewBreadCrumb.cs" />
+    <Compile Include="ViewModel\ViewMenuItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Provider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707141643318_initial.resx">
+      <DependentUpon>201707141643318_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707151602102_addModelHeader.resx">
+      <DependentUpon>201707151602102_addModelHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805261317525_Add_Cform.resx">
+      <DependentUpon>201805261317525_Add_Cform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805261512074_Edit-CForm.resx">
+      <DependentUpon>201805261512074_Edit-CForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806252016080_Language_Column.resx">
+      <DependentUpon>201806252016080_Language_Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292023344_image-languages.resx">
+      <DependentUpon>201806292023344_image-languages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806301603233_editColumn.resx">
+      <DependentUpon>201806301603233_editColumn.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,28 @@
+﻿@model CloudApp.Data.ViewModel.PagingModel
+@{
+}
+<div style="background-color:#eee; text-align:right;">
+   
+    <ul class="pagination pagination-sm" style="margin:5px;">
+        <li class="disabled"><a>Previous</a></li>
+        @for(int i =1 ; i<=(Model.TotalCount/15)+1;i++)
+        {
+            if(i==Model.CurrentPage)
+            {
+                @*@Html.Raw(Request.Url.Fragment)*@
+                <li class="active"><a href='@Request.Url.AbsolutePath?Id=@Request.QueryString["Id"]&Page=@i '>@i</a></li>
+            }
+            else
+            {
+                <li><a href='@Request.Url.AbsolutePath?Id=@Request.QueryString["Id"]&Page=@i '>@i</a></li>
+            }
+        }
+        @*<li class="disabled"><a>Previous</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>*@
+        <li><a href="#">Next</a></li>
+    </ul>
+</div>

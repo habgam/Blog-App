@@ -1,0 +1,103 @@
+﻿@model List<CloudApp.Data.ViewModel.ViewMenuItem>
+
+@if (Model.Count == 0)
+{
+    <div class="leftmenu">
+        <ul class="nav nav-tabs nav-stacked">
+
+            <li class="dropdown">
+                <a href=""><span class="iconfa-pencil"></span> Menüler</a>
+                <ul>
+                    <li><a href="/blog/Admin/Menu/InsertMenu">Menü Ekle</a></li>
+                    <li><a href="/blog/Admin/Menu/GetMenu/?Id=0&page=1">Menüler</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href=""><span class="iconfa-briefcase"></span> Yazılar</a>
+                <ul>
+                    <li><a href="/blog/Admin/Text/Insert">Yazı Ekle</a></li>
+                    <li><a href="/blog/Admin/Text/Index/?Id=0&page=1">Yazılar</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href=""><span class="iconfa-briefcase"></span> Formlar</a>
+                <ul>
+                    <li><a href="/blog/Admin/Form/CreateForm">Form Ekle</a></li>
+                    <li><a href="/blog/Admin/Form/List?page=1">Formlar</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href=""><span class="iconfa-th-list"></span> Kategoriler</a>
+                <ul>
+                    <li><a href="/blog/Admin/Category/InsertCategory">Kategori Ekle</a></li>
+                    <li><a href="/blog/Admin/Category/GetCategory/?id=0&page=1">Kategoriler</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href=""><span class="iconfa-th-list"></span> Modül Temaları</a>
+                <ul>
+                    <li><a href="/blog/Admin/ItemTheme/Insert">Tema Ekle</a></li>
+                    <li><a href="/blog/Admin/ItemTheme/Index/?Id=0&page=1">Temalar</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href=""><span class="iconfa-th-list"></span> Slider</a>
+                <ul>
+                    <li><a href="/blog/Admin/Slider/InsertSlider">Slider Ekle</a></li>
+                    <li><a href="/blog/Admin/Slider/GetSlider/?Id=0&page=1">Slider</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href=""><span class="iconfa-th-list"></span> Html Çevirici</a>
+                <ul>
+                    <li><a href="/blog/Admin/HtmlConvert/Index">Çevirici</a></li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div><!--leftmenu-->
+}
+else
+{
+
+    <div class="leftmenu">
+        <ul class="nav nav-tabs nav-stacked">
+           
+           
+
+            @foreach (var item in Model)
+            {
+
+                if (item.SubMenu != null && item.SubMenu.Count != 0)
+                {
+                    @:  <li class="dropdown">
+                        }
+                        else
+                        {
+                    @:  <li>
+                        }
+                        <a href="/@item.Url"><span class="iconfa-pencil"></span> @item.Name</a>
+                        if (item.SubMenu != null && item.SubMenu.Count != 0)
+                        {
+                        <ul>
+                            @foreach (var subItem in item.SubMenu)
+                                            {
+                                <li><a href="/@subItem.Url">@subItem.Name</a></li>
+                                            }
+                        </ul>
+                        }
+                   @: </li>
+                    }
+                   
+
+                </ul>
+            </div><!--leftmenu-->
+}

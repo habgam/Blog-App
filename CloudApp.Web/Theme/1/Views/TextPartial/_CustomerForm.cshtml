@@ -1,0 +1,969 @@
+﻿@{
+    CloudApp.Web.Controllers.HomePageController pg = new CloudApp.Web.Controllers.HomePageController();
+    string lang = ViewContext.RouteData.Values["lang"].ToString();
+}
+
+@Html.Raw(TempData["Message"])
+<div class="index-banner">
+    <img src="/blog/Theme/1/Content/img/figure.png" />
+    <h1>@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_header", culture: lang)</h1>
+    <img src="/blog/Theme/1/Content/img/figure2.png" />
+</div>
+@using (Html.BeginForm("InsertForm", "HomePage", new { url = "/yazi/site-yazilari-2/iletisim-5/", header = "Müşteri Memnuniyet", subject = "Müşteri Memnuniyet", whoSendMail = "kalite@ozgullu.com.tr", @enctype = "multipart/form-data" }))
+{
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <input type="hidden" id="ExternalFormHeader_1" name="ExternalFormHeader_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question1", culture: lang)">
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question1", culture: lang)</strong>
+                    <div class="clearfix"></div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kasarpeyniri", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kasarpeyniri", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_beyazpeynir", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_beyazpeynir", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lorpeyniri", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lorpeyniri", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orgupeyniri", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orgupeyniri", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_telpeyniri", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_telpeyniri", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dilpeyniri", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dilpeyniri", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ayran", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ayran", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yogurt", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yogurt", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_1" id="ExternalFormElement_1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tereyagi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tereyagi", culture: lang)</label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question2", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_2" name="ExternalFormHeader_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question2", culture: lang)">
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hijyentemizlik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hijyentemizlik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_fiyat", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_fiyat", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_uruncesitliligi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_uruncesitliligi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dogallik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dogallik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tat", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tat", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_koku", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_koku", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ambalajcekiciligi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ambalajcekiciligi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sonkullanimtarihi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sonkullanimtarihi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_indirimolmasi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_indirimolmasi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_bilinirmarkaolması", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_bilinirmarkaolması", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_raftakigoruntusu", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_raftakigoruntusu", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzettedegismezlik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzettedegismezlik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_markaguvenirligi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_markaguvenirligi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_2" id="ExternalFormElement_2" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_gorunum", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_gorunum", culture: lang)</label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question3", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_3" name="ExternalFormHeader_3" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question3", culture: lang)">
+                    <input type="hidden" id="ExternalFormElement_3" name="ExternalFormElement_3" value="-">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8 text-center" style="font-weight: bold;">
+                            <div class="row">
+                                <div class="col-md-2">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)</div>
+                                <div class="col-md-2">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)</div>
+                                <div class="col-md-2">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)</div>
+                                <div class="col-md-2">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)</div>
+                                <div class="col-md-2">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_4" name="ExternalFormHeader_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_4" id="ExternalFormElement_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_4" id="ExternalFormElement_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_4" id="ExternalFormElement_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_4" id="ExternalFormElement_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_4" id="ExternalFormElement_4" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_5" name="ExternalFormHeader_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_5" id="ExternalFormElement_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_5" id="ExternalFormElement_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_5" id="ExternalFormElement_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_5" id="ExternalFormElement_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_5" id="ExternalFormElement_5" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tatdoku", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_6" name="ExternalFormHeader_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tatdoku", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_6" id="ExternalFormElement_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_6" id="ExternalFormElement_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_6" id="ExternalFormElement_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_6" id="ExternalFormElement_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_6" id="ExternalFormElement_6" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_fiyat", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_7" name="ExternalFormHeader_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_fiyat", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_7" id="ExternalFormElement_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_7" id="ExternalFormElement_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_7" id="ExternalFormElement_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_7" id="ExternalFormElement_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_7" id="ExternalFormElement_7" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_uruncesitliligi", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_8" name="ExternalFormHeader_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_uruncesitliligi", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_8" id="ExternalFormElement_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_8" id="ExternalFormElement_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_8" id="ExternalFormElement_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_8" id="ExternalFormElement_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_8" id="ExternalFormElement_8" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_markaimaji", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_9" name="ExternalFormHeader_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_markaimaji", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_9" id="ExternalFormElement_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_9" id="ExternalFormElement_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_9" id="ExternalFormElement_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_9" id="ExternalFormElement_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_9" id="ExternalFormElement_9" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kampanyaveindirimler", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_10" name="ExternalFormHeader_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kampanyaveindirimler", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_10" id="ExternalFormElement_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_10" id="ExternalFormElement_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_10" id="ExternalFormElement_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_10" id="ExternalFormElement_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_10" id="ExternalFormElement_10" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_raftabulunabilirlik", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_11" name="ExternalFormHeader_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_raftabulunabilirlik", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_11" id="ExternalFormElement_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_11" id="ExternalFormElement_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_11" id="ExternalFormElement_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_11" id="ExternalFormElement_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_11" id="ExternalFormElement_11" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ambalajcekiciligi", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_12" name="ExternalFormHeader_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_raftabulunabilirlik", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_12" id="ExternalFormElement_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokiyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_12" id="ExternalFormElement_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_iyi", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_12" id="ExternalFormElement_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_orta", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_12" id="ExternalFormElement_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_12" id="ExternalFormElement_12" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cokkotu", culture: lang)">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question4", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_13" name="ExternalFormHeader_13" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question4", culture: lang)">
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_13" id="ExternalFormElement_13" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenmemnunum", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenmemnunum", culture: lang)
+                        </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_13" id="ExternalFormElement_13" value="  @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cogunluklamemnunum", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio2">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cogunluklamemnunum", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_13" id="ExternalFormElement_13" value="  @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nememnunumnedememnundegilim", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio2">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nememnunumnedememnundegilim", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_13" id="ExternalFormElement_13" value=" @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hicmemnundegilim", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio3">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hicmemnundegilim", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_13" id="ExternalFormElement_13" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cogunlukmemnundegilim", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio4">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cogunlukmemnundegilim", culture: lang)
+                        </label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15"> @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question5", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_14" name="ExternalFormHeader_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question5", culture: lang)">
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_14" id="ExternalFormElement_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kesinlikleevet", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="memnunradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kesinlikleevet", culture: lang)
+                        </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_14" id="ExternalFormElement_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_muhtemelenevet", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="kesinradio2">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_muhtemelenevet", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_14" id="ExternalFormElement_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_emindegilim", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="kesinradio3">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_emindegilim", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_14" id="ExternalFormElement_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_muhtemelenhayir", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="kesinradio4">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_muhtemelenhayir", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_14" id="ExternalFormElement_14" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kesinliklehayir", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="kesinradio5">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kesinliklehayir", culture: lang)
+                        </label>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">  @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question6", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_15" name="ExternalFormHeader_15" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question6", culture: lang)">
+                    <input type="hidden" name="ExternalFormElement_15" id="ExternalFormElement_15" value="-">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8 text-center" style="font-weight: bold;">
+                            <div class="row">
+                                <div class="col-md-2 m-r-10">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hickatilmiyorum", culture: lang)</div>
+                                <div class="col-md-2 m-r-10">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatilmiyorum", culture: lang)</div>
+                                <div class="col-md-2 m-r-10">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nekatiliyorumnedekatilmiyorum", culture: lang)</div>
+                                <div class="col-md-2 m-r-10">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatiliyorum", culture: lang)</div>
+                                <div class="col-md-2 m-r-10">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenkatiliyorum", culture: lang)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer1", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_16" name="ExternalFormHeader_16" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer1", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_16" id="ExternalFormElement_16" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hickatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_16" id="ExternalFormElement_16" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_16" id="ExternalFormElement_16" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nekatiliyorumnedekatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_16" id="ExternalFormElement_16" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_16" id="ExternalFormElement_16" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer2", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_17" name="ExternalFormHeader_17" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer2", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_17" id="ExternalFormElement_17" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hickatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_17" id="ExternalFormElement_17" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_17" id="ExternalFormElement_17" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nekatiliyorumnedekatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_17" id="ExternalFormElement_17" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_17" id="ExternalFormElement_17" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer3", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_18" name="ExternalFormHeader_18" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer3", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_18" id="ExternalFormElement_18" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hickatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_18" id="ExternalFormElement_18" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_18" id="ExternalFormElement_18" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nekatiliyorumnedekatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_18" id="ExternalFormElement_18" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_18" id="ExternalFormElement_18" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-15">
+                        <div class="col-md-4">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer4", culture: lang)</div>
+                        <input type="hidden" id="ExternalFormHeader_19" name="ExternalFormHeader_19" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_answer4", culture: lang)">
+                        <div class="col-md-8 text-center">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_19" id="ExternalFormElement_19" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hickatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_19" id="ExternalFormElement_19" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_19" id="ExternalFormElement_19" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_nekatiliyorumnedekatilmiyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_19" id="ExternalFormElement_19" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kismenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ExternalFormElement_19" id="ExternalFormElement_19" value=@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tamamenkatiliyorum", culture: lang)>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question7", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_20" name="ExternalFormHeader_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question7", culture: lang)">
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tazelik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hijyentemizlik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_hijyentemizlik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_lezzet", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sut", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sut", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kalite", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kalite", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_guven", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_guven", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dogallik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_dogallik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sorumluluk", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_sorumluluk", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_pahalı", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_pahalı", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_saglik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_saglik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="Sakarya">
+                        <label class="form-check-label" for="inlineCheckbox1">Sakarya</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ekonomik", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ekonomik", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ayran", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ayran", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_peynir", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_peynir", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tereyagi", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_tereyagi", culture: lang)</label>
+                    </div>
+                    <div class="form-check form-check-inline pull-left m-15">
+                        <input class="form-check-input" type="checkbox" name="ExternalFormElement_20" id="ExternalFormElement_20" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yogurt", culture: lang)">
+                        <label class="form-check-label" for="inlineCheckbox1">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yogurt", culture: lang)</label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cinsiyetiniz", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_21" name="ExternalFormHeader_21" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_cinsiyetiniz", culture: lang)">
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_21" id="ExternalFormElement_21" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kadin", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="cinsiyetradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_kadin", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_21" id="ExternalFormElement_21" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_erkek", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="cinsiyetradio2">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_erkek", culture: lang)
+                        </label>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">   @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yasiniz", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_22" name="ExternalFormHeader_22" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_yasiniz", culture: lang)">
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_20vealti", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_20vealti", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value="21 - 30">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio2">
+                            21 - 30
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value="31 - 40">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio3">
+                            31 - 40
+                        </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value="41 - 50">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio4">
+                            41 - 50
+                        </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value="51 - 60">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio5">
+                            51 - 60
+                        </label>
+                    </div>
+
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_22" id="ExternalFormElement_22" value=" @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_61veuzeri", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="yasradio6">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_61veuzeri", culture: lang)
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15"> @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_meslek", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_23" name="ExternalFormHeader_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_meslek", culture: lang)">
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="  @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_memur", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_memur", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="  @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_isci", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio2">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_isci", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_serbestmeslek", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio3">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_serbestmeslek", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_evhanimi", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio4">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_evhanimi", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_emekli", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio5">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_emekli", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ogrenci", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio6">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_ogrenci", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_23" id="ExternalFormElement_23" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_diger", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio7">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_diger", culture: lang)
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question8", culture: lang)</strong>
+                    <input type="hidden" id="ExternalFormHeader_24" name="ExternalFormHeader_24" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_question8", culture: lang)">
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="gelirradio1" id="gelirradio1" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_bintlvealti", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="meslekradio1">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_bintlvealti", culture: lang)
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio" name="ExternalFormElement_24" id="ExternalFormElement_24" value="1.001 TL - 2.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio2">
+                            1.001 TL - 2.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio"  name="ExternalFormElement_24" id="ExternalFormElement_24" value="2.001 TL - 3.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio3">
+                            2.001 TL - 3.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio"  name="ExternalFormElement_24" id="ExternalFormElement_24" value="3.001 TL - 4.000 TL">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio4">
+                            3.001 TL - 4.000 TL
+                        </label>
+                    </div>
+                    <div class="form-check m-15">
+                        <input class="form-check-input pull-left m-r-10" type="radio"  name="ExternalFormElement_24" id="ExternalFormElement_24" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_4bintlveustu", culture: lang)">
+                        <label class="form-check-label pull-left m-r-10" for="gelirradio5">
+                            @CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_4bintlveustu", culture: lang)
+                        </label>
+                    </div>
+
+                    <div class="m-15">
+                        <div class="clearfix"></div>
+                        <strong style="color:#ce1820; display:block;" class="m-15">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_puanaciklama", culture: lang)</strong>
+                        <div class="form-group">
+                            <label for="puan">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_puan", culture: lang)</label>
+                            <input type="hidden" id="ExternalFormHeader_25" name="ExternalFormHeader_25" value="@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_puan", culture: lang)">
+                            <input type="text" class="form-control" name="ExternalFormElement_25" id="ExternalFormElement_25" aria-describedby="puan1" placeholder="">
+                            <small id="puan1" class="form-text text-muted">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_customerform_rakambelirt", culture: lang)</small>
+                        </div>
+                        <div class="contact">
+                        <div class="col-md-6 col-xs-12">
+                        <div class="g-recaptcha" data-sitekey="6LcYtmEUAAAAAFmUtMoSyo8WvSjAJ31yiTBV8YWx"></div>
+                          
+                        </div>
+                         <div class="col-md-6 col-xs-12">
+                        
+                             <button type="submit" class="btn pull-right m-t-b-30">@CloudApp.Web.Localization.LocalizationHelper.Localize("r_contact_form_sendmessage", culture: lang)</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @{
+
+                    CloudApp.Web.Models.ViewPartialObject mainMenu123 = pg.GetCategoryPartial(21, Request);
+                    if (mainMenu123 != null)
+                    {
+                        Html.RenderPartial("~/blog/Theme/1/Views/CategoryPartial/_FastMenuHumanResources.cshtml", mainMenu123.ViewModel);
+                    }
+
+                }
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,86 @@
+﻿@model CloudApp.Data.Model.CForm
+
+@{
+
+}
+
+
+
+<div class="rightpanel">
+
+   
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Menü</h5>
+            @if (Model.Id != 0)
+            {
+                <h1>Form Düzenle</h1>
+            }
+            else
+            {
+                <h1>Form Ekle</h1>
+            }
+        </div>
+    </div><!--pageheader-->
+
+
+
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+
+
+            <div class="widget">
+                <h4 class="widgettitle">Menü Ekle</h4>
+                <div class="widgetcontent">
+                    @using (Html.BeginForm("CreateForm", "Form", FormMethod.Post, new { @id = "frmNewAssignment", @class = "form", @enctype = "multipart/form-data" }))
+    {
+                        @Html.HiddenFor(h=>h.Id)
+                <div class="form-group">
+                    <label for="firstname" class="col-md-2 control-label">Form İsmi</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(item => item.Name, "", new { @class = "form-control", @placeholder = "Form İsmi" })
+                        @Html.ValidationMessageFor(item => item.Name, "", new { @style = "color:red;" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname" class="col-md-2 control-label">Menü Alanları (Virgülle ayırınız.)</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(item => item.Properties, new { @class = "form-control", @placeholder = "Menü Alanları (Virgülle ayırınız)" })
+                        @Html.ValidationMessageFor(item => item.Properties, "", new { @style = "color:red;" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname" class="col-md-2 control-label">Menü Gösterilecek Alanlar (Virgülle ayırınız)</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(item => item.ViewProperties, new { @class = "form-control", @placeholder = "Menü Gösterilecek Alanlar (Virgülle ayırınız)" })
+                        @Html.ValidationMessageFor(item => item.ViewProperties, "", new { @style = "color:red;" })
+                    </div>
+                </div>
+
+                <br /><br />
+                <button type="submit" class="btn btn-default">Kaydet</button>
+
+
+}
+                </div><!-- widgetcontent-->
+            </div><!-- widgetcontent-->
+            @Html.Partial("../Shared/_Footer")
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
+
+@section scripts{
+    <script>
+
+   
+
+    </script>}
+

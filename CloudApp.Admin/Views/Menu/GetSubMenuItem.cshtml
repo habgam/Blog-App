@@ -1,0 +1,91 @@
+﻿@model List<CloudApp.Data.Model.CMenuItem>
+@{
+  
+}
+
+
+<div class="rightpanel">
+
+    @Html.Partial("../Shared/_BreadCrumbs", (List<CloudApp.Data.ViewModel.ViewBreadCrumb>)ViewBag.BreadCrumbList)
+
+    <div class="pageheader">
+
+        <div class="pageicon"><span class="iconfa-laptop"></span></div>
+        <div class="pagetitle">
+            <h5>Alt Menüler</h5>
+            <h1>Alt Menü Görüntüle</h1>
+        </div>
+    </div><!--pageheader-->
+
+    <div class="maincontent">
+        <div class="maincontentinner">
+
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="form-group" style="margin-top:10px; margin-left:10px;">
+                    <a class="btn btn-default" href="/blog/Admin/Menu/InsertSubMenu/?MenuId=@Request.QueryString["MenuId"]&Id=@Request.QueryString["Id"]">Menü Ekle</a>
+                    @*<button type="submit" class="btn btn-default">Kaydet</button>*@
+                </div>
+
+
+
+            </nav>
+            <h4 class="widgettitle">Liste</h4>
+            <table class="table table-bordered responsive">
+                <thead>
+                    <tr>
+                        @*<th class="centeralign"><input type="checkbox" class="checkall" /></th>*@
+                        <th>Kimlik</th>
+                        <th>Menü Adı</th>
+                        <th>Menü Tipi</th>
+                        <th>Bağlam</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @*<td class="centeralign"><input type="checkbox" /></td>*@
+                            <td style="vertical-align:middle"> @item.Id</td>
+                            <td style="vertical-align:middle">@(item.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR") != null ? item.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR").Name : "" )</td>
+                            <td style="vertical-align:middle"><span class="label label-info"> @item.MenuType.ToString() </span></td>
+                            @if (item.MenuType == CloudApp.Data.Enum.EMenuType.Category)
+                            {
+                                <td style="vertical-align:middle"><span class="label label-info"> @(item.ConnectCategory.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR") != null ? item.ConnectCategory.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR").Name : "" )  </span></td>
+                            }
+                            else if (item.MenuType == CloudApp.Data.Enum.EMenuType.CategoryContent)
+                            {
+                                <td style="vertical-align:middle"><span class="label label-info"> @(item.ConnectCategory.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR") != null ? item.ConnectCategory.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR").Name : "" ) </span></td>
+                            }
+                            else if (item.MenuType == CloudApp.Data.Enum.EMenuType.Root)
+                            {
+                                <td style="vertical-align:middle"><a style="color:white;" href="/blog/Admin/Menu/GetSubMenuItem/?Id=@item.Id&MenuId=0&page=1" class="btn btn-primary"> Alt Menü (@item.SubMenu.Count)</a></td>
+                            }
+                            else if (item.MenuType == CloudApp.Data.Enum.EMenuType.Text)
+                            {
+                                <td style="vertical-align:middle"><span class="label label-info">@(item.ConnectText.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR") != null ? item.ConnectText.LanguageValues.FirstOrDefault(s => s.Lang == "tr-TR").Name : "" ) </span></td>
+                            }
+                            else if (item.MenuType == CloudApp.Data.Enum.EMenuType.Url)
+                            {
+                                <td style="vertical-align:middle"><span class="label label-info"> @item.Url </span></td>
+                            }
+                            <td class="centeralign" style="vertical-align:middle"><a href="/blog/Admin/Menu/InsertSubMenu/?Id=@Request.QueryString["Id"]&MenuId=@Request.QueryString["MenuId"]&SubMenuId=@item.Id" class="deleterow"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td class="centeralign" style="vertical-align:middle"><a style="cursor:pointer;" onclick="return ConfirmButton('Silme Onayı', 'Alt Menüyü kaldırmak istediğinize emin misiniz  ?',@item.Id,'subMenu' )" class="deleterow"><span class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+
+
+            @Html.Partial("../Shared/_ListPaging", new CloudApp.Data.ViewModel.PagingModel { TotalCount = Convert.ToInt32(ViewBag.ListCount), CurrentPage = Convert.ToInt32(ViewBag.CurrentPage) })
+
+            @Html.Partial("../Shared/_Footer")
+            <!--footer-->
+
+        </div><!--maincontentinner-->
+    </div><!--maincontent-->
+
+</div><!--rightpanel-->
